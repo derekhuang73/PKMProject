@@ -33,3 +33,7 @@ int Trainer::availablePokemon() const {
     return i;
 }
 
+Trainer::Trainer() {
+    setName("");
+}
+

@@ -18,6 +18,8 @@ public:
 
     Pokemon();
 
+    void setUpPokemon(string pokemonID);
+
     //Purpose: return the percentage damage that this pokemon will receive from given type
     double typeRestriction (PokemonType pokemonType1);
 

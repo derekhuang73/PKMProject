@@ -11,6 +11,8 @@
 using namespace std;
 class Trainer {
 public:
+    Trainer();
+
     Trainer(string name, int pokemonData[6*7]);
 
     int availablePokemon() const;

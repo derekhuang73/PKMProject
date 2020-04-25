@@ -18,6 +18,8 @@ Pokemon::Pokemon(int serialNumber) {
 }
 
 
+
+
 //purpose: read file and setup pokemon seed data
 void Pokemon::findPokemon(int serialNumber) {
     PokemonSeedReader pokemonSeedReader;
@@ -187,6 +189,12 @@ void Pokemon::generatePokemonWithSeed(string pokemonSeed) {
     setInitialAttack(atk);
     setSerialNumber(pokeSN);
     setName(name);
+
+}
+
+//Purpose: generate Pokemon Information after set up its seed
+//Requirement: not a default pokemon
+void Pokemon::setUpPokemon(string pokemonID) {
 
 }
 

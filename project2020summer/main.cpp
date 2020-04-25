@@ -1,5 +1,4 @@
 #include <iostream>
-#include "model/Pokemon.h"
 
 int main() {
     using namespace std;
