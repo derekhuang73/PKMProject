@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Derek Huang/CLionProjects/project2020summer/main.cpp
+iostream
+-
+model/Pokemon.h
+C:/Users/Derek Huang/CLionProjects/project2020summer/model/Pokemon.h
+
+C:/Users/Derek Huang/CLionProjects/project2020summer/model/Pokemon.h
+xstring
+-
+PokemonType.h
+C:/Users/Derek Huang/CLionProjects/project2020summer/model/PokemonType.h
+PokemonSkill.h
+C:/Users/Derek Huang/CLionProjects/project2020summer/model/PokemonSkill.h
+
+C:/Users/Derek Huang/CLionProjects/project2020summer/model/PokemonSkill.h
+xstring
+-
+PokemonType.h
+C:/Users/Derek Huang/CLionProjects/project2020summer/model/PokemonType.h
+
+C:/Users/Derek Huang/CLionProjects/project2020summer/model/PokemonType.h
+
