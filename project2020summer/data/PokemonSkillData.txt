@@ -1,0 +1,5 @@
+000,012,100,1,fuck u default
+001,015,100,1,fire ball
+002,025,100,2,water shooting
+003,090,090,3,grass storm
+004,150,030,1,deadly frame

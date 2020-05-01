@@ -19,10 +19,12 @@ using namespace std;
     while (!inFile.eof()) {
         inFile >> pokemonSeed;
         if (matchSerialNum(serialNum, pokemonSeed)) {
+            inFile.close();
             return pokemonSeed;
         }
     }
         cerr << "missing pokemon" << endl;
+    inFile.close();
 }
 
 bool PokemonSeedReader::matchSerialNum(int serialNum, string pokemonSeed) {

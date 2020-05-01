@@ -2,20 +2,16 @@
 // Created by Derek Huang on 2020-04-22.
 //
 
+#include <sstream>
 #include "Pokemon.h"
 #include "../persistence/PokemonSeedReader.h"
 
 using namespace std;
 Pokemon::Pokemon(int serialNumber) {
-
     findPokemon(serialNumber);
-    /*for (int i=0; i<4; i++) {
-        skills[i] = PokemonSkill(pokemonSkills[i]);
-    }
-    setPokemonLevel(pokemonLevel);
-    setCurrentHp(currentHp);
-     */
 }
+
+
 
 
 
@@ -24,7 +20,7 @@ Pokemon::Pokemon(int serialNumber) {
 void Pokemon::findPokemon(int serialNumber) {
     PokemonSeedReader pokemonSeedReader;
     string seed = pokemonSeedReader.generatePokemonSeed(serialNumber);
-    generatePokemonWithSeed(seed);
+    setPokemonWithSeed(seed);
 }
 
 //dummy constructor
@@ -170,14 +166,15 @@ void Pokemon::setPokemonType(int typeInt) {
     }
 }
 
-void Pokemon::generatePokemonWithSeed(string pokemonSeed) {
+void Pokemon::setPokemonWithSeed(string pokemonSeed) {
     string serialNum,seedATK,seedDEF,seedHP,seedType,name;
-    serialNum = pokemonSeed.substr(0,3);
-    seedATK = pokemonSeed.substr(5,3);
-    seedDEF = pokemonSeed.substr(9,3);
-    seedHP  = pokemonSeed.substr(13,3);
-    seedType= pokemonSeed.substr(15,1);
-    name    = pokemonSeed.substr(18);
+    stringstream ss(pokemonSeed);
+    getline(ss, serialNum, ',');
+    getline(ss, seedATK, ',');
+    getline(ss, seedDEF, ',');
+    getline(ss, seedHP, ',');
+    getline(ss, seedType, ',');
+    getline(ss, name, ',');
     int pokeSN = atoi(serialNum.c_str());
     int atk    = atoi(seedATK.c_str());
     int def    = atoi(seedDEF.c_str());
@@ -192,9 +189,56 @@ void Pokemon::generatePokemonWithSeed(string pokemonSeed) {
 
 }
 
-//Purpose: generate Pokemon Information after set up its seed
-//Requirement: not a default pokemon
-void Pokemon::setUpPokemon(string pokemonID) {
-
+//Purpose: generate Pokemon Information (skills hp lv)
+void Pokemon::setPokemonWithID(string pokemonID) {
+    string serialS, currentHpS, levelS,skill1,skill2,skill3,skill4;
+    int    serI,hpI,levelI,sk1I,sk2I,sk3I,sk4I;
+    PokemonSkill pkSkill1, pkSkill2, pkSkill3, pkSkill4;
+    stringstream ss(pokemonID);
+    getline(ss, serialS, ',');
+    getline(ss, levelS, ',');
+    getline(ss, currentHpS, ',');
+    getline(ss, skill1, ',');
+    getline(ss, skill2, ',');
+    getline(ss, skill3, ',');
+    getline(ss, skill4, ',');
+    serI = atoi(serialS.c_str());
+    levelI  = atoi(levelS.c_str());
+    hpI = atoi(currentHpS.c_str());
+    sk1I = atoi(skill1.c_str());
+    sk2I = atoi(skill2.c_str());
+    sk3I = atoi(skill3.c_str());
+    sk4I = atoi(skill4.c_str());
+    pkSkill1 = PokemonSkill(sk1I);
+    pkSkill2 = PokemonSkill(sk2I);
+    pkSkill3 = PokemonSkill(sk3I);
+    pkSkill4 = PokemonSkill(sk4I);
+    setUpPokemonWithLV(serI,levelI,hpI);
+    addSkill(pkSkill1);
+    addSkill(pkSkill2);
+    addSkill(pkSkill3);
+    addSkill(pkSkill4);
 }
+
+void Pokemon::setUpPokemonWithLV(int serialNum, int level, int currentHp) {
+    findPokemon(serialNum);
+    setPokemonLevel(level);
+    setCurrentHp(currentHp);
+}
+
+void Pokemon::addSkill(PokemonSkill &pokemonSkill) {
+        for(int i=0; i<4;i++)
+        {
+            if(skills[i] = NULL) {
+                skills[i] = &pokemonSkill;
+                break;
+            }
+        }
+}
+
+PokemonSkill * Pokemon::getSkill(int index) {
+    return skills[index];
+}
+
+
 

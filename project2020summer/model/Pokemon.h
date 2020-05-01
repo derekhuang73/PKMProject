@@ -18,7 +18,9 @@ public:
 
     Pokemon();
 
-    void setUpPokemon(string pokemonID);
+    void setUpPokemonWithLV(int serialNum, int level , int currentHp);
+
+    void setPokemonWithID(string pokemonID);
 
     //Purpose: return the percentage damage that this pokemon will receive from given type
     double typeRestriction (PokemonType pokemonType1);
@@ -60,13 +62,17 @@ public:
 
     void setPokemonType(int typeInt);
 
+    PokemonSkill * getSkill(int index);
+
+    void addSkill(PokemonSkill &pokemonSkill);
+
 private:
     string name;
     int serialNumber, initialAttack, initialDefend, initialHealth, pokemonLevel, currentHP;
     PokemonType pokemonType;
-    PokemonSkill skills[4] = {};
+    PokemonSkill *skills[4] = {};
     void findPokemon(int serialNumber);
-    void generatePokemonWithSeed(string pokemonSeed);
+    void setPokemonWithSeed(string pokemonSeed);
 };
 
 

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Derek Huang/CLionProjects/project2020summer
+# Install script for directory: C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Derek Huang/CLionProjects/project2020summer/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

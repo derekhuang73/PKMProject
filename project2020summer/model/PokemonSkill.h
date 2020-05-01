@@ -27,6 +27,8 @@ public:
 
     void setSkillType(PokemonType skillType);
 
+    void setSkillType(int typeInt);
+
     int getSkillSerialNum() const;
 
     void setSkillSerialNum(int skillSerialNum);
@@ -39,8 +41,7 @@ private:
     int skillSerialNum, power, hitRate;
     string skillName;
     PokemonType skillType;
-    void findSkill(int skillSerialNum);
-
+    void setUpSkill(string pmSkillString);
 };
 
 

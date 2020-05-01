@@ -25,6 +25,7 @@ CMakeFiles\project2020summer.dir\model\Pokemon.cpp.obj: ..\persistence\PokemonSe
 CMakeFiles\project2020summer.dir\model\PokemonSkill.cpp.obj: ..\model\PokemonSkill.cpp
 CMakeFiles\project2020summer.dir\model\PokemonSkill.cpp.obj: ..\model\PokemonSkill.h
 CMakeFiles\project2020summer.dir\model\PokemonSkill.cpp.obj: ..\model\PokemonType.h
+CMakeFiles\project2020summer.dir\model\PokemonSkill.cpp.obj: ..\persistence\PokemonSkillReader.h
 
 CMakeFiles\project2020summer.dir\model\PokemonType.cpp.obj: ..\model\PokemonType.cpp
 CMakeFiles\project2020summer.dir\model\PokemonType.cpp.obj: ..\model\PokemonType.h
@@ -47,4 +48,9 @@ CMakeFiles\project2020summer.dir\persistence\PokemonSeedReader.cpp.obj: ..\model
 CMakeFiles\project2020summer.dir\persistence\PokemonSeedReader.cpp.obj: ..\model\PokemonType.h
 CMakeFiles\project2020summer.dir\persistence\PokemonSeedReader.cpp.obj: ..\persistence\PokemonSeedReader.cpp
 CMakeFiles\project2020summer.dir\persistence\PokemonSeedReader.cpp.obj: ..\persistence\PokemonSeedReader.h
+
+CMakeFiles\project2020summer.dir\persistence\PokemonSkillReader.cpp.obj: ..\model\PokemonSkill.h
+CMakeFiles\project2020summer.dir\persistence\PokemonSkillReader.cpp.obj: ..\model\PokemonType.h
+CMakeFiles\project2020summer.dir\persistence\PokemonSkillReader.cpp.obj: ..\persistence\PokemonSkillReader.cpp
+CMakeFiles\project2020summer.dir\persistence\PokemonSkillReader.cpp.obj: ..\persistence\PokemonSkillReader.h
 

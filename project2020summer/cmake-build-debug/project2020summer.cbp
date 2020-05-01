@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/Derek Huang/CLionProjects/project2020summer/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 all"/>
-					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="project2020summer">
-				<Option output="C:/Users/Derek Huang/CLionProjects/project2020summer/cmake-build-debug/project2020summer.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Derek Huang/CLionProjects/project2020summer/cmake-build-debug"/>
+				<Option output="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/cmake-build-debug/project2020summer.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
@@ -33,15 +33,15 @@
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 project2020summer"/>
-					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 project2020summer"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="project2020summer/fast">
-				<Option output="C:/Users/Derek Huang/CLionProjects/project2020summer/cmake-build-debug/project2020summer.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Derek Huang/CLionProjects/project2020summer/cmake-build-debug"/>
+				<Option output="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/cmake-build-debug/project2020summer.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
@@ -55,85 +55,91 @@
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 project2020summer/fast"/>
-					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 project2020summer/fast"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/Derek Huang/CLionProjects/project2020summer/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 edit_cache"/>
-					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/Derek Huang/CLionProjects/project2020summer/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/project2020summer/main.cpp">
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/main.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/project2020summer/model/Item.cpp">
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Item.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/project2020summer/model/Item.h">
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Item.h">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/project2020summer/model/Player.cpp">
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Player.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/project2020summer/model/Player.h">
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Player.h">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/project2020summer/model/Pokemon.cpp">
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/project2020summer/model/Pokemon.h">
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.h">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/project2020summer/model/PokemonSkill.cpp">
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonSkill.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/project2020summer/model/PokemonSkill.h">
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonSkill.h">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/project2020summer/model/PokemonType.cpp">
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonType.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/project2020summer/model/PokemonType.h">
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonType.h">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/project2020summer/model/Trainer.cpp">
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Trainer.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/project2020summer/model/Trainer.h">
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Trainer.h">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/project2020summer/model/TrainerBattle.cpp">
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/TrainerBattle.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/project2020summer/model/TrainerBattle.h">
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/TrainerBattle.h">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/project2020summer/persistence/PokemonSeedReader.cpp">
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/PokemonSeedReader.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/project2020summer/persistence/PokemonSeedReader.h">
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/PokemonSeedReader.h">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/project2020summer/CMakeLists.txt">
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/PokemonSkillReader.cpp">
+			<Option target="project2020summer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/PokemonSkillReader.h">
+			<Option target="project2020summer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

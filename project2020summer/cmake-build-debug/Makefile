@@ -49,10 +49,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E re
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\Derek Huang\CLionProjects\project2020summer"
+CMAKE_SOURCE_DIR = "C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -81,9 +81,9 @@ rebuild_cache\fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\CMakeFiles" "C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\CMakeFiles" "C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\CMakeFiles\progress.marks"
 	$(MAKE) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Derek Huang\CLionProjects\project2020summer\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -367,6 +367,33 @@ persistence\PokemonSeedReader.cpp.s:
 	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\persistence\PokemonSeedReader.cpp.s
 .PHONY : persistence\PokemonSeedReader.cpp.s
 
+persistence\PokemonSkillReader.obj: persistence\PokemonSkillReader.cpp.obj
+
+.PHONY : persistence\PokemonSkillReader.obj
+
+# target to build an object file
+persistence\PokemonSkillReader.cpp.obj:
+	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\persistence\PokemonSkillReader.cpp.obj
+.PHONY : persistence\PokemonSkillReader.cpp.obj
+
+persistence\PokemonSkillReader.i: persistence\PokemonSkillReader.cpp.i
+
+.PHONY : persistence\PokemonSkillReader.i
+
+# target to preprocess a source file
+persistence\PokemonSkillReader.cpp.i:
+	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\persistence\PokemonSkillReader.cpp.i
+.PHONY : persistence\PokemonSkillReader.cpp.i
+
+persistence\PokemonSkillReader.s: persistence\PokemonSkillReader.cpp.s
+
+.PHONY : persistence\PokemonSkillReader.s
+
+# target to generate assembly for a file
+persistence\PokemonSkillReader.cpp.s:
+	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\persistence\PokemonSkillReader.cpp.s
+.PHONY : persistence\PokemonSkillReader.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -403,6 +430,9 @@ help:
 	@echo ... persistence/PokemonSeedReader.obj
 	@echo ... persistence/PokemonSeedReader.i
 	@echo ... persistence/PokemonSeedReader.s
+	@echo ... persistence/PokemonSkillReader.obj
+	@echo ... persistence/PokemonSkillReader.i
+	@echo ... persistence/PokemonSkillReader.s
 .PHONY : help
 
 
