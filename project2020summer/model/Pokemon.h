@@ -18,6 +18,8 @@ class Pokemon {
 public:
     Pokemon(int serialNumber);
 
+    PokemonSkill *const *getSkills() const;
+
     Pokemon();
 
     void setUpPokemonWithLV(int serialNum, int level , int currentHp);

@@ -19,14 +19,8 @@ iostream
 -
 model/Pokemon.h
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.h
-
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.cpp
-sstream
+string
 -
-Pokemon.h
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.h
-../persistence/PokemonSeedReader.h
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/PokemonSeedReader.h
 
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.h
 string
@@ -47,12 +41,4 @@ C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonTyp
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullSkillException.h
 
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonType.h
-
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/PokemonSeedReader.h
-string
--
-../model/Pokemon.h
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.h
-../exception/NullPokemonException.h
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullPokemonException.h
 

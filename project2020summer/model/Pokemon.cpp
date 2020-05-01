@@ -223,9 +223,9 @@ void Pokemon::setUpPokemonWithLV(int serialNum, int level, int currentHp) {
 }
 
 void Pokemon::addSkill(PokemonSkill &pokemonSkill) {
-        for(int i=0; i<4;i++)
+        for(int i=0; i<4; i++)
         {
-            if(getSkill(i) == NULL) {
+            if(skills[i] == NULL) {
                 skills[i] = &pokemonSkill;
                 break;
             }
@@ -242,6 +242,10 @@ void Pokemon::addSkillwSerialNum(int skillSerialNum) {
         addSkill(pokemonSkill);
     } catch (NullSkillException) {
     }
+}
+
+PokemonSkill *const *Pokemon::getSkills() const {
+    return skills;
 }
 
 
