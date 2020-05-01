@@ -8,7 +8,11 @@
 
 using namespace std;
 Pokemon::Pokemon(int serialNumber) {
-    findPokemon(serialNumber);
+    try {
+        findPokemon(serialNumber);
+    } catch (NullPokemonException e) {
+
+    }
 }
 
 
@@ -17,7 +21,7 @@ Pokemon::Pokemon(int serialNumber) {
 
 
 //purpose: read file and setup pokemon seed data
-void Pokemon::findPokemon(int serialNumber) {
+void Pokemon::findPokemon(int serialNumber)throw (NullPokemonException) {
     PokemonSeedReader pokemonSeedReader;
     string seed = pokemonSeedReader.generatePokemonSeed(serialNumber);
     setPokemonWithSeed(seed);
@@ -25,14 +29,6 @@ void Pokemon::findPokemon(int serialNumber) {
 
 //dummy constructor
 Pokemon::Pokemon() {
-    setPokemonLevel(0);
-    setCurrentHp(0);
-    setSerialNumber(0);
-    setPokemonType(Fire);
-    setInitialAttack(0);
-    setInitialDefend(0);
-    setInitialHealth(0);
-    setName("null");
 }
 
 int Pokemon::getInitialAttack() const {
@@ -189,7 +185,7 @@ void Pokemon::setPokemonWithSeed(string pokemonSeed) {
 
 }
 
-//Purpose: generate Pokemon Information (skills hp lv)
+//Purpose: generate Pokemon Information (skills hp lv) (can be found in trainer data)
 void Pokemon::setPokemonWithID(string pokemonID) {
     string serialS, currentHpS, levelS,skill1,skill2,skill3,skill4;
     int    serI,hpI,levelI,sk1I,sk2I,sk3I,sk4I;
@@ -229,7 +225,7 @@ void Pokemon::setUpPokemonWithLV(int serialNum, int level, int currentHp) {
 void Pokemon::addSkill(PokemonSkill &pokemonSkill) {
         for(int i=0; i<4;i++)
         {
-            if(skills[i] == NULL) {
+            if(getSkill(i) == NULL) {
                 skills[i] = &pokemonSkill;
                 break;
             }
@@ -238,6 +234,14 @@ void Pokemon::addSkill(PokemonSkill &pokemonSkill) {
 
 PokemonSkill * Pokemon::getSkill(int index) {
     return skills[index];
+}
+
+void Pokemon::addSkillwSerialNum(int skillSerialNum) {
+    try {
+        PokemonSkill pokemonSkill = PokemonSkill(skillSerialNum);
+        addSkill(pokemonSkill);
+    } catch (NullSkillException) {
+    }
 }
 
 

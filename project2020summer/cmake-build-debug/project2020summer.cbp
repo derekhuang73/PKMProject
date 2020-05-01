@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullPokemonException.h">
+			<Option target="project2020summer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullSkillException.h">
+			<Option target="project2020summer"/>
+		</Unit>
 		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/main.cpp">
 			<Option target="project2020summer"/>
 		</Unit>

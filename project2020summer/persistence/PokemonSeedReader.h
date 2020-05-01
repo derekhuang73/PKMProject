@@ -5,8 +5,9 @@
 #ifndef PROJECT2020SUMMER_POKEMONSEEDREADER_H
 #define PROJECT2020SUMMER_POKEMONSEEDREADER_H
 
-#include <xstring>
+#include <string>
 #include "../model/Pokemon.h"
+#include "../exception/NullPokemonException.h"
 
 using namespace std;
 
@@ -16,7 +17,7 @@ class PokemonSeedReader {
 public:
     PokemonSeedReader();
 
-    string generatePokemonSeed(int serialNum);
+    string generatePokemonSeed(int serialNum) throw (NullPokemonException);
 
 private:
     bool matchSerialNum(int serialNum, string pokemonSeed);

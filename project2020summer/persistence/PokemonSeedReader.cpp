@@ -3,12 +3,16 @@
 //
 
 #include "PokemonSeedReader.h"
+#include "../exception/NullPokemonException.h"
 #include <fstream>
 #include <iostream>
 
 using namespace std;
 
-    string PokemonSeedReader::generatePokemonSeed(int serialNum) {
+string PokemonSeedReader::generatePokemonSeed(int serialNum) throw (NullPokemonException){
+    if (serialNum == 0) {
+        throw NullPokemonException();
+    }
     ifstream inFile;
     inFile.open(File);
     if (inFile.fail()) {
@@ -23,12 +27,12 @@ using namespace std;
             return pokemonSeed;
         }
     }
-        cerr << "missing pokemon" << endl;
+    cerr << "missing pokemon" << endl;
     inFile.close();
 }
 
 bool PokemonSeedReader::matchSerialNum(int serialNum, string pokemonSeed) {
-    string pokemonSerialNum = pokemonSeed.substr(0,3);
+    string pokemonSerialNum = pokemonSeed.substr(0, 3);
     int pokemonSerialNumber = atoi(pokemonSerialNum.c_str());
     return pokemonSerialNumber == serialNum;
 }

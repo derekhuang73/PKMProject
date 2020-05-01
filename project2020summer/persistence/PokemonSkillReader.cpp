@@ -6,8 +6,12 @@
 #include <iostream>
 #include <sstream>
 #include "PokemonSkillReader.h"
+#include "../exception/NullSkillException.h"
 
-string PokemonSkillReader::findSkill(int skillNum) {
+string PokemonSkillReader::findSkill(int skillNum) throw(NullSkillException) {
+    if (skillNum == 0) {
+        throw NullSkillException();
+    }
     ifstream inFile;
     inFile.open(File);
     if (inFile.fail()) {

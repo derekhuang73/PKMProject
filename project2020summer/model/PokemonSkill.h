@@ -6,14 +6,16 @@
 #define PROJECT2020SUMMER_POKEMONSKILL_H
 
 
-#include <xstring>
+#include <string>
 #include "PokemonType.h"
+#include "../exception/NullSkillException.h"
+
 using namespace std;
 class PokemonSkill {
 public:
     PokemonSkill();
 
-    PokemonSkill(int skillSerialNum);
+    PokemonSkill(int skillSerialNum) throw(NullSkillException);
 
     int getPower() const;
 
@@ -38,7 +40,7 @@ public:
     void setSkillName(const string &skillName);
 
 private:
-    int skillSerialNum, power, hitRate;
+    int skillSerialNum{}, power{}, hitRate{};
     string skillName;
     PokemonType skillType;
     void setUpSkill(string pmSkillString);

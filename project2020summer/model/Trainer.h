@@ -6,7 +6,7 @@
 #define PROJECT2020SUMMER_TRAINER_H
 
 
-#include <xstring>
+#include <string>
 #include "Pokemon.h"
 using namespace std;
 class Trainer {

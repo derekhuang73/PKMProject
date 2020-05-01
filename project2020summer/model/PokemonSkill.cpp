@@ -7,23 +7,16 @@
 #include "../persistence/PokemonSkillReader.h"
 
 using namespace std;
-PokemonSkill::PokemonSkill(int skillSerialNum) {
+PokemonSkill::PokemonSkill(int skillSerialNum) throw(NullSkillException) {
     string skillString;
     PokemonSkillReader pokemonSkillReader;
-    skillString = pokemonSkillReader.findSkill(skillSerialNum);
-    setUpSkill(skillString);
+        skillString = pokemonSkillReader.findSkill(skillSerialNum);
+        setUpSkill(skillString);
 }
 
 
 //Purpose: default skill
-PokemonSkill::PokemonSkill() {
-    //stub
-    setSkillSerialNum(0);
-    setSkillType(Fire);
-    setHitRate(0);
-    setPower(0);
-    setSkillName("null skill");
-}
+PokemonSkill::PokemonSkill() = default;
 
 int PokemonSkill::getPower() const {
     return power;

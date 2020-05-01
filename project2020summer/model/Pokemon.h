@@ -6,9 +6,11 @@
 #define PROJECT2020SUMMER_POKEMON_H
 
 
-#include <xstring>
+#include <string>
 #include "PokemonType.h"
 #include "PokemonSkill.h"
+#include "../exception/NullPokemonException.h"
+
 using namespace std;
 
 class Pokemon {
@@ -64,15 +66,16 @@ public:
 
     PokemonSkill * getSkill(int index);
 
-    void addSkill(PokemonSkill &pokemonSkill);
+    void addSkillwSerialNum(int skillSerialNum);
 
 private:
     string name;
     int serialNumber, initialAttack, initialDefend, initialHealth, pokemonLevel, currentHP;
     PokemonType pokemonType;
     PokemonSkill *skills[4] = {};
-    void findPokemon(int serialNumber);
+    void findPokemon(int serialNumber) throw (NullPokemonException);
     void setPokemonWithSeed(string pokemonSeed);
+    void addSkill(PokemonSkill &pokemonSkill);
 };
 
 
