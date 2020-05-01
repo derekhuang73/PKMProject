@@ -229,7 +229,7 @@ void Pokemon::setUpPokemonWithLV(int serialNum, int level, int currentHp) {
 void Pokemon::addSkill(PokemonSkill &pokemonSkill) {
         for(int i=0; i<4;i++)
         {
-            if(skills[i] = NULL) {
+            if(skills[i] == NULL) {
                 skills[i] = &pokemonSkill;
                 break;
             }
