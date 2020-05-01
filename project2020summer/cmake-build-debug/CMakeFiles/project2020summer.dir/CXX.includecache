@@ -6,13 +6,11 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.cpp
-sstream
+C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/main.cpp
+iostream
 -
-Pokemon.h
+model/Pokemon.h
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.h
-../persistence/PokemonSeedReader.h
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/PokemonSeedReader.h
 
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.h
 xstring
@@ -29,10 +27,4 @@ PokemonType.h
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonType.h
 
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonType.h
-
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/PokemonSeedReader.h
-xstring
--
-../model/Pokemon.h
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.h
 
