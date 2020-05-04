@@ -1,10 +1,14 @@
 #include <iostream>
 #include "model/Pokemon.h"
 #include <string>
+#include <list>
 
 int main() {
     using namespace std;
     cout << "Hello, World!" << endl;
+
+
+
     Pokemon p = Pokemon(1);
     p.setUpPokemonWithLV(1,1,0);
 

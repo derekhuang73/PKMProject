@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/TrainerBattle.cpp" "C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/cmake-build-debug/CMakeFiles/project2020summer.dir/model/TrainerBattle.cpp.obj"
   "C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/PokemonSeedReader.cpp" "C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/cmake-build-debug/CMakeFiles/project2020summer.dir/persistence/PokemonSeedReader.cpp.obj"
   "C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/PokemonSkillReader.cpp" "C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/cmake-build-debug/CMakeFiles/project2020summer.dir/persistence/PokemonSkillReader.cpp.obj"
+  "C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/TrainerReader.cpp" "C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/cmake-build-debug/CMakeFiles/project2020summer.dir/persistence/TrainerReader.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")
 

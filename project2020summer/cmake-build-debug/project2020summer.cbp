@@ -88,6 +88,9 @@
 		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullSkillException.h">
 			<Option target="project2020summer"/>
 		</Unit>
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullTrainerException.h">
+			<Option target="project2020summer"/>
+		</Unit>
 		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/main.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
@@ -143,6 +146,12 @@
 			<Option target="project2020summer"/>
 		</Unit>
 		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/PokemonSkillReader.h">
+			<Option target="project2020summer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/TrainerReader.cpp">
+			<Option target="project2020summer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/TrainerReader.h">
 			<Option target="project2020summer"/>
 		</Unit>
 		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/CMakeLists.txt">

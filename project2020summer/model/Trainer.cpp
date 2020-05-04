@@ -3,17 +3,8 @@
 //
 
 #include "Trainer.h"
-
-Trainer::Trainer(string name, int pokemonData[6*7]) {
-    setName(name);
-    for (int i = 0; i < 6; i++) {
-        int skillList[4] = {pokemonData[7*i +3],
-                            pokemonData[7*i +4],
-                            pokemonData[7*i +5],
-                            pokemonData[7*i +6]};
-        pokemonList[i] = Pokemon(pokemonData[7 * i]);
-    }
-}
+#include "../persistence/TrainerReader.h"
+#include "../exception/NullTrainerException.h"
 
 const string &Trainer::getName() const {
     return name;
@@ -25,12 +16,41 @@ void Trainer::setName(const string &name) {
 
 int Trainer::availablePokemon() const {
     int i=0;
-    for(Pokemon pokemon : pokemonList) {
-        if (pokemon.getCurrentHp() > 0) {
+    for(Pokemon * pokemon : pokemonList) {
+        if (pokemon -> getCurrentHp() > 0) {
             i++;
         }
     }
     return i;
+}
+
+Trainer::Trainer(string name) {
+    TrainerReader trainerReader;
+    try {
+        list<string> listOfStr = trainerReader.findTrainerWithName(name);
+        setUpTrainer(listOfStr);
+    }
+    catch (NullTrainerException) {
+        setName(name);
+    }
+}
+
+void Trainer::setUpTrainer(list<string> trainerID) {
+    std::list<std::string>::iterator it = trainerID.begin();
+    setName(*it);
+    advance(it,1);
+    while (it != trainerID.end()) {
+        try {
+            Pokemon p = Pokemon();
+            p.setPokemonWithID(*it);
+            addPokemon(p);
+        } catch (NullPokemonException) {
+        }
+    }
+}
+
+void Trainer::addPokemon(Pokemon &pokemon) {
+    //stub
 }
 
 Trainer::Trainer() = default;

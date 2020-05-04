@@ -11,7 +11,6 @@ Pokemon::Pokemon(int serialNumber) {
     try {
         findPokemon(serialNumber);
     } catch (NullPokemonException e) {
-
     }
 }
 
@@ -186,7 +185,7 @@ void Pokemon::setPokemonWithSeed(string pokemonSeed) {
 }
 
 //Purpose: generate Pokemon Information (skills hp lv) (can be found in trainer data)
-void Pokemon::setPokemonWithID(string pokemonID) {
+void Pokemon::setPokemonWithID(string pokemonID) throw (NullPokemonException) {
     string serialS, currentHpS, levelS,skill1,skill2,skill3,skill4;
     int    serI,hpI,levelI,sk1I,sk2I,sk3I,sk4I;
     PokemonSkill pkSkill1, pkSkill2, pkSkill3, pkSkill4;
@@ -216,7 +215,8 @@ void Pokemon::setPokemonWithID(string pokemonID) {
     addSkill(pkSkill4);
 }
 
-void Pokemon::setUpPokemonWithLV(int serialNum, int level, int currentHp) {
+void Pokemon::setUpPokemonWithLV(int serialNum, int level, int currentHp)
+throw (NullPokemonException){
     findPokemon(serialNum);
     setPokemonLevel(level);
     setCurrentHp(currentHp);

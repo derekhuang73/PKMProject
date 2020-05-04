@@ -22,6 +22,7 @@ string PokemonSkillReader::findSkill(int skillNum) throw(NullSkillException) {
     while (!inFile.eof()) {
         inFile >> skillString;
         if (skillMatch(skillNum,skillString)) {
+            inFile.close();
             return skillString;
         }
     }

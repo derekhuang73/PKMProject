@@ -394,6 +394,33 @@ persistence\PokemonSkillReader.cpp.s:
 	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\persistence\PokemonSkillReader.cpp.s
 .PHONY : persistence\PokemonSkillReader.cpp.s
 
+persistence\TrainerReader.obj: persistence\TrainerReader.cpp.obj
+
+.PHONY : persistence\TrainerReader.obj
+
+# target to build an object file
+persistence\TrainerReader.cpp.obj:
+	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\persistence\TrainerReader.cpp.obj
+.PHONY : persistence\TrainerReader.cpp.obj
+
+persistence\TrainerReader.i: persistence\TrainerReader.cpp.i
+
+.PHONY : persistence\TrainerReader.i
+
+# target to preprocess a source file
+persistence\TrainerReader.cpp.i:
+	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\persistence\TrainerReader.cpp.i
+.PHONY : persistence\TrainerReader.cpp.i
+
+persistence\TrainerReader.s: persistence\TrainerReader.cpp.s
+
+.PHONY : persistence\TrainerReader.s
+
+# target to generate assembly for a file
+persistence\TrainerReader.cpp.s:
+	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\persistence\TrainerReader.cpp.s
+.PHONY : persistence\TrainerReader.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -433,6 +460,9 @@ help:
 	@echo ... persistence/PokemonSkillReader.obj
 	@echo ... persistence/PokemonSkillReader.i
 	@echo ... persistence/PokemonSkillReader.s
+	@echo ... persistence/TrainerReader.obj
+	@echo ... persistence/TrainerReader.i
+	@echo ... persistence/TrainerReader.s
 .PHONY : help
 
 

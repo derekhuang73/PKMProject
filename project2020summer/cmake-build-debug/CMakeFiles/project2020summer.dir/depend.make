@@ -39,11 +39,13 @@ CMakeFiles\project2020summer.dir\model\PokemonType.cpp.obj: ..\model\PokemonType
 
 CMakeFiles\project2020summer.dir\model\Trainer.cpp.obj: ..\exception\NullPokemonException.h
 CMakeFiles\project2020summer.dir\model\Trainer.cpp.obj: ..\exception\NullSkillException.h
+CMakeFiles\project2020summer.dir\model\Trainer.cpp.obj: ..\exception\NullTrainerException.h
 CMakeFiles\project2020summer.dir\model\Trainer.cpp.obj: ..\model\Pokemon.h
 CMakeFiles\project2020summer.dir\model\Trainer.cpp.obj: ..\model\PokemonSkill.h
 CMakeFiles\project2020summer.dir\model\Trainer.cpp.obj: ..\model\PokemonType.h
 CMakeFiles\project2020summer.dir\model\Trainer.cpp.obj: ..\model\Trainer.cpp
 CMakeFiles\project2020summer.dir\model\Trainer.cpp.obj: ..\model\Trainer.h
+CMakeFiles\project2020summer.dir\model\Trainer.cpp.obj: ..\persistence\TrainerReader.h
 
 CMakeFiles\project2020summer.dir\model\TrainerBattle.cpp.obj: ..\exception\NullPokemonException.h
 CMakeFiles\project2020summer.dir\model\TrainerBattle.cpp.obj: ..\exception\NullSkillException.h
@@ -67,4 +69,8 @@ CMakeFiles\project2020summer.dir\persistence\PokemonSkillReader.cpp.obj: ..\mode
 CMakeFiles\project2020summer.dir\persistence\PokemonSkillReader.cpp.obj: ..\model\PokemonType.h
 CMakeFiles\project2020summer.dir\persistence\PokemonSkillReader.cpp.obj: ..\persistence\PokemonSkillReader.cpp
 CMakeFiles\project2020summer.dir\persistence\PokemonSkillReader.cpp.obj: ..\persistence\PokemonSkillReader.h
+
+CMakeFiles\project2020summer.dir\persistence\TrainerReader.cpp.obj: ..\exception\NullTrainerException.h
+CMakeFiles\project2020summer.dir\persistence\TrainerReader.cpp.obj: ..\persistence\TrainerReader.cpp
+CMakeFiles\project2020summer.dir\persistence\TrainerReader.cpp.obj: ..\persistence\TrainerReader.h
 

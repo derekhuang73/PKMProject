@@ -8,12 +8,13 @@
 
 #include <string>
 #include "Pokemon.h"
+#include <list>
 using namespace std;
 class Trainer {
 public:
     Trainer();
 
-    Trainer(string name, int pokemonData[6*7]);
+    Trainer(string name);
 
     int availablePokemon() const;
 
@@ -21,10 +22,13 @@ public:
 
     void setName(const string &name);
 
+    void addPokemon(Pokemon &pokemon);
 
 private:
-    Pokemon pokemonList[6];
+    Pokemon *pokemonList[6] = {};
     string name;
+
+    void setUpTrainer(list<string> trainerID);
 };
 
 
