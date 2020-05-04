@@ -9,7 +9,7 @@
 
 using namespace std;
 
-string PokemonSeedReader::generatePokemonSeed(int serialNum) throw (NullPokemonException){
+string PokemonSeedReader::generatePokemonSeed(int serialNum) throw(NullPokemonException){
     if (serialNum == 0) {
         throw NullPokemonException();
     }

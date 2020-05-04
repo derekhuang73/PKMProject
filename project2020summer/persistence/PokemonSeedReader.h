@@ -18,6 +18,7 @@ public:
     PokemonSeedReader();
 
     string generatePokemonSeed(int serialNum) throw (NullPokemonException);
+    // read from txt, create Pokemon Object
 
 private:
     bool matchSerialNum(int serialNum, string pokemonSeed);
