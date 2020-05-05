@@ -22,10 +22,10 @@ public:
 
     void setName(const string &name);
 
-    void addPokemon(Pokemon &pokemon);
+    void addPokemon(Pokemon * pokemon);
 
 private:
-    Pokemon *pokemonList[6] = {};
+    Pokemon * pokemonList[6] = {};
     string name;
 
     void setUpTrainer(list<string> trainerID);

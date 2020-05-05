@@ -14,35 +14,17 @@ C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullSk
 exception
 -
 
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullTrainerException.h
-exception
--
-
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/main.cpp
 iostream
 -
 model/Pokemon.h
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.h
+model/Trainer.h
+C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Trainer.h
 string
 -
 list
 -
-
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Player.cpp
-Player.h
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Player.h
-
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Player.h
-Trainer.h
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Trainer.h
-
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.cpp
-sstream
--
-Pokemon.h
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.h
-../persistence/PokemonSeedReader.h
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/PokemonSeedReader.h
 
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.h
 string
@@ -64,53 +46,11 @@ C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullSk
 
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonType.h
 
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Trainer.cpp
-Trainer.h
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Trainer.h
-../persistence/TrainerReader.h
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/TrainerReader.h
-../exception/NullTrainerException.h
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullTrainerException.h
-
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Trainer.h
 string
 -
 Pokemon.h
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.h
-list
--
-
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/TrainerBattle.cpp
-TrainerBattle.h
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/TrainerBattle.h
-Trainer.h
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Trainer.h
-
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/TrainerBattle.h
-Trainer.h
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Trainer.h
-
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/PokemonSeedReader.cpp
-PokemonSeedReader.h
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/PokemonSeedReader.h
-../exception/NullPokemonException.h
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullPokemonException.h
-fstream
--
-iostream
--
-
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/PokemonSeedReader.h
-string
--
-../model/Pokemon.h
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.h
-../exception/NullPokemonException.h
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullPokemonException.h
-
-C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/TrainerReader.h
-string
--
 list
 -
 

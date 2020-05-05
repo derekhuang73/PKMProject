@@ -41,16 +41,22 @@ void Trainer::setUpTrainer(list<string> trainerID) {
     advance(it,1);
     while (it != trainerID.end()) {
         try {
-            Pokemon p = Pokemon();
-            p.setPokemonWithID(*it);
+            Pokemon* p = new Pokemon();
+            p->setPokemonWithID(*it);
             addPokemon(p);
         } catch (NullPokemonException) {
         }
     }
 }
 
-void Trainer::addPokemon(Pokemon &pokemon) {
-    //stub
+void Trainer::addPokemon(Pokemon * pokemon) {
+    for(int i=0; i<6; i++)
+    {
+        if(pokemonList[i] == NULL) {
+            pokemonList[i] = pokemon;
+            break;
+        }
+    }
 }
 
 Trainer::Trainer() = default;
