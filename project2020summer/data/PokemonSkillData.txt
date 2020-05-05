@@ -1,4 +1,4 @@
-001,015,100,1,fire ball
-002,025,100,2,water shooting
-003,090,090,3,grass storm
-004,150,030,1,deadly frame
+001,015,100,1,fire_ball
+002,025,100,2,water_shooting
+003,090,090,3,grass_storm
+004,150,030,1,deadly_frame

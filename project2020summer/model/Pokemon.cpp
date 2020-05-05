@@ -204,15 +204,11 @@ void Pokemon::setPokemonWithID(string pokemonID) throw (NullPokemonException) {
     sk2I = atoi(skill2.c_str());
     sk3I = atoi(skill3.c_str());
     sk4I = atoi(skill4.c_str());
-    pkSkill1 = PokemonSkill(sk1I);
-    pkSkill2 = PokemonSkill(sk2I);
-    pkSkill3 = PokemonSkill(sk3I);
-    pkSkill4 = PokemonSkill(sk4I);
     setUpPokemonWithLV(serI,levelI,hpI);
-    addSkill(pkSkill1);
-    addSkill(pkSkill2);
-    addSkill(pkSkill3);
-    addSkill(pkSkill4);
+    addSkillwSerialNum(sk1I);
+    addSkillwSerialNum(sk2I);
+    addSkillwSerialNum(sk3I);
+    addSkillwSerialNum(sk4I);
 }
 
 void Pokemon::setUpPokemonWithLV(int serialNum, int level, int currentHp)
@@ -222,11 +218,11 @@ throw (NullPokemonException){
     setCurrentHp(currentHp);
 }
 
-void Pokemon::addSkill(PokemonSkill &pokemonSkill) {
+void Pokemon::addSkill(PokemonSkill * pokemonSkill) {
         for(int i=0; i<4; i++)
         {
             if(skills[i] == NULL) {
-                skills[i] = &pokemonSkill;
+                skills[i] = pokemonSkill;
                 break;
             }
         }
@@ -238,7 +234,7 @@ PokemonSkill * Pokemon::getSkill(int index) {
 
 void Pokemon::addSkillwSerialNum(int skillSerialNum) {
     try {
-        PokemonSkill pokemonSkill = PokemonSkill(skillSerialNum);
+        PokemonSkill* pokemonSkill = new PokemonSkill(skillSerialNum);
         addSkill(pokemonSkill);
     } catch (NullSkillException) {
     }

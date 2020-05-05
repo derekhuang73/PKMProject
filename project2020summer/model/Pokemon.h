@@ -77,7 +77,7 @@ private:
     PokemonSkill *skills[4] = {};
     void findPokemon(int serialNumber) throw (NullPokemonException);
     void setPokemonWithSeed(string pokemonSeed);
-    void addSkill(PokemonSkill &pokemonSkill);
+    void addSkill(PokemonSkill * pokemonSkill);
 };
 
 
