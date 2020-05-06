@@ -44,7 +44,9 @@ void Trainer::setUpTrainer(list<string> trainerID) {
             Pokemon* p = new Pokemon();
             p->setPokemonWithID(*it);
             addPokemon(p);
+            advance(it,1);
         } catch (NullPokemonException) {
+            advance(it,1);
         }
     }
 }

@@ -3,11 +3,13 @@
 
 CMakeFiles\project2020summer.dir\main.cpp.obj: ..\exception\NullPokemonException.h
 CMakeFiles\project2020summer.dir\main.cpp.obj: ..\exception\NullSkillException.h
+CMakeFiles\project2020summer.dir\main.cpp.obj: ..\exception\NullTrainerException.h
 CMakeFiles\project2020summer.dir\main.cpp.obj: ..\main.cpp
 CMakeFiles\project2020summer.dir\main.cpp.obj: ..\model\Pokemon.h
 CMakeFiles\project2020summer.dir\main.cpp.obj: ..\model\PokemonSkill.h
 CMakeFiles\project2020summer.dir\main.cpp.obj: ..\model\PokemonType.h
 CMakeFiles\project2020summer.dir\main.cpp.obj: ..\model\Trainer.h
+CMakeFiles\project2020summer.dir\main.cpp.obj: ..\persistence\TrainerReader.h
 
 CMakeFiles\project2020summer.dir\model\Item.cpp.obj: ..\model\Item.cpp
 CMakeFiles\project2020summer.dir\model\Item.cpp.obj: ..\model\Item.h

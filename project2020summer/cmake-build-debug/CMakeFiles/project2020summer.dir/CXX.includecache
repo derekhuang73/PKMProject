@@ -14,6 +14,10 @@ C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullSk
 exception
 -
 
+C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullTrainerException.h
+exception
+-
+
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/main.cpp
 iostream
 -
@@ -21,6 +25,10 @@ model/Pokemon.h
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.h
 model/Trainer.h
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Trainer.h
+persistence/TrainerReader.h
+C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/TrainerReader.h
+exception/NullTrainerException.h
+C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullTrainerException.h
 string
 -
 list
@@ -51,6 +59,12 @@ string
 -
 Pokemon.h
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.h
+list
+-
+
+C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/TrainerReader.h
+string
+-
 list
 -
 

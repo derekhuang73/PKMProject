@@ -1,6 +1,8 @@
 #include <iostream>
 #include "model/Pokemon.h"
 #include "model/Trainer.h"
+#include "persistence/TrainerReader.h"
+#include "exception/NullTrainerException.h"
 #include <string>
 #include <list>
 
@@ -9,6 +11,9 @@ int main() {
     cout << "Hello, World!" << endl;
 
     Trainer derek = Trainer("derek");
+
+    Pokemon p = Pokemon(001);
+
 
     cout << "Hello, World!" << endl;
 

@@ -21,10 +21,10 @@ list<string> TrainerReader::findTrainerWithName(string trainerName) throw (NullT
     string trainerString;
     while (!inFile.eof()) {
         inFile >> trainerString;
-        list<string> list = trainerStringSpliter(trainerString);
-        std::list<std::string>::iterator it = list.begin();
+        list<string> los = trainerStringSpliter(trainerString);
+        std::list<std::string>::iterator it = los.begin();
         if ( *it == trainerName) {
-            return list;
+            return los;
         }
     }
     throw NullTrainerException();

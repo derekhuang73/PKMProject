@@ -4,11 +4,13 @@
 CMakeFiles/project2020summer.dir/main.cpp.obj
  C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullPokemonException.h
  C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullSkillException.h
+ C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullTrainerException.h
  C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/main.cpp
  C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.h
  C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonSkill.h
  C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonType.h
  C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Trainer.h
+ C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/TrainerReader.h
 CMakeFiles/project2020summer.dir/model/Item.cpp.obj
  C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Item.cpp
  C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Item.h
