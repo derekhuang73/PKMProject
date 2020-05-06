@@ -112,6 +112,12 @@
 		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.h">
 			<Option target="project2020summer"/>
 		</Unit>
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonBattle.cpp">
+			<Option target="project2020summer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonBattle.h">
+			<Option target="project2020summer"/>
+		</Unit>
 		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonSkill.cpp">
 			<Option target="project2020summer"/>
 		</Unit>

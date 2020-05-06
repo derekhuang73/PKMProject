@@ -232,6 +232,33 @@ model\Pokemon.cpp.s:
 	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\model\Pokemon.cpp.s
 .PHONY : model\Pokemon.cpp.s
 
+model\PokemonBattle.obj: model\PokemonBattle.cpp.obj
+
+.PHONY : model\PokemonBattle.obj
+
+# target to build an object file
+model\PokemonBattle.cpp.obj:
+	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\model\PokemonBattle.cpp.obj
+.PHONY : model\PokemonBattle.cpp.obj
+
+model\PokemonBattle.i: model\PokemonBattle.cpp.i
+
+.PHONY : model\PokemonBattle.i
+
+# target to preprocess a source file
+model\PokemonBattle.cpp.i:
+	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\model\PokemonBattle.cpp.i
+.PHONY : model\PokemonBattle.cpp.i
+
+model\PokemonBattle.s: model\PokemonBattle.cpp.s
+
+.PHONY : model\PokemonBattle.s
+
+# target to generate assembly for a file
+model\PokemonBattle.cpp.s:
+	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\model\PokemonBattle.cpp.s
+.PHONY : model\PokemonBattle.cpp.s
+
 model\PokemonSkill.obj: model\PokemonSkill.cpp.obj
 
 .PHONY : model\PokemonSkill.obj
@@ -442,6 +469,9 @@ help:
 	@echo ... model/Pokemon.obj
 	@echo ... model/Pokemon.i
 	@echo ... model/Pokemon.s
+	@echo ... model/PokemonBattle.obj
+	@echo ... model/PokemonBattle.i
+	@echo ... model/PokemonBattle.s
 	@echo ... model/PokemonSkill.obj
 	@echo ... model/PokemonSkill.i
 	@echo ... model/PokemonSkill.s

@@ -61,5 +61,9 @@ void Trainer::addPokemon(Pokemon * pokemon) {
     }
 }
 
+Pokemon *Trainer::getPokemonWithIndex(int index) {
+    return pokemonList[index];
+}
+
 Trainer::Trainer() = default;
 

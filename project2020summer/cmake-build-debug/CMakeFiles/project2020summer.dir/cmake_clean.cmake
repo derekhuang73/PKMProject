@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/project2020summer.dir/model/Item.cpp.obj"
   "CMakeFiles/project2020summer.dir/model/Player.cpp.obj"
   "CMakeFiles/project2020summer.dir/model/Pokemon.cpp.obj"
+  "CMakeFiles/project2020summer.dir/model/PokemonBattle.cpp.obj"
   "CMakeFiles/project2020summer.dir/model/PokemonSkill.cpp.obj"
   "CMakeFiles/project2020summer.dir/model/PokemonType.cpp.obj"
   "CMakeFiles/project2020summer.dir/model/Trainer.cpp.obj"

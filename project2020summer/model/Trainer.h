@@ -25,6 +25,8 @@ public:
     void addPokemon(Pokemon * pokemon);
 
     void setUpTrainer(list<string> trainerID);
+
+    Pokemon * getPokemonWithIndex(int index);
 private:
     Pokemon * pokemonList[6] = {};
     string name;

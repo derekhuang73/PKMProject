@@ -1,24 +1,54 @@
 //
-// Created by Derek Huang on 2020-04-24.
+// Created by Derek Huang on 2020-05-06.
 //
 
 #include "TrainerBattle.h"
-#include "Trainer.h"
 
-TrainerBattle::TrainerBattle(Trainer &trainer1, Trainer &trainer2) : trainer1(trainer1), trainer2(trainer2) {
-
+PokemonBattle *TrainerBattle::getPkmBattle() const {
+    return pkmBattle;
 }
 
-void TrainerBattle::damageResolve(Pokemon subjectPokemon, Pokemon objectPokemon, PokemonSkill skill) {
-    if (true) {
-        int damage = skill.getPower();
-        if (skill.getSkillType() == subjectPokemon.getPokemonType()) {
-            damage * 2;
-        }
-        damage * objectPokemon.typeRestriction(skill.getSkillType());
-        objectPokemon.takeDamage(damage);
-    }
-
+void TrainerBattle::setPkmBattle(PokemonBattle *pkmBattle) {
+    TrainerBattle::pkmBattle = pkmBattle;
 }
 
+int TrainerBattle::getPokemonSwitchCoolDown() const {
+    return pokemonSwitchCoolDown;
+}
 
+void TrainerBattle::setPokemonSwitchCoolDown(int pokemonSwitchCoolDown) {
+    TrainerBattle::pokemonSwitchCoolDown = pokemonSwitchCoolDown;
+}
+
+bool TrainerBattle::isEndOfBattle() const {
+    return endOfBattle;
+}
+
+void TrainerBattle::setEndOfBattle(bool endOfBattle) {
+    TrainerBattle::endOfBattle = endOfBattle;
+}
+
+Trainer *TrainerBattle::getPlayer() const {
+    return player;
+}
+
+void TrainerBattle::setPlayer(Trainer *player) {
+    TrainerBattle::player = player;
+}
+
+Trainer *TrainerBattle::getCpTrainer() const {
+    return cpTrainer;
+}
+
+void TrainerBattle::setCpTrainer(Trainer *cpTrainer) {
+    TrainerBattle::cpTrainer = cpTrainer;
+}
+
+TrainerBattle::TrainerBattle(Trainer *player, Trainer *cpTrainer) {
+    setCpTrainer(cpTrainer);
+    setPlayer(player);
+    PokemonBattle * pokemonBattle = new PokemonBattle(player -> getPokemonWithIndex(0),
+            cpTrainer -> getPokemonWithIndex(0));
+    setPkmBattle(pokemonBattle);
+    setPokemonSwitchCoolDown(0);
+}

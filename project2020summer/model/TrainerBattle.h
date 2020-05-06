@@ -1,25 +1,42 @@
 //
-// Created by Derek Huang on 2020-04-24.
+// Created by Derek Huang on 2020-05-06.
 //
 
 #ifndef PROJECT2020SUMMER_TRAINERBATTLE_H
 #define PROJECT2020SUMMER_TRAINERBATTLE_H
 
-
-#include "Trainer.h"
+using namespace std;
+#include "PokemonBattle.h"
 
 class TrainerBattle {
+    TrainerBattle(Trainer * player, Trainer * cpTrainer);
+
 public:
-    TrainerBattle(Trainer &trainer1, Trainer &trainer2);
+    PokemonBattle *getPkmBattle() const;
 
-    //purpose: calculate damage
-    void damageResolve(Pokemon subjectPokemon, Pokemon objectPokemon, PokemonSkill skill);
+    void setPkmBattle(PokemonBattle *pkmBattle);
 
+    int getPokemonSwitchCoolDown() const;
+
+    void setPokemonSwitchCoolDown(int pokemonSwitchCoolDown);
+
+    bool isEndOfBattle() const;
+
+    void setEndOfBattle(bool endOfBattle);
+
+    Trainer *getPlayer() const;
+
+    void setPlayer(Trainer *player);
+
+    Trainer *getCpTrainer() const;
+
+    void setCpTrainer(Trainer *cpTrainer);
 
 private:
-
-    Trainer trainer1, trainer2;
-
+    PokemonBattle * pkmBattle;
+    int pokemonSwitchCoolDown;
+    bool endOfBattle;
+    Trainer * player, * cpTrainer;
 };
 
 
