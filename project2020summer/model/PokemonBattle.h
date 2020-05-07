@@ -20,9 +20,15 @@ public:
 
     void setPlayerPokemon(Pokemon *playerPokemon);
 
-    void cpPokemonAttack(PokemonSkill * skill);
+    void cpPokemonAttack();
 
     void playerPokemonAttack(PokemonSkill * skill);
+
+    bool getisGameOver() const;
+
+    void setIsGameOver(bool isGameOver);
+
+    void checkGameOver();
 
 private:
 
@@ -30,6 +36,8 @@ private:
     void damageResolve(Pokemon * subjectPokemon, Pokemon * objectPokemon, PokemonSkill * skill);
 
     Pokemon * playerPokemon, * cpPokemon;
+
+    bool isGameOver;
 
 };
 

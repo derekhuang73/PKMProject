@@ -24,14 +24,16 @@ public:
 
     void addPokemon(Pokemon * pokemon);
 
-    void setUpTrainer(list<string> trainerID);
+    //void setUpTrainer(list<string> trainerID);
 
     Pokemon * getPokemonWithIndex(int index);
+
+    int *availablePokemonIndex();
 private:
     Pokemon * pokemonList[6] = {};
     string name;
 
-    //void setUpTrainer(list<string> trainerID);
+    void setUpTrainer(list<string> trainerID);
 };
 
 

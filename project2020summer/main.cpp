@@ -14,7 +14,7 @@ int main() {
 
     Pokemon p = Pokemon(001);
 
-
+    Trainer jack = Trainer("jack");
     cout << "Hello, World!" << endl;
 
 

@@ -12,13 +12,6 @@ void TrainerBattle::setPkmBattle(PokemonBattle *pkmBattle) {
     TrainerBattle::pkmBattle = pkmBattle;
 }
 
-int TrainerBattle::getPokemonSwitchCoolDown() const {
-    return pokemonSwitchCoolDown;
-}
-
-void TrainerBattle::setPokemonSwitchCoolDown(int pokemonSwitchCoolDown) {
-    TrainerBattle::pokemonSwitchCoolDown = pokemonSwitchCoolDown;
-}
 
 bool TrainerBattle::isEndOfBattle() const {
     return endOfBattle;
@@ -50,5 +43,44 @@ TrainerBattle::TrainerBattle(Trainer *player, Trainer *cpTrainer) {
     PokemonBattle * pokemonBattle = new PokemonBattle(player -> getPokemonWithIndex(0),
             cpTrainer -> getPokemonWithIndex(0));
     setPkmBattle(pokemonBattle);
-    setPokemonSwitchCoolDown(0);
+    setEndOfBattle(false);
+    setP1SwitchingPkm(false);
+}
+
+void TrainerBattle::checkBattleOver() {
+    if( player -> availablePokemon() <= 0 ||
+        cpTrainer -> availablePokemon() <= 0) {
+        setEndOfBattle(true);
+    }
+}
+
+void TrainerBattle::endOfTurnStage() {
+    pkmBattle -> checkGameOver();
+    if (pkmBattle -> getisGameOver()){
+        if (pkmBattle -> getCpPokemon() -> getCurrentHp() <= 0) {
+            cpSwitchPokemon();
+        } else if (pkmBattle -> getPlayerPokemon() -> getCurrentHp() <= 0) {
+            setP1SwitchingPkm(true);
+        }
+    }
+    checkBattleOver();
+}
+
+void TrainerBattle::cpSwitchPokemon() {
+    int i = cpTrainer -> availablePokemon();
+    int index = rand()%i;
+    int pkmIndex = cpTrainer->availablePokemonIndex() [index];
+    pkmBattle->setCpPokemon(cpTrainer->getPokemonWithIndex(pkmIndex));
+}
+
+bool TrainerBattle::isP1SwitchingPkm() const {
+    return p1SwitchingPKM;
+}
+
+void TrainerBattle::setP1SwitchingPkm(bool p1SwitchingPkm) {
+    p1SwitchingPKM = p1SwitchingPkm;
+}
+
+void TrainerBattle::playerSwitchPkm(int index) {
+    pkmBattle -> setPlayerPokemon( player -> getPokemonWithIndex(index));
 }

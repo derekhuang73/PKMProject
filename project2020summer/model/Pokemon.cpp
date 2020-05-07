@@ -102,7 +102,7 @@ double Pokemon::typeRestriction(PokemonType pokemonType1) {
                     return 0.5;
                     break;
                 case Water:
-                    return 1.5;
+                    return 1.3;
                     break;
                 default:
                     return 1;
@@ -114,7 +114,7 @@ double Pokemon::typeRestriction(PokemonType pokemonType1) {
                     return 0.5;
                     break;
                 case Fire:
-                    return 1.5;
+                    return 1.3;
                     break;
                 default:
                     return 1;
@@ -126,7 +126,7 @@ double Pokemon::typeRestriction(PokemonType pokemonType1) {
                     return 0.5;
                     break;
                 case Grass:
-                    return 1.5;
+                    return 1.3;
                     break;
                 default:
                     return 1;
@@ -138,10 +138,11 @@ double Pokemon::typeRestriction(PokemonType pokemonType1) {
 }
 
 void Pokemon::takeDamage(int damage) {
-    if (damage >= currentHP) {
+    int i = damage - 1.5*initialDefend;
+    if (i >= currentHP) {
         setCurrentHp(0);
     } else {
-        setCurrentHp(currentHP - damage);
+        setCurrentHp(currentHP - i);
     }
 }
 
@@ -242,6 +243,14 @@ void Pokemon::addSkillwSerialNum(int skillSerialNum) {
 
 PokemonSkill *const *Pokemon::getSkills() const {
     return skills;
+}
+
+int Pokemon::getNumOfSkill() {
+    for(int i=0; i<4; i++) {
+        if (skills[i] == NULL) {
+        return (i-1);
+    }
+    }
 }
 
 

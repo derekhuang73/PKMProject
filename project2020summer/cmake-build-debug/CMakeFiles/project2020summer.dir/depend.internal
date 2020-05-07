@@ -31,6 +31,15 @@ CMakeFiles/project2020summer.dir/model/Pokemon.cpp.obj
  C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonSkill.h
  C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonType.h
  C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/PokemonSeedReader.h
+CMakeFiles/project2020summer.dir/model/PokemonBattle.cpp.obj
+ C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullPokemonException.h
+ C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullSkillException.h
+ C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.h
+ C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonBattle.cpp
+ C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonBattle.h
+ C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonSkill.h
+ C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonType.h
+ C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Trainer.h
 CMakeFiles/project2020summer.dir/model/PokemonSkill.cpp.obj
  C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullSkillException.h
  C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonSkill.cpp
@@ -54,6 +63,7 @@ CMakeFiles/project2020summer.dir/model/TrainerBattle.cpp.obj
  C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullPokemonException.h
  C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullSkillException.h
  C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.h
+ C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonBattle.h
  C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonSkill.h
  C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonType.h
  C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Trainer.h

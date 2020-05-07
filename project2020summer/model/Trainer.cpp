@@ -65,5 +65,22 @@ Pokemon *Trainer::getPokemonWithIndex(int index) {
     return pokemonList[index];
 }
 
+int *Trainer::availablePokemonIndex() {
+    int * i[6] = {};
+    int * indexOfPKMlist = 0;
+    int indexOfReturnlist = 0;
+    for (int  j = 0; j < 6; ++j) {
+        if(pokemonList[j] -> getCurrentHp() >= 0) {
+            i[indexOfReturnlist] = indexOfPKMlist;
+            indexOfReturnlist ++;
+        } else {
+        indexOfReturnlist ++;
+        }
+    }
+
+    return *i;
+}
+
+
 Trainer::Trainer() = default;
 

@@ -31,6 +31,15 @@ CMakeFiles\project2020summer.dir\model\Pokemon.cpp.obj: ..\model\PokemonSkill.h
 CMakeFiles\project2020summer.dir\model\Pokemon.cpp.obj: ..\model\PokemonType.h
 CMakeFiles\project2020summer.dir\model\Pokemon.cpp.obj: ..\persistence\PokemonSeedReader.h
 
+CMakeFiles\project2020summer.dir\model\PokemonBattle.cpp.obj: ..\exception\NullPokemonException.h
+CMakeFiles\project2020summer.dir\model\PokemonBattle.cpp.obj: ..\exception\NullSkillException.h
+CMakeFiles\project2020summer.dir\model\PokemonBattle.cpp.obj: ..\model\Pokemon.h
+CMakeFiles\project2020summer.dir\model\PokemonBattle.cpp.obj: ..\model\PokemonBattle.cpp
+CMakeFiles\project2020summer.dir\model\PokemonBattle.cpp.obj: ..\model\PokemonBattle.h
+CMakeFiles\project2020summer.dir\model\PokemonBattle.cpp.obj: ..\model\PokemonSkill.h
+CMakeFiles\project2020summer.dir\model\PokemonBattle.cpp.obj: ..\model\PokemonType.h
+CMakeFiles\project2020summer.dir\model\PokemonBattle.cpp.obj: ..\model\Trainer.h
+
 CMakeFiles\project2020summer.dir\model\PokemonSkill.cpp.obj: ..\exception\NullSkillException.h
 CMakeFiles\project2020summer.dir\model\PokemonSkill.cpp.obj: ..\model\PokemonSkill.cpp
 CMakeFiles\project2020summer.dir\model\PokemonSkill.cpp.obj: ..\model\PokemonSkill.h
@@ -53,6 +62,7 @@ CMakeFiles\project2020summer.dir\model\Trainer.cpp.obj: ..\persistence\TrainerRe
 CMakeFiles\project2020summer.dir\model\TrainerBattle.cpp.obj: ..\exception\NullPokemonException.h
 CMakeFiles\project2020summer.dir\model\TrainerBattle.cpp.obj: ..\exception\NullSkillException.h
 CMakeFiles\project2020summer.dir\model\TrainerBattle.cpp.obj: ..\model\Pokemon.h
+CMakeFiles\project2020summer.dir\model\TrainerBattle.cpp.obj: ..\model\PokemonBattle.h
 CMakeFiles\project2020summer.dir\model\TrainerBattle.cpp.obj: ..\model\PokemonSkill.h
 CMakeFiles\project2020summer.dir\model\TrainerBattle.cpp.obj: ..\model\PokemonType.h
 CMakeFiles\project2020summer.dir\model\TrainerBattle.cpp.obj: ..\model\Trainer.h

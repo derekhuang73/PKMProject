@@ -70,6 +70,8 @@ public:
 
     void addSkillwSerialNum(int skillSerialNum);
 
+    int getNumOfSkill();
+
 private:
     string name;
     int serialNumber, initialAttack, initialDefend, initialHealth, pokemonLevel, currentHP;

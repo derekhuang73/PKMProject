@@ -9,9 +9,9 @@
 void PokemonBattle::damageResolve(Pokemon * subjectPokemon, Pokemon * objectPokemon, PokemonSkill * skill) {
     int hit = rand() % 100;
     if (hit <= skill->getHitRate())/*if hit > hitrate it is miss*/ {
-        int damage = skill->getPower();
+        int damage = skill->getPower() + subjectPokemon -> getInitialAttack();
         if (skill->getSkillType() == subjectPokemon->getPokemonType()) {
-            damage * 2;
+            damage * 1.5;
         }
         damage * objectPokemon->typeRestriction(skill->getSkillType());
         objectPokemon->takeDamage(damage);
@@ -22,6 +22,7 @@ void PokemonBattle::damageResolve(Pokemon * subjectPokemon, Pokemon * objectPoke
 PokemonBattle::PokemonBattle(Pokemon *playerPokemon, Pokemon *cpPokemon) {
     setCpPokemon(cpPokemon);
     setPlayerPokemon(playerPokemon);
+    setIsGameOver(false);
 }
 
 Pokemon *PokemonBattle::getPlayerPokemon() const {
@@ -40,13 +41,33 @@ void PokemonBattle::setCpPokemon(Pokemon *cpPokemon) {
     PokemonBattle::cpPokemon = cpPokemon;
 }
 
-void PokemonBattle::cpPokemonAttack(PokemonSkill *skill) {
+void PokemonBattle::cpPokemonAttack() {
+    int availableSkillIndex = cpPokemon -> getNumOfSkill();
+    int randomIndex = rand()%availableSkillIndex;
+    PokemonSkill * skill = cpPokemon -> getSkill(randomIndex);
     damageResolve(cpPokemon,playerPokemon,skill);
 }
 
 void PokemonBattle::playerPokemonAttack(PokemonSkill *skill) {
     damageResolve(playerPokemon,cpPokemon,skill);
 }
+
+
+void PokemonBattle::checkGameOver() {
+    if (cpPokemon -> getCurrentHp() <= 0 ||
+        playerPokemon -> getCurrentHp() <= 0) {
+        setIsGameOver(true);
+    }
+}
+
+bool PokemonBattle::getisGameOver() const {
+    return isGameOver;
+}
+
+void PokemonBattle::setIsGameOver(bool isGameOver) {
+    PokemonBattle::isGameOver = isGameOver;
+}
+
 
 
 
