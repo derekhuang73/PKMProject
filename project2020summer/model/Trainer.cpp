@@ -17,9 +17,10 @@ void Trainer::setName(const string &name) {
 int Trainer::availablePokemon() const {
     int i=0;
     for(Pokemon * pokemon : pokemonList) {
+        if (pokemon != NULL) {
         if (pokemon -> getCurrentHp() > 0) {
             i++;
-        }
+        }}
     }
     return i;
 }

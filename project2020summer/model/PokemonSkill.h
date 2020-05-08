@@ -13,9 +13,17 @@
 using namespace std;
 class PokemonSkill {
 public:
+    static int const    NumOfSkillPerType = 10,
+                        FireSkillStartAT = 1,
+                        WaterSkillStartAT = 11,
+                        GrassSkillStartAT = 21,
+                        NormalSkillStartAT = 31;
     PokemonSkill();
 
     PokemonSkill(int skillSerialNum) throw(NullSkillException);
+
+    //random generate skill within range and given start point
+    PokemonSkill(int startPoint, int range);
 
     int getPower() const;
 
@@ -39,6 +47,7 @@ public:
 
     void setSkillName(const string &skillName);
 
+    int startPointOfType(PokemonType type);
 private:
     int skillSerialNum{}, power{}, hitRate{};
     string skillName;

@@ -7,9 +7,10 @@
 
 
 enum PokemonType {
-    Fire = 1,
-    Grass= 2,
-    Water= 3
+    Fire,
+    Grass,
+    Water,
+    Normal
 };
 
 

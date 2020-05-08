@@ -24,8 +24,6 @@ public:
 
     void addPokemon(Pokemon * pokemon);
 
-    //void setUpTrainer(list<string> trainerID);
-
     Pokemon * getPokemonWithIndex(int index);
 
     int *availablePokemonIndex();

@@ -10,14 +10,9 @@ using namespace std;
 Pokemon::Pokemon(int serialNumber) {
     try {
         findPokemon(serialNumber);
-    } catch (NullPokemonException e) {
+    } catch (NullPokemonException) {
     }
 }
-
-
-
-
-
 
 //purpose: read file and setup pokemon seed data
 void Pokemon::findPokemon(int serialNumber)throw (NullPokemonException) {
@@ -100,38 +95,29 @@ double Pokemon::typeRestriction(PokemonType pokemonType1) {
             switch (pokemonType1) {
                 case Grass:
                     return 0.5;
-                    break;
                 case Water:
                     return 1.3;
-                    break;
                 default:
                     return 1;
             }
-            break;
         case Grass:
             switch (pokemonType1) {
                 case Water:
                     return 0.5;
-                    break;
                 case Fire:
                     return 1.3;
-                    break;
                 default:
                     return 1;
             }
-            break;
         case Water:
             switch (pokemonType1) {
                 case Fire:
                     return 0.5;
-                    break;
                 case Grass:
                     return 1.3;
-                    break;
                 default:
                     return 1;
             }
-            break;
         default:
             return 1;
     }
@@ -157,6 +143,8 @@ void Pokemon::setPokemonType(int typeInt) {
         case 3:
             setPokemonType(Grass);
             break;
+        case 4:
+            setPokemonType(Normal);
         default:
             setPokemonType(Fire);
     }
@@ -205,17 +193,18 @@ void Pokemon::setPokemonWithID(string pokemonID) throw (NullPokemonException) {
     sk2I = atoi(skill2.c_str());
     sk3I = atoi(skill3.c_str());
     sk4I = atoi(skill4.c_str());
-    setUpPokemonWithLV(serI,levelI,hpI);
+    setUpPokemonWithLvAndCurrentHp(serI, levelI, hpI);
     addSkillwSerialNum(sk1I);
     addSkillwSerialNum(sk2I);
     addSkillwSerialNum(sk3I);
     addSkillwSerialNum(sk4I);
 }
 
-void Pokemon::setUpPokemonWithLV(int serialNum, int level, int currentHp)
+void Pokemon::setUpPokemonWithLvAndCurrentHp(int serialNum, int level, int currentHp)
 throw (NullPokemonException){
     findPokemon(serialNum);
     setPokemonLevel(level);
+    wrapUpWithLevelAndType();
     setCurrentHp(currentHp);
 }
 
@@ -250,6 +239,37 @@ int Pokemon::getNumOfSkill() {
         if (skills[i] == NULL) {
         return (i-1);
     }
+    }
+}
+
+void Pokemon::wrapUpWithLevelAndType() {
+    switch(pokemonType) {
+        case Fire:
+            initialAttack += pokemonLevel * 1.7;
+            initialDefend += pokemonLevel * 0.7;
+            initialHealth += pokemonLevel * 0.8;
+        case Water:
+            initialAttack += pokemonLevel * 0.8;
+            initialDefend += pokemonLevel * 1.7;
+            initialHealth += pokemonLevel * 0.7;
+        case Grass:
+            initialAttack += pokemonLevel * 0.7;
+            initialDefend += pokemonLevel * 0.8;
+            initialHealth += pokemonLevel * 1.7;
+        case Normal:
+            initialAttack += pokemonLevel * 1.2;
+            initialDefend += pokemonLevel * 1.2;
+            initialHealth += pokemonLevel * 1.2;
+    }
+}
+
+Pokemon::Pokemon(int serialNum, int LV) {
+    try {
+        findPokemon(serialNum);
+        setPokemonLevel(LV);
+        wrapUpWithLevelAndType();
+        setCurrentHp(initialHealth);
+    } catch (NullPokemonException) {
     }
 }
 

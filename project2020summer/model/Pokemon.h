@@ -16,13 +16,17 @@ using namespace std;
 class Pokemon {
 
 public:
+    static const int SerialNumRange = 9;
     Pokemon(int serialNumber);
 
     PokemonSkill *const *getSkills() const;
 
     Pokemon();
 
-    void setUpPokemonWithLV(int serialNum, int level , int currentHp);
+    //construct a pokemon with full currentHp in given lv
+    Pokemon(int serialNum, int LV);
+
+    void setUpPokemonWithLvAndCurrentHp(int serialNum, int level , int currentHp);
 
     void setPokemonWithID(string pokemonID);
 
@@ -80,6 +84,9 @@ private:
     void findPokemon(int serialNumber) throw (NullPokemonException);
     void setPokemonWithSeed(string pokemonSeed);
     void addSkill(PokemonSkill * pokemonSkill);
+
+    //set up initial atk def hp with seedData lv and type attribution
+    void wrapUpWithLevelAndType();
 };
 
 

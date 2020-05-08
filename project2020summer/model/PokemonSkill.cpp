@@ -22,7 +22,7 @@ int PokemonSkill::getPower() const {
     return power;
 }
 
-void PokemonSkill::setPower(int power) {
+void PokemonSkill::setPower(int power) throw (NullSkillException){
     PokemonSkill::power = power;
 }
 
@@ -85,8 +85,29 @@ void PokemonSkill::setSkillType(int typeInt) {
         case 3:
             setSkillType(Grass);
             break;
+        case 4:
+            setSkillType(Normal);
+            break;
         default:
-            setSkillType(Fire);
+            setSkillType(Normal);
+            break;
     }
 
+}
+
+PokemonSkill::PokemonSkill(int startPoint, int range) {
+    int serialNum = rand()%range + startPoint;
+    string skillString;
+    PokemonSkillReader pokemonSkillReader;
+    skillString = pokemonSkillReader.findSkill(serialNum);
+    setUpSkill(skillString);
+}
+
+int PokemonSkill::startPointOfType(PokemonType type) {
+    switch (type) {
+        case Fire: return   FireSkillStartAT;
+        case Water: return  WaterSkillStartAT;
+        case Grass: return  GrassSkillStartAT;
+        case Normal:return  NormalSkillStartAT;
+    }
 }
