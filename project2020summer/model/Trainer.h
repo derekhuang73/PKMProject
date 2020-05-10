@@ -9,6 +9,7 @@
 #include <string>
 #include "Pokemon.h"
 #include <list>
+#include <vector>
 using namespace std;
 class Trainer {
 public:
@@ -26,7 +27,7 @@ public:
 
     Pokemon * getPokemonWithIndex(int index);
 
-    int *availablePokemonIndex();
+    vector<int> availablePokemonIndex();
 private:
     Pokemon * pokemonList[6] = {};
     string name;

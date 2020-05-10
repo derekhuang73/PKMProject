@@ -13,11 +13,11 @@
 using namespace std;
 class PokemonSkill {
 public:
-    static int const    NumOfSkillPerType = 10,
+    static int const    NumOfSkillPerType = 1,
                         FireSkillStartAT = 1,
-                        WaterSkillStartAT = 11,
-                        GrassSkillStartAT = 21,
-                        NormalSkillStartAT = 31;
+                        WaterSkillStartAT = 2,
+                        GrassSkillStartAT = 3,
+                        NormalSkillStartAT = 4;
     PokemonSkill();
 
     PokemonSkill(int skillSerialNum) throw(NullSkillException);

@@ -9,9 +9,10 @@ using namespace std;
 #include "PokemonBattle.h"
 
 class TrainerBattle {
-    TrainerBattle(Trainer * player, Trainer * cpTrainer);
 
 public:
+    TrainerBattle(Trainer * player, Trainer * cpTrainer);
+
     PokemonBattle *getPkmBattle() const;
 
     void setPkmBattle(PokemonBattle *pkmBattle);

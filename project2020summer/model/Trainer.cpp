@@ -5,7 +5,7 @@
 #include "Trainer.h"
 #include "../persistence/TrainerReader.h"
 #include "../exception/NullTrainerException.h"
-
+#include <vector>
 const string &Trainer::getName() const {
     return name;
 }
@@ -66,20 +66,16 @@ Pokemon *Trainer::getPokemonWithIndex(int index) {
     return pokemonList[index];
 }
 
-int *Trainer::availablePokemonIndex() {
-    int * i[6] = {};
-    int * indexOfPKMlist = 0;
-    int indexOfReturnlist = 0;
-    for (int  j = 0; j < 6; ++j) {
-        if(pokemonList[j] -> getCurrentHp() >= 0) {
-            i[indexOfReturnlist] = indexOfPKMlist;
-            indexOfReturnlist ++;
-        } else {
-        indexOfReturnlist ++;
+vector<int> Trainer::availablePokemonIndex() {
+    vector<int> i;//return list
+    for (int  j = 0; j < 6; j++) {
+        if (pokemonList[j] != NULL) {
+            if(pokemonList[j] -> getCurrentHp() > 0) {
+                i.push_back(j);
+            }
         }
     }
-
-    return *i;
+    return i;
 }
 
 

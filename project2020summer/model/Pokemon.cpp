@@ -273,5 +273,38 @@ Pokemon::Pokemon(int serialNum, int LV) {
     }
 }
 
+void Pokemon::randomGenerateSkills() {
+        switch (pokemonType) {
+            case Fire:
+                for (int i = 0; i < rand()%3+1; ++i) {
+                    PokemonSkill * p;
+                    p = new PokemonSkill(p -> FireSkillStartAT, p -> NumOfSkillPerType);
+                    addSkill(p);
+                }
+                break;
+            case Water:
+                for (int i = 0; i < rand()%3+1; ++i) {
+                    PokemonSkill * p;
+                    p = new PokemonSkill(p -> WaterSkillStartAT, p -> NumOfSkillPerType);
+                    addSkill(p);
+                }
+                break;
+            case Grass:
+                for (int i = 0; i < rand()%3+1; ++i) {
+                    PokemonSkill * p;
+                    p = new PokemonSkill(p -> GrassSkillStartAT, p -> NumOfSkillPerType);
+                    addSkill(p);
+                }
+                break;
+            case Normal:
+                for (int i = 0; i < rand()%3+1; ++i) {
+                    PokemonSkill * p;
+                    p = new PokemonSkill(p -> NormalSkillStartAT, p -> NumOfSkillPerType);
+                    addSkill(p);
+                }
+        }
+
+}
+
 
 

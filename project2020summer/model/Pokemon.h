@@ -76,6 +76,9 @@ public:
 
     int getNumOfSkill();
 
+    //random generate 1-4 skills with its type skill
+    void randomGenerateSkills();
+
 private:
     string name;
     int serialNumber, initialAttack, initialDefend, initialHealth, pokemonLevel, currentHP;

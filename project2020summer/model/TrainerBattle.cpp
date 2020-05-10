@@ -69,7 +69,8 @@ void TrainerBattle::endOfTurnStage() {
 void TrainerBattle::cpSwitchPokemon() {
     int i = cpTrainer -> availablePokemon();
     int index = rand()%i;
-    int pkmIndex = cpTrainer->availablePokemonIndex() [index];
+    vector<int> vec = cpTrainer->availablePokemonIndex();
+    int pkmIndex = vec.at(index);
     pkmBattle->setCpPokemon(cpTrainer->getPokemonWithIndex(pkmIndex));
 }
 

@@ -29,9 +29,13 @@ persistence/TrainerReader.h
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/TrainerReader.h
 exception/NullTrainerException.h
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullTrainerException.h
+model/TrainerBattle.h
+C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/TrainerBattle.h
 string
 -
 list
+-
+vector
 -
 
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.h
@@ -43,6 +47,10 @@ PokemonSkill.h
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonSkill.h
 ../exception/NullPokemonException.h
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullPokemonException.h
+
+C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonBattle.h
+Trainer.h
+C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Trainer.h
 
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonSkill.h
 string
@@ -61,6 +69,12 @@ Pokemon.h
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.h
 list
 -
+vector
+-
+
+C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/TrainerBattle.h
+PokemonBattle.h
+C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonBattle.h
 
 C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/TrainerReader.h
 string
