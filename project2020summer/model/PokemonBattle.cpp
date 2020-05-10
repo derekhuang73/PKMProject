@@ -15,6 +15,8 @@ void PokemonBattle::damageResolve(Pokemon * subjectPokemon, Pokemon * objectPoke
         }
         damage * objectPokemon->typeRestriction(skill->getSkillType());
         objectPokemon->takeDamage(damage);
+    } else {
+        missing = true;
     }
 
 }
@@ -22,7 +24,7 @@ void PokemonBattle::damageResolve(Pokemon * subjectPokemon, Pokemon * objectPoke
 PokemonBattle::PokemonBattle(Pokemon *playerPokemon, Pokemon *cpPokemon) {
     setCpPokemon(cpPokemon);
     setPlayerPokemon(playerPokemon);
-    setIsGameOver(false);
+    resetMissing();
 }
 
 Pokemon *PokemonBattle::getPlayerPokemon() const {
@@ -53,19 +55,17 @@ void PokemonBattle::playerPokemonAttack(PokemonSkill *skill) {
 }
 
 
-void PokemonBattle::checkGameOver() {
-    if (cpPokemon -> getCurrentHp() <= 0 ||
-        playerPokemon -> getCurrentHp() <= 0) {
-        setIsGameOver(true);
-    }
+bool PokemonBattle::checkGameOver() {
+    return (cpPokemon -> getCurrentHp() <= 0 ||
+        playerPokemon -> getCurrentHp() <= 0);
 }
 
-bool PokemonBattle::getisGameOver() const {
-    return isGameOver;
+bool PokemonBattle::isMissing() {
+    return missing;
 }
 
-void PokemonBattle::setIsGameOver(bool isGameOver) {
-    PokemonBattle::isGameOver = isGameOver;
+void PokemonBattle::resetMissing() {
+    missing = false;
 }
 
 

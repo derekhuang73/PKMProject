@@ -17,10 +17,6 @@ public:
 
     void setPkmBattle(PokemonBattle *pkmBattle);
 
-    bool isEndOfBattle() const;
-
-    void setEndOfBattle(bool endOfBattle);
-
     Trainer *getPlayer() const;
 
     void setPlayer(Trainer *player);
@@ -29,21 +25,14 @@ public:
 
     void setCpTrainer(Trainer *cpTrainer);
 
-    void endOfTurnStage();
-
-    void checkBattleOver();
+    bool checkBattleOver();
 
     void cpSwitchPokemon();
-
-    bool isP1SwitchingPkm() const;
-
-    void setP1SwitchingPkm(bool p1SwitchingPkm);
 
     void playerSwitchPkm(int index);
 
 private:
     PokemonBattle * pkmBattle;
-    bool endOfBattle, p1SwitchingPKM;
     Trainer * player, * cpTrainer;
 
 };

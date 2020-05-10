@@ -125,6 +125,9 @@ double Pokemon::typeRestriction(PokemonType pokemonType1) {
 
 void Pokemon::takeDamage(int damage) {
     int i = damage - 1.5*initialDefend;
+    if (i <= 0) {
+        i = damage/8;
+    }
     if (i >= currentHP) {
         setCurrentHp(0);
     } else {

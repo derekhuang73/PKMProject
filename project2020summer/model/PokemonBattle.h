@@ -10,6 +10,7 @@
 
 class PokemonBattle {
 public:
+
     PokemonBattle(Pokemon * playerPokemon, Pokemon * cpPokemon);
 
     Pokemon *getCpPokemon() const;
@@ -24,20 +25,20 @@ public:
 
     void playerPokemonAttack(PokemonSkill * skill);
 
-    bool getisGameOver() const;
+    bool checkGameOver();
 
-    void setIsGameOver(bool isGameOver);
+    void resetMissing();
 
-    void checkGameOver();
+    bool isMissing();
 
 private:
 
     //purpose: calculate damage
     void damageResolve(Pokemon * subjectPokemon, Pokemon * objectPokemon, PokemonSkill * skill);
 
+    bool missing;
     Pokemon * playerPokemon, * cpPokemon;
 
-    bool isGameOver;
 
 };
 

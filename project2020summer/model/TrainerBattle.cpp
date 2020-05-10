@@ -13,14 +13,6 @@ void TrainerBattle::setPkmBattle(PokemonBattle *pkmBattle) {
 }
 
 
-bool TrainerBattle::isEndOfBattle() const {
-    return endOfBattle;
-}
-
-void TrainerBattle::setEndOfBattle(bool endOfBattle) {
-    TrainerBattle::endOfBattle = endOfBattle;
-}
-
 Trainer *TrainerBattle::getPlayer() const {
     return player;
 }
@@ -40,30 +32,15 @@ void TrainerBattle::setCpTrainer(Trainer *cpTrainer) {
 TrainerBattle::TrainerBattle(Trainer *player, Trainer *cpTrainer) {
     setCpTrainer(cpTrainer);
     setPlayer(player);
-    PokemonBattle * pokemonBattle = new PokemonBattle(player -> getPokemonWithIndex(0),
+    if (! checkBattleOver())
+    { PokemonBattle * pokemonBattle = new PokemonBattle(player -> getPokemonWithIndex(0),
             cpTrainer -> getPokemonWithIndex(0));
-    setPkmBattle(pokemonBattle);
-    setEndOfBattle(false);
-    setP1SwitchingPkm(false);
+    setPkmBattle(pokemonBattle);}
 }
 
-void TrainerBattle::checkBattleOver() {
-    if( player -> availablePokemon() <= 0 ||
-        cpTrainer -> availablePokemon() <= 0) {
-        setEndOfBattle(true);
-    }
-}
-
-void TrainerBattle::endOfTurnStage() {
-    pkmBattle -> checkGameOver();
-    if (pkmBattle -> getisGameOver()){
-        if (pkmBattle -> getCpPokemon() -> getCurrentHp() <= 0) {
-            cpSwitchPokemon();
-        } else if (pkmBattle -> getPlayerPokemon() -> getCurrentHp() <= 0) {
-            setP1SwitchingPkm(true);
-        }
-    }
-    checkBattleOver();
+bool TrainerBattle::checkBattleOver() {
+    return ( player -> availablePokemon() <= 0 ||
+        cpTrainer -> availablePokemon() <= 0);
 }
 
 void TrainerBattle::cpSwitchPokemon() {
@@ -74,13 +51,6 @@ void TrainerBattle::cpSwitchPokemon() {
     pkmBattle->setCpPokemon(cpTrainer->getPokemonWithIndex(pkmIndex));
 }
 
-bool TrainerBattle::isP1SwitchingPkm() const {
-    return p1SwitchingPKM;
-}
-
-void TrainerBattle::setP1SwitchingPkm(bool p1SwitchingPkm) {
-    p1SwitchingPKM = p1SwitchingPkm;
-}
 
 void TrainerBattle::playerSwitchPkm(int index) {
     pkmBattle -> setPlayerPokemon( player -> getPokemonWithIndex(index));

@@ -5,8 +5,6 @@
 #include "exception/NullTrainerException.h"
 #include "model/TrainerBattle.h"
 #include <string>
-#include <list>
-#include <vector>
 string space = "              ";
 
 
@@ -71,7 +69,7 @@ void printOutSkillOption(Pokemon * playerPokemon) {
 }
 
 int main() {
-    /*using namespace std;
+    using namespace std;
     cout << "Hello, World!" << endl;
     string inputStr;
     int trainerLevel;
@@ -131,7 +129,7 @@ int main() {
     }
     TrainerBattle * trainerBattle = new TrainerBattle(player,derek);
 
-    while (!trainerBattle -> isEndOfBattle()) {
+    while (!trainerBattle -> checkBattleOver()) {
         Pokemon * playerPokemon = trainerBattle -> getPkmBattle() ->getPlayerPokemon();
         Pokemon * cpPokemon = trainerBattle -> getPkmBattle() ->getCpPokemon();
         PokemonBattle * pokemonBattle = trainerBattle -> getPkmBattle();
@@ -147,6 +145,10 @@ int main() {
                 cout << playerPokemon->getName() << " used skill"
                 << playerPokemon -> getSkill(inputInt) -> getSkillName() << endl;
                 pokemonBattle->playerPokemonAttack(playerPokemon -> getSkill(inputInt));
+                if (pokemonBattle -> isMissing()) {
+                    cout << "but it missed!" << endl;
+                    pokemonBattle -> resetMissing();
+                }
                 printOutEncounter(playerPokemon,cpPokemon);
                 b = false;
             } else if (inputStr == "Switch") {
@@ -157,21 +159,27 @@ int main() {
                 pokemonBattle -> setPlayerPokemon(playerPokemon);
                 cout << "I choose you " << playerPokemon -> getName() << endl;
                 b = false;
+            } else if (player->availablePokemon() <= 1) {
+                cout << "You do not have switch option, please enter 'Skill' to fight" << endl;
             } else {
                 cout << "invalid input, try again" << endl;
             }
         }
 
-        if (cpPokemon -> getCurrentHp() <= 0 && !trainerBattle -> isEndOfBattle()) {
+        if (cpPokemon -> getCurrentHp() <= 0 && !trainerBattle -> checkBattleOver()) {
             cout << cpPokemon -> getName() << " is defeated" <<endl;
             trainerBattle->cpSwitchPokemon();
             cpPokemon = trainerBattle -> getPkmBattle() -> getCpPokemon();
             cout << "derek: GO! " << cpPokemon->getName() << ", I choose you!" << endl;
-        } else if (trainerBattle -> isEndOfBattle()) {
+        } else if (trainerBattle -> checkBattleOver()) {
             cout << "you win!" << endl;
         } else if(cpPokemon->getCurrentHp() > 0) {
             pokemonBattle -> cpPokemonAttack();
             cout << "derek's " << cpPokemon->getName() << " attacked!" << endl;
+            if (pokemonBattle->isMissing()) {
+                cout << "but it missed!" << endl;
+                pokemonBattle -> resetMissing();
+            }
         }
 
         if (playerPokemon -> getCurrentHp() <= 0) {
@@ -187,9 +195,5 @@ int main() {
     }
     cout << "game over, thank you for playing" <<endl;
 
-
-     */
-    Trainer * derek = new Trainer("derek");
-    printOutSwitchOption(derek);
     return 0;
 }
