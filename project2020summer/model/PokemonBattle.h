@@ -13,6 +13,7 @@ public:
 
     PokemonBattle(Pokemon * playerPokemon, Pokemon * cpPokemon);
 
+//---------------------------------------------------------------
     Pokemon *getCpPokemon() const;
 
     void setCpPokemon(Pokemon *cpPokemon);
@@ -21,19 +22,27 @@ public:
 
     void setPlayerPokemon(Pokemon *playerPokemon);
 
+//-----------------------------------------------------------------
+
+    //P: cpPokemon attack with random chosen skill
     void cpPokemonAttack();
 
+    //P: playerPokemon attack with given skill
+    //R: Skill must be chosen in playerPokemon's skills
     void playerPokemonAttack(PokemonSkill * skill);
 
+    //P: return ture if GameOver
     bool checkGameOver();
 
+    //P: missing is true when a Pokemon is missed,
+    //  it will be reset to false right after the missing information got displayed
+    //R: resetMissing should be called after every time isMissing got called
     void resetMissing();
-
     bool isMissing();
 
 private:
 
-    //purpose: calculate damage
+    //P: calculate damage
     void damageResolve(Pokemon * subjectPokemon, Pokemon * objectPokemon, PokemonSkill * skill);
 
     bool missing;

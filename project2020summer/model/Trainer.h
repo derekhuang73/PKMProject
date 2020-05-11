@@ -16,22 +16,32 @@ public:
     Trainer();
 
     Trainer(string name);
-
-    int availablePokemon() const;
+    //------------------------------------------------------
 
     const string &getName() const;
 
     void setName(const string &name);
 
+    //------------------------------------------------------
+
+    //P: return the num of Pokemon that is still fight-able
+    int availablePokemon() const;
+
+    //P: add pokemon to pokemonList
     void addPokemon(Pokemon * pokemon);
 
+    //P: get Pokemon With Index
     Pokemon * getPokemonWithIndex(int index);
 
+    //P: return a vector that contain the index of available pokemon
     vector<int> availablePokemonIndex();
+
 private:
     Pokemon * pokemonList[6] = {};
     string name;
 
+    //P: set up trainer with trainer string
+    //R: trainer string that return from trainer reader
     void setUpTrainer(list<string> trainerID);
 };
 

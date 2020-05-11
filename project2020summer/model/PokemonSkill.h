@@ -22,9 +22,10 @@ public:
 
     PokemonSkill(int skillSerialNum) throw(NullSkillException);
 
-    //random generate skill within range and given start point
+    //P:random generate skill within range and given start point
     PokemonSkill(int startPoint, int range);
 
+    //------------------------------------------------------------------------------
     int getPower() const;
 
     void setPower(int power);
@@ -46,12 +47,18 @@ public:
     const string &getSkillName() const;
 
     void setSkillName(const string &skillName);
+    //-----------------------------------
 
+    //P: match start point with type
     int startPointOfType(PokemonType type);
+
 private:
     int skillSerialNum{}, power{}, hitRate{};
     string skillName;
     PokemonType skillType;
+
+    //P: set up skill with skillString
+    //R: skill string returned from skillReader
     void setUpSkill(string pmSkillString);
 };
 

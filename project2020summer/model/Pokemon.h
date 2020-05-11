@@ -16,26 +16,37 @@ using namespace std;
 class Pokemon {
 
 public:
-    static const int SerialNumRange = 9;
-    Pokemon(int serialNumber);
+    static const int SerialNumRange = 43;
 
-    PokemonSkill *const *getSkills() const;
+    //P:generate Pokemon with given serial num
+    //R:serial number should be within the range
+    Pokemon(int serialNumber);
 
     Pokemon();
 
-    //construct a pokemon with full currentHp in given lv
+    //P:construct a pokemon with full currentHp in given lv
     Pokemon(int serialNum, int LV);
 
-    void setUpPokemonWithLvAndCurrentHp(int serialNum, int level , int currentHp);
+    //--------------------------------------------------------------------------------------
 
+    //P: generate Pokemon Information (skills hp lv) (can be found in trainer data)
     void setPokemonWithID(string pokemonID);
 
-    //Purpose: return the percentage damage that this pokemon will receive from given type
+    //P: return the percentage damage that this pokemon will receive from given type
     double typeRestriction (PokemonType pokemonType1);
 
-    //Purpose: set current hp after receiving the damage
+    //P: set current hp after receiving the damage from other pokemon
     void takeDamage(int damage);
 
+    //P: add skill with given skillnum to skills
+    void addSkillwSerialNum(int skillSerialNum);
+
+    int getNumOfSkill();
+
+    //random generate 1-4 skills with its type skill
+    void randomGenerateSkills();
+
+    //---------------------------------------------------------------------------------------
     int getInitialAttack() const;
 
     void setInitialAttack(int initialAttack);
@@ -72,23 +83,24 @@ public:
 
     PokemonSkill * getSkill(int index);
 
-    void addSkillwSerialNum(int skillSerialNum);
-
-    int getNumOfSkill();
-
-    //random generate 1-4 skills with its type skill
-    void randomGenerateSkills();
 
 private:
     string name;
     int serialNumber, initialAttack, initialDefend, initialHealth, pokemonLevel, currentHP;
     PokemonType pokemonType;
     PokemonSkill *skills[4] = {};
+
+    //P: find pokemon with given num
     void findPokemon(int serialNumber) throw (NullPokemonException);
+
+    //P:set up pokemon information with seed string
+    //R: string returned from pokemonSeed reader
     void setPokemonWithSeed(string pokemonSeed);
+
+    //P: add skill to skills
     void addSkill(PokemonSkill * pokemonSkill);
 
-    //set up initial atk def hp with seedData lv and type attribution
+    //P:set up initial atk def hp with seedData lv and type attribution
     void wrapUpWithLevelAndType();
 };
 

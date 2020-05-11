@@ -17,9 +17,12 @@ class PokemonSeedReader {
 public:
     PokemonSeedReader();
 
+    //P: Read File, find Pokemon, return line that contain PokemonSeed information
+    // or throw exception if Pokemon 000 or Pokemon not found;
     string generatePokemonSeed(int serialNum) throw (NullPokemonException);
 
 private:
+    //P: check if given line match with given PokemonNum
     bool matchSerialNum(int serialNum, string pokemonSeed);
 
 };

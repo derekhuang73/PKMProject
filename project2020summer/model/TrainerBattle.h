@@ -13,6 +13,7 @@ class TrainerBattle {
 public:
     TrainerBattle(Trainer * player, Trainer * cpTrainer);
 
+    //----------------------------------------------------------------------
     PokemonBattle *getPkmBattle() const;
 
     void setPkmBattle(PokemonBattle *pkmBattle);
@@ -24,6 +25,7 @@ public:
     Trainer *getCpTrainer() const;
 
     void setCpTrainer(Trainer *cpTrainer);
+    //-------------------------------------------------------------------------
 
     bool checkBattleOver();
 

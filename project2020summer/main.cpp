@@ -7,7 +7,13 @@
 #include <string>
 string space = "              ";
 
-
+string fillString(string str) {
+    int length = str.length();
+    for (int i = length; i < 50; ++i) {
+        str += " ";
+    }
+    return str;
+}
 string pokeType(PokemonType pt) {
     switch (pt) {
         case Fire: return "Fire";
@@ -38,6 +44,7 @@ void printOutSwitchOption(Trainer * player) {
         int a = player->availablePokemonIndex().at(i);
             cout << "Pokemon" << a << ": " << endl;
             pokedex(player -> getPokemonWithIndex(a));
+            cout << "-------------------------------" << endl;
     }
 
     cout << "enter the pokemon num" << endl;
@@ -45,11 +52,11 @@ void printOutSwitchOption(Trainer * player) {
 
 void printOutEncounter(Pokemon * playerPokemon, Pokemon * cpPokemon) {
     cout << "------------------------------BATTLE SYSTEM DISPLAY---------------------------" << endl;
-    cout << "| Player:" <<space << space << space<<"CP:" << endl;
-    cout << "| " <<playerPokemon -> getName() <<space << space << space << cpPokemon -> getName() <<endl;
-    cout    <<"| Type: " << pokeType(playerPokemon -> getPokemonType()) << space << space << space
+    cout << fillString("Player:") <<"CP:" << endl;
+    cout << fillString("| " + playerPokemon -> getName()) << cpPokemon -> getName() <<endl;
+    cout    <<fillString("| Type: " + pokeType(playerPokemon -> getPokemonType()))
             <<"Type: " << pokeType(cpPokemon -> getPokemonType())<<endl;
-    cout    <<"| HP: " <<playerPokemon -> getCurrentHp() << space << space << space
+    cout    << fillString("| HP: " + to_string(playerPokemon -> getCurrentHp()))
             <<"HP: " << cpPokemon->getCurrentHp()<<endl;
     cout    <<"-----------------------------------------------------------------------------" << endl;
 }
@@ -60,6 +67,7 @@ void printOutSkillOption(Pokemon * playerPokemon) {
         if (skill != NULL) {
             cout << "skill " << i << endl;
             printOutSkill(skill);
+            cout << "--------------------------------------" <<endl;
         } else {
             break;
         }
@@ -128,7 +136,6 @@ int main() {
             }}
     }
     TrainerBattle * trainerBattle = new TrainerBattle(player,derek);
-
     while (!trainerBattle -> checkBattleOver()) {
         Pokemon * playerPokemon = trainerBattle -> getPkmBattle() ->getPlayerPokemon();
         Pokemon * cpPokemon = trainerBattle -> getPkmBattle() ->getCpPokemon();
@@ -142,6 +149,7 @@ int main() {
                 printOutSkillOption(playerPokemon);
                 getline(cin,inputStr);
                 inputInt = atoi(inputStr.c_str());
+                printOutEncounter(playerPokemon,cpPokemon);
                 cout << playerPokemon->getName() << " used skill"
                 << playerPokemon -> getSkill(inputInt) -> getSkillName() << endl;
                 pokemonBattle->playerPokemonAttack(playerPokemon -> getSkill(inputInt));
@@ -156,7 +164,7 @@ int main() {
                 getline(cin,inputStr);
                 inputInt = atoi(inputStr.c_str());
                 playerPokemon = player -> getPokemonWithIndex(inputInt);
-                pokemonBattle -> setPlayerPokemon(playerPokemon);
+                trainerBattle->playerSwitchPkm(inputInt);
                 cout << "I choose you " << playerPokemon -> getName() << endl;
                 b = false;
             } else if (player->availablePokemon() <= 1) {
@@ -183,14 +191,19 @@ int main() {
         }
 
         if (playerPokemon -> getCurrentHp() <= 0) {
-            cout<< playerPokemon -> getName() << "is defeated" << endl;
-            cout<< "please choose a pokemon to fight!" << endl;
-            printOutSwitchOption(player);
-            getline(cin,inputStr);
-            inputInt = atoi(inputStr.c_str());
-            playerPokemon = player -> getPokemonWithIndex(inputInt);
-            pokemonBattle -> setPlayerPokemon(playerPokemon);
-            cout << "I choose you " << playerPokemon -> getName() << endl;
+            printOutEncounter(playerPokemon,cpPokemon);
+            cout << playerPokemon->getName() << "is defeated" << endl;
+            if (player->availablePokemon() <= 0) {
+                break;
+            } else {
+                cout << "please choose a pokemon to fight!" << endl;
+                printOutSwitchOption(player);
+                getline(cin, inputStr);
+                inputInt = atoi(inputStr.c_str());
+                playerPokemon = player->getPokemonWithIndex(inputInt);
+                trainerBattle->playerSwitchPkm(inputInt);
+                cout << "I choose you " << playerPokemon->getName() << endl;
+            }
         }
     }
     cout << "game over, thank you for playing" <<endl;

@@ -27,8 +27,8 @@ string PokemonSeedReader::generatePokemonSeed(int serialNum) throw (NullPokemonE
             return pokemonSeed;
         }
     }
-    cerr << "missing pokemon" << endl;
     inFile.close();
+    throw NullPokemonException();
 }
 
 bool PokemonSeedReader::matchSerialNum(int serialNum, string pokemonSeed) {

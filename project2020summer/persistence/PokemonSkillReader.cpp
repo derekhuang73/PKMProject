@@ -26,6 +26,8 @@ string PokemonSkillReader::findSkill(int skillNum) throw(NullSkillException) {
             return skillString;
         }
     }
+    inFile.close();
+    throw NullSkillException();
 
 }
 

@@ -173,42 +173,34 @@ void Pokemon::setPokemonWithSeed(string pokemonSeed) {
     setInitialAttack(atk);
     setSerialNumber(pokeSN);
     setName(name);
-
 }
 
-//Purpose: generate Pokemon Information (skills hp lv) (can be found in trainer data)
+
 void Pokemon::setPokemonWithID(string pokemonID) throw (NullPokemonException) {
-    string serialS, currentHpS, levelS,skill1,skill2,skill3,skill4;
-    int    serI,hpI,levelI,sk1I,sk2I,sk3I,sk4I;
+    string serialS, levelS,skill1,skill2,skill3,skill4;
+    int    serI,levelI,sk1I,sk2I,sk3I,sk4I;
     PokemonSkill pkSkill1, pkSkill2, pkSkill3, pkSkill4;
     stringstream ss(pokemonID);
     getline(ss, serialS, ',');
     getline(ss, levelS, ',');
-    getline(ss, currentHpS, ',');
     getline(ss, skill1, ',');
     getline(ss, skill2, ',');
     getline(ss, skill3, ',');
     getline(ss, skill4, ',');
     serI = atoi(serialS.c_str());
     levelI  = atoi(levelS.c_str());
-    hpI = atoi(currentHpS.c_str());
     sk1I = atoi(skill1.c_str());
     sk2I = atoi(skill2.c_str());
     sk3I = atoi(skill3.c_str());
     sk4I = atoi(skill4.c_str());
-    setUpPokemonWithLvAndCurrentHp(serI, levelI, hpI);
+    findPokemon(serI);
+    setPokemonLevel(levelI);
+    wrapUpWithLevelAndType();
+    setCurrentHp(initialHealth);
     addSkillwSerialNum(sk1I);
     addSkillwSerialNum(sk2I);
     addSkillwSerialNum(sk3I);
     addSkillwSerialNum(sk4I);
-}
-
-void Pokemon::setUpPokemonWithLvAndCurrentHp(int serialNum, int level, int currentHp)
-throw (NullPokemonException){
-    findPokemon(serialNum);
-    setPokemonLevel(level);
-    wrapUpWithLevelAndType();
-    setCurrentHp(currentHp);
 }
 
 void Pokemon::addSkill(PokemonSkill * pokemonSkill) {
@@ -231,10 +223,6 @@ void Pokemon::addSkillwSerialNum(int skillSerialNum) {
         addSkill(pokemonSkill);
     } catch (NullSkillException) {
     }
-}
-
-PokemonSkill *const *Pokemon::getSkills() const {
-    return skills;
 }
 
 int Pokemon::getNumOfSkill() {
