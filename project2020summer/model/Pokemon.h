@@ -46,6 +46,11 @@ public:
     //random generate 1-4 skills with its type skill
     void randomGenerateSkills();
 
+    //increase pokemon lv by 1, check if it ready for evo
+    void pokemonLvUp();
+
+    //evolve a pokemon
+    void evolvePokemon();
     //---------------------------------------------------------------------------------------
     int getInitialAttack() const;
 
@@ -83,12 +88,23 @@ public:
 
     PokemonSkill * getSkill(int index);
 
+    int getMinLv() const;
+
+    void setMinLv(int minLv);
+
+    int getEvolveLv() const;
+
+    void setEvolveLv(int evolveLv);
+
+
+
 
 private:
     string name;
-    int serialNumber, initialAttack, initialDefend, initialHealth, pokemonLevel, currentHP;
+    int serialNumber, initialAttack, initialDefend, initialHealth, pokemonLevel, currentHP,minLv, evolveLv;
     PokemonType pokemonType;
     PokemonSkill *skills[4] = {};
+    bool readyForEvo;
 
     //P: find pokemon with given num
     void findPokemon(int serialNumber) throw (NullPokemonException);
@@ -102,6 +118,7 @@ private:
 
     //P:set up initial atk def hp with seedData lv and type attribution
     void wrapUpWithLevelAndType();
+
 };
 
 

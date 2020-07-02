@@ -154,24 +154,30 @@ void Pokemon::setPokemonType(int typeInt) {
 }
 
 void Pokemon::setPokemonWithSeed(string pokemonSeed) {
-    string serialNum,seedATK,seedDEF,seedHP,seedType,name;
+    string serialNum,seedATK,seedDEF,seedHP,seedType,name,seedMinLv,seedEvoLv;
     stringstream ss(pokemonSeed);
     getline(ss, serialNum, ',');
     getline(ss, seedATK, ',');
     getline(ss, seedDEF, ',');
     getline(ss, seedHP, ',');
     getline(ss, seedType, ',');
+    getline(ss, seedMinLv, ',');
+    getline(ss, seedEvoLv, ',');
     getline(ss, name, ',');
     int pokeSN = atoi(serialNum.c_str());
     int atk    = atoi(seedATK.c_str());
     int def    = atoi(seedDEF.c_str());
     int hp     = atoi(seedHP.c_str());
     int type   = atoi(seedType.c_str());
+    int minLv  = atoi(seedMinLv.c_str());
+    int evoLv  = atoi(seedEvoLv.c_str());
     setPokemonType(type);
     setInitialHealth(hp);
     setInitialDefend(def);
     setInitialAttack(atk);
     setSerialNumber(pokeSN);
+    setMinLv(minLv);
+    setEvolveLv(evoLv);
     setName(name);
 }
 
@@ -295,6 +301,44 @@ void Pokemon::randomGenerateSkills() {
                 }
         }
 
+}
+
+int Pokemon::getMinLv() const {
+    return minLv;
+}
+
+void Pokemon::setMinLv(int minLv) {
+    Pokemon::minLv = minLv;
+}
+
+int Pokemon::getEvolveLv() const {
+    return evolveLv;
+}
+
+void Pokemon::setEvolveLv(int evolveLv) {
+    Pokemon::evolveLv = evolveLv;
+}
+
+void Pokemon::pokemonLvUp() {
+    if (pokemonLevel <= 99) {
+    setPokemonLevel(pokemonLevel + 1);
+    if (pokemonLevel >= evolveLv) {
+        readyForEvo = true;
+    }
+    }
+}
+
+void Pokemon::evolvePokemon() {
+    if (serialNumber = 25) {
+        int i = rand()%2 + 1;
+        findPokemon(serialNumber + i);
+        wrapUpWithLevelAndType();
+        setCurrentHp(initialHealth);
+    } else {
+        findPokemon(serialNumber + 1);
+        wrapUpWithLevelAndType();
+        setCurrentHp(initialHealth);
+    }
 }
 
 
