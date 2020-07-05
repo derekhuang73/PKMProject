@@ -94,10 +94,10 @@
 		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/main.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Item.cpp">
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Block.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Item.h">
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Block.h">
 			<Option target="project2020summer"/>
 		</Unit>
 		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Player.cpp">
@@ -140,6 +140,12 @@
 			<Option target="project2020summer"/>
 		</Unit>
 		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/TrainerBattle.h">
+			<Option target="project2020summer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/floor.cpp">
+			<Option target="project2020summer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/floor.h">
 			<Option target="project2020summer"/>
 		</Unit>
 		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/PokemonSeedReader.cpp">

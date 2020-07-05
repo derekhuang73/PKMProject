@@ -151,32 +151,32 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\main.cpp.s
 .PHONY : main.cpp.s
 
-model\Item.obj: model\Item.cpp.obj
+model\Block.obj: model\Block.cpp.obj
 
-.PHONY : model\Item.obj
+.PHONY : model\Block.obj
 
 # target to build an object file
-model\Item.cpp.obj:
-	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\model\Item.cpp.obj
-.PHONY : model\Item.cpp.obj
+model\Block.cpp.obj:
+	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\model\Block.cpp.obj
+.PHONY : model\Block.cpp.obj
 
-model\Item.i: model\Item.cpp.i
+model\Block.i: model\Block.cpp.i
 
-.PHONY : model\Item.i
+.PHONY : model\Block.i
 
 # target to preprocess a source file
-model\Item.cpp.i:
-	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\model\Item.cpp.i
-.PHONY : model\Item.cpp.i
+model\Block.cpp.i:
+	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\model\Block.cpp.i
+.PHONY : model\Block.cpp.i
 
-model\Item.s: model\Item.cpp.s
+model\Block.s: model\Block.cpp.s
 
-.PHONY : model\Item.s
+.PHONY : model\Block.s
 
 # target to generate assembly for a file
-model\Item.cpp.s:
-	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\model\Item.cpp.s
-.PHONY : model\Item.cpp.s
+model\Block.cpp.s:
+	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\model\Block.cpp.s
+.PHONY : model\Block.cpp.s
 
 model\Player.obj: model\Player.cpp.obj
 
@@ -367,6 +367,33 @@ model\TrainerBattle.cpp.s:
 	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\model\TrainerBattle.cpp.s
 .PHONY : model\TrainerBattle.cpp.s
 
+model\floor.obj: model\floor.cpp.obj
+
+.PHONY : model\floor.obj
+
+# target to build an object file
+model\floor.cpp.obj:
+	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\model\floor.cpp.obj
+.PHONY : model\floor.cpp.obj
+
+model\floor.i: model\floor.cpp.i
+
+.PHONY : model\floor.i
+
+# target to preprocess a source file
+model\floor.cpp.i:
+	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\model\floor.cpp.i
+.PHONY : model\floor.cpp.i
+
+model\floor.s: model\floor.cpp.s
+
+.PHONY : model\floor.s
+
+# target to generate assembly for a file
+model\floor.cpp.s:
+	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\model\floor.cpp.s
+.PHONY : model\floor.cpp.s
+
 persistence\PokemonSeedReader.obj: persistence\PokemonSeedReader.cpp.obj
 
 .PHONY : persistence\PokemonSeedReader.obj
@@ -460,9 +487,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... model/Item.obj
-	@echo ... model/Item.i
-	@echo ... model/Item.s
+	@echo ... model/Block.obj
+	@echo ... model/Block.i
+	@echo ... model/Block.s
 	@echo ... model/Player.obj
 	@echo ... model/Player.i
 	@echo ... model/Player.s
@@ -484,6 +511,9 @@ help:
 	@echo ... model/TrainerBattle.obj
 	@echo ... model/TrainerBattle.i
 	@echo ... model/TrainerBattle.s
+	@echo ... model/floor.obj
+	@echo ... model/floor.i
+	@echo ... model/floor.s
 	@echo ... persistence/PokemonSeedReader.obj
 	@echo ... persistence/PokemonSeedReader.i
 	@echo ... persistence/PokemonSeedReader.s

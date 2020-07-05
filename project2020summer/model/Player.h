@@ -7,9 +7,17 @@
 
 
 #include "Trainer.h"
+#include "Block.h"
 
 class Player : Trainer{
-
+public:
+    Block blockMap;
+    int location;
+    void moveUp();
+    void moveDown();
+    void moveLeft();
+    void moveRight();
+    void pickUp();
 };
 
 
