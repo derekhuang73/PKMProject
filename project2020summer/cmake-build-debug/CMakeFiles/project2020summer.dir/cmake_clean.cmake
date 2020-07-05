@@ -11,9 +11,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/project2020summer.dir/persistence/PokemonSeedReader.cpp.obj"
   "CMakeFiles/project2020summer.dir/persistence/PokemonSkillReader.cpp.obj"
   "CMakeFiles/project2020summer.dir/persistence/TrainerReader.cpp.obj"
+  "libproject2020summer.dll.a"
   "project2020summer.exe"
   "project2020summer.exe.manifest"
-  "project2020summer.lib"
   "project2020summer.pdb"
 )
 
