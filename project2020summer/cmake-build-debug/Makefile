@@ -365,6 +365,33 @@ model/TrainerBattle.cpp.s:
 	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make CMakeFiles/project2020summer.dir/model/TrainerBattle.cpp.s
 .PHONY : model/TrainerBattle.cpp.s
 
+persistence/PlayerReader.obj: persistence/PlayerReader.cpp.obj
+
+.PHONY : persistence/PlayerReader.obj
+
+# target to build an object file
+persistence/PlayerReader.cpp.obj:
+	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make CMakeFiles/project2020summer.dir/persistence/PlayerReader.cpp.obj
+.PHONY : persistence/PlayerReader.cpp.obj
+
+persistence/PlayerReader.i: persistence/PlayerReader.cpp.i
+
+.PHONY : persistence/PlayerReader.i
+
+# target to preprocess a source file
+persistence/PlayerReader.cpp.i:
+	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make CMakeFiles/project2020summer.dir/persistence/PlayerReader.cpp.i
+.PHONY : persistence/PlayerReader.cpp.i
+
+persistence/PlayerReader.s: persistence/PlayerReader.cpp.s
+
+.PHONY : persistence/PlayerReader.s
+
+# target to generate assembly for a file
+persistence/PlayerReader.cpp.s:
+	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make CMakeFiles/project2020summer.dir/persistence/PlayerReader.cpp.s
+.PHONY : persistence/PlayerReader.cpp.s
+
 persistence/PokemonSeedReader.obj: persistence/PokemonSeedReader.cpp.obj
 
 .PHONY : persistence/PokemonSeedReader.obj
@@ -482,6 +509,9 @@ help:
 	@echo ... model/TrainerBattle.obj
 	@echo ... model/TrainerBattle.i
 	@echo ... model/TrainerBattle.s
+	@echo ... persistence/PlayerReader.obj
+	@echo ... persistence/PlayerReader.i
+	@echo ... persistence/PlayerReader.s
 	@echo ... persistence/PokemonSeedReader.obj
 	@echo ... persistence/PokemonSeedReader.i
 	@echo ... persistence/PokemonSeedReader.s

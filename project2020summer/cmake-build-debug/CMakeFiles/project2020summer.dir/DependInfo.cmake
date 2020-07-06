@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "F:/Projects/PKMProject/project2020summer/model/PokemonType.cpp" "F:/Projects/PKMProject/project2020summer/cmake-build-debug/CMakeFiles/project2020summer.dir/model/PokemonType.cpp.obj"
   "F:/Projects/PKMProject/project2020summer/model/Trainer.cpp" "F:/Projects/PKMProject/project2020summer/cmake-build-debug/CMakeFiles/project2020summer.dir/model/Trainer.cpp.obj"
   "F:/Projects/PKMProject/project2020summer/model/TrainerBattle.cpp" "F:/Projects/PKMProject/project2020summer/cmake-build-debug/CMakeFiles/project2020summer.dir/model/TrainerBattle.cpp.obj"
+  "F:/Projects/PKMProject/project2020summer/persistence/PlayerReader.cpp" "F:/Projects/PKMProject/project2020summer/cmake-build-debug/CMakeFiles/project2020summer.dir/persistence/PlayerReader.cpp.obj"
   "F:/Projects/PKMProject/project2020summer/persistence/PokemonSeedReader.cpp" "F:/Projects/PKMProject/project2020summer/cmake-build-debug/CMakeFiles/project2020summer.dir/persistence/PokemonSeedReader.cpp.obj"
   "F:/Projects/PKMProject/project2020summer/persistence/PokemonSkillReader.cpp" "F:/Projects/PKMProject/project2020summer/cmake-build-debug/CMakeFiles/project2020summer.dir/persistence/PokemonSkillReader.cpp.obj"
   "F:/Projects/PKMProject/project2020summer/persistence/TrainerReader.cpp" "F:/Projects/PKMProject/project2020summer/cmake-build-debug/CMakeFiles/project2020summer.dir/persistence/TrainerReader.cpp.obj"

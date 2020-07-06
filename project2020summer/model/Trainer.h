@@ -36,13 +36,15 @@ public:
     //P: return a vector that contain the index of available pokemon
     vector<int> availablePokemonIndex();
 
-private:
-    Pokemon * pokemonList[6] = {};
-    string name;
-
     //P: set up trainer with trainer string
     //R: trainer string that return from trainer reader
     void setUpTrainer(list<string> trainerID);
+
+
+protected:
+    string name;
+
+    Pokemon * pokemonList[6] = {};
 };
 
 

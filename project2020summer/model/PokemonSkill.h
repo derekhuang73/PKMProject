@@ -20,7 +20,7 @@ public:
                         NormalSkillStartAT = 4;
     PokemonSkill();
 
-    PokemonSkill(int skillSerialNum) throw(NullSkillException);
+    PokemonSkill(int skillSerialNum) throw (NullSkillException);
 
     //P:random generate skill within range and given start point
     PokemonSkill(int startPoint, int range);
@@ -28,7 +28,7 @@ public:
     //------------------------------------------------------------------------------
     int getPower() const;
 
-    void setPower(int power);
+    void setPower(int power) throw(NullSkillException);
 
     int getHitRate() const;
 

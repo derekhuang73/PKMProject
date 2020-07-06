@@ -140,6 +140,12 @@
 		<Unit filename="F:/Projects/PKMProject/project2020summer/model/TrainerBattle.h">
 			<Option target="project2020summer"/>
 		</Unit>
+		<Unit filename="F:/Projects/PKMProject/project2020summer/persistence/PlayerReader.cpp">
+			<Option target="project2020summer"/>
+		</Unit>
+		<Unit filename="F:/Projects/PKMProject/project2020summer/persistence/PlayerReader.h">
+			<Option target="project2020summer"/>
+		</Unit>
 		<Unit filename="F:/Projects/PKMProject/project2020summer/persistence/PokemonSeedReader.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
