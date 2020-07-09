@@ -13,6 +13,7 @@ CMakeFiles/project2020summer.dir/main.cpp.obj: ../model/PokemonType.h
 CMakeFiles/project2020summer.dir/main.cpp.obj: ../model/Trainer.h
 CMakeFiles/project2020summer.dir/main.cpp.obj: ../model/TrainerBattle.h
 CMakeFiles/project2020summer.dir/main.cpp.obj: ../persistence/PlayerReader.h
+CMakeFiles/project2020summer.dir/main.cpp.obj: ../persistence/PlayerWriter.h
 CMakeFiles/project2020summer.dir/main.cpp.obj: ../persistence/TrainerReader.h
 
 CMakeFiles/project2020summer.dir/model/Item.cpp.obj: ../model/Item.cpp
@@ -83,6 +84,16 @@ CMakeFiles/project2020summer.dir/persistence/PlayerReader.cpp.obj: ../model/Poke
 CMakeFiles/project2020summer.dir/persistence/PlayerReader.cpp.obj: ../model/Trainer.h
 CMakeFiles/project2020summer.dir/persistence/PlayerReader.cpp.obj: ../persistence/PlayerReader.cpp
 CMakeFiles/project2020summer.dir/persistence/PlayerReader.cpp.obj: ../persistence/PlayerReader.h
+
+CMakeFiles/project2020summer.dir/persistence/PlayerWriter.cpp.obj: ../exception/NullPokemonException.h
+CMakeFiles/project2020summer.dir/persistence/PlayerWriter.cpp.obj: ../exception/NullSkillException.h
+CMakeFiles/project2020summer.dir/persistence/PlayerWriter.cpp.obj: ../model/Player.h
+CMakeFiles/project2020summer.dir/persistence/PlayerWriter.cpp.obj: ../model/Pokemon.h
+CMakeFiles/project2020summer.dir/persistence/PlayerWriter.cpp.obj: ../model/PokemonSkill.h
+CMakeFiles/project2020summer.dir/persistence/PlayerWriter.cpp.obj: ../model/PokemonType.h
+CMakeFiles/project2020summer.dir/persistence/PlayerWriter.cpp.obj: ../model/Trainer.h
+CMakeFiles/project2020summer.dir/persistence/PlayerWriter.cpp.obj: ../persistence/PlayerWriter.cpp
+CMakeFiles/project2020summer.dir/persistence/PlayerWriter.cpp.obj: ../persistence/PlayerWriter.h
 
 CMakeFiles/project2020summer.dir/persistence/PokemonSeedReader.cpp.obj: ../exception/NullPokemonException.h
 CMakeFiles/project2020summer.dir/persistence/PokemonSeedReader.cpp.obj: ../exception/NullSkillException.h

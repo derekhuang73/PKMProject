@@ -19,15 +19,28 @@ public:
         level = l;
     }
 
+    int getLevel() {
+        return level;
+    }
+
     void setUpPokemons(list<string> curPokemons, list<int> curHealth, list<string> staPokemons, list<int> staHealth);
+
+    string getPokemons();
+
+
+private:
 
     void setUpPokemonList(list<string> PokemonString, Pokemon* pklist[]);
 
     void setUpPokemonHealth(list<int> HP, Pokemon* pklist[]);
 
-private:
-    int level;
+    list<string> getPokemonList(Pokemon* pklist[]);
 
+    list<string> getHealthList(Pokemon* pklist[]);
+
+    string listConcat(list<string> ss);
+
+    int level;
 
     // Limit 20 to stashed Pokemons
     Pokemon * stashedPokemonList[20]{};

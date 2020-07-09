@@ -392,6 +392,33 @@ persistence/PlayerReader.cpp.s:
 	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make CMakeFiles/project2020summer.dir/persistence/PlayerReader.cpp.s
 .PHONY : persistence/PlayerReader.cpp.s
 
+persistence/PlayerWriter.obj: persistence/PlayerWriter.cpp.obj
+
+.PHONY : persistence/PlayerWriter.obj
+
+# target to build an object file
+persistence/PlayerWriter.cpp.obj:
+	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make CMakeFiles/project2020summer.dir/persistence/PlayerWriter.cpp.obj
+.PHONY : persistence/PlayerWriter.cpp.obj
+
+persistence/PlayerWriter.i: persistence/PlayerWriter.cpp.i
+
+.PHONY : persistence/PlayerWriter.i
+
+# target to preprocess a source file
+persistence/PlayerWriter.cpp.i:
+	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make CMakeFiles/project2020summer.dir/persistence/PlayerWriter.cpp.i
+.PHONY : persistence/PlayerWriter.cpp.i
+
+persistence/PlayerWriter.s: persistence/PlayerWriter.cpp.s
+
+.PHONY : persistence/PlayerWriter.s
+
+# target to generate assembly for a file
+persistence/PlayerWriter.cpp.s:
+	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make CMakeFiles/project2020summer.dir/persistence/PlayerWriter.cpp.s
+.PHONY : persistence/PlayerWriter.cpp.s
+
 persistence/PokemonSeedReader.obj: persistence/PokemonSeedReader.cpp.obj
 
 .PHONY : persistence/PokemonSeedReader.obj
@@ -512,6 +539,9 @@ help:
 	@echo ... persistence/PlayerReader.obj
 	@echo ... persistence/PlayerReader.i
 	@echo ... persistence/PlayerReader.s
+	@echo ... persistence/PlayerWriter.obj
+	@echo ... persistence/PlayerWriter.i
+	@echo ... persistence/PlayerWriter.s
 	@echo ... persistence/PokemonSeedReader.obj
 	@echo ... persistence/PokemonSeedReader.i
 	@echo ... persistence/PokemonSeedReader.s

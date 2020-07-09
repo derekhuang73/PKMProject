@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/project2020summer.dir/model/Trainer.cpp.obj"
   "CMakeFiles/project2020summer.dir/model/TrainerBattle.cpp.obj"
   "CMakeFiles/project2020summer.dir/persistence/PlayerReader.cpp.obj"
+  "CMakeFiles/project2020summer.dir/persistence/PlayerWriter.cpp.obj"
   "CMakeFiles/project2020summer.dir/persistence/PokemonSeedReader.cpp.obj"
   "CMakeFiles/project2020summer.dir/persistence/PokemonSkillReader.cpp.obj"
   "CMakeFiles/project2020summer.dir/persistence/TrainerReader.cpp.obj"

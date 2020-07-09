@@ -35,12 +35,12 @@ Player* PlayerReader::readPlayerData() throw (NullTrainerException){
     inFile >> curHealth;
     inFile >> staPokemons;
     inFile >> staHealth;
+    inFile.close();
 
-    player->setUpPokemons(pokemonStringSpliter(curPokemons), pokemonHealthSpliter(curHealth)
+    player->setUpPokemons(pokemonStringSpliter(curPokemons), pokemonHealthSpliter(  curHealth)
             , pokemonStringSpliter(staPokemons), pokemonHealthSpliter(staHealth));
 
     return player;
-    throw NullTrainerException();
 }
 
 list<string> PlayerReader::pokemonStringSpliter(string pokemonString) {
