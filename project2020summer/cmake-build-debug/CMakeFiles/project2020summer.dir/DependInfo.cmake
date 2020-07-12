@@ -5,7 +5,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "F:/Projects/PKMProject/project2020summer/main.cpp" "F:/Projects/PKMProject/project2020summer/cmake-build-debug/CMakeFiles/project2020summer.dir/main.cpp.obj"
-  "F:/Projects/PKMProject/project2020summer/model/Item.cpp" "F:/Projects/PKMProject/project2020summer/cmake-build-debug/CMakeFiles/project2020summer.dir/model/Item.cpp.obj"
   "F:/Projects/PKMProject/project2020summer/model/Player.cpp" "F:/Projects/PKMProject/project2020summer/cmake-build-debug/CMakeFiles/project2020summer.dir/model/Player.cpp.obj"
   "F:/Projects/PKMProject/project2020summer/model/Pokemon.cpp" "F:/Projects/PKMProject/project2020summer/cmake-build-debug/CMakeFiles/project2020summer.dir/model/Pokemon.cpp.obj"
   "F:/Projects/PKMProject/project2020summer/model/PokemonBattle.cpp" "F:/Projects/PKMProject/project2020summer/cmake-build-debug/CMakeFiles/project2020summer.dir/model/PokemonBattle.cpp.obj"

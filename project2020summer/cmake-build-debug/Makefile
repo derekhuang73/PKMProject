@@ -149,33 +149,6 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make CMakeFiles/project2020summer.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-model/Item.obj: model/Item.cpp.obj
-
-.PHONY : model/Item.obj
-
-# target to build an object file
-model/Item.cpp.obj:
-	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make CMakeFiles/project2020summer.dir/model/Item.cpp.obj
-.PHONY : model/Item.cpp.obj
-
-model/Item.i: model/Item.cpp.i
-
-.PHONY : model/Item.i
-
-# target to preprocess a source file
-model/Item.cpp.i:
-	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make CMakeFiles/project2020summer.dir/model/Item.cpp.i
-.PHONY : model/Item.cpp.i
-
-model/Item.s: model/Item.cpp.s
-
-.PHONY : model/Item.s
-
-# target to generate assembly for a file
-model/Item.cpp.s:
-	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make CMakeFiles/project2020summer.dir/model/Item.cpp.s
-.PHONY : model/Item.cpp.s
-
 model/Player.obj: model/Player.cpp.obj
 
 .PHONY : model/Player.obj
@@ -512,9 +485,6 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... model/Item.obj
-	@echo ... model/Item.i
-	@echo ... model/Item.s
 	@echo ... model/Player.obj
 	@echo ... model/Player.i
 	@echo ... model/Player.s

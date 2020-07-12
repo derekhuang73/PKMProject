@@ -92,12 +92,6 @@
 		<Unit filename="F:/Projects/PKMProject/project2020summer/main.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="F:/Projects/PKMProject/project2020summer/model/Item.cpp">
-			<Option target="project2020summer"/>
-		</Unit>
-		<Unit filename="F:/Projects/PKMProject/project2020summer/model/Item.h">
-			<Option target="project2020summer"/>
-		</Unit>
 		<Unit filename="F:/Projects/PKMProject/project2020summer/model/Player.cpp">
 			<Option target="project2020summer"/>
 		</Unit>

@@ -121,22 +121,9 @@ CMakeFiles/project2020summer.dir/model/Player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project2020summer.dir/model/Player.cpp.s"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\Projects\PKMProject\project2020summer\model\Player.cpp -o CMakeFiles\project2020summer.dir\model\Player.cpp.s
 
-CMakeFiles/project2020summer.dir/model/Item.cpp.obj: CMakeFiles/project2020summer.dir/flags.make
-CMakeFiles/project2020summer.dir/model/Item.cpp.obj: ../model/Item.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Projects\PKMProject\project2020summer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/project2020summer.dir/model/Item.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\project2020summer.dir\model\Item.cpp.obj -c F:\Projects\PKMProject\project2020summer\model\Item.cpp
-
-CMakeFiles/project2020summer.dir/model/Item.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project2020summer.dir/model/Item.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\Projects\PKMProject\project2020summer\model\Item.cpp > CMakeFiles\project2020summer.dir\model\Item.cpp.i
-
-CMakeFiles/project2020summer.dir/model/Item.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project2020summer.dir/model/Item.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\Projects\PKMProject\project2020summer\model\Item.cpp -o CMakeFiles\project2020summer.dir\model\Item.cpp.s
-
 CMakeFiles/project2020summer.dir/model/PokemonSkill.cpp.obj: CMakeFiles/project2020summer.dir/flags.make
 CMakeFiles/project2020summer.dir/model/PokemonSkill.cpp.obj: ../model/PokemonSkill.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Projects\PKMProject\project2020summer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/project2020summer.dir/model/PokemonSkill.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Projects\PKMProject\project2020summer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/project2020summer.dir/model/PokemonSkill.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\project2020summer.dir\model\PokemonSkill.cpp.obj -c F:\Projects\PKMProject\project2020summer\model\PokemonSkill.cpp
 
 CMakeFiles/project2020summer.dir/model/PokemonSkill.cpp.i: cmake_force
@@ -149,7 +136,7 @@ CMakeFiles/project2020summer.dir/model/PokemonSkill.cpp.s: cmake_force
 
 CMakeFiles/project2020summer.dir/model/PokemonBattle.cpp.obj: CMakeFiles/project2020summer.dir/flags.make
 CMakeFiles/project2020summer.dir/model/PokemonBattle.cpp.obj: ../model/PokemonBattle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Projects\PKMProject\project2020summer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/project2020summer.dir/model/PokemonBattle.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Projects\PKMProject\project2020summer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/project2020summer.dir/model/PokemonBattle.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\project2020summer.dir\model\PokemonBattle.cpp.obj -c F:\Projects\PKMProject\project2020summer\model\PokemonBattle.cpp
 
 CMakeFiles/project2020summer.dir/model/PokemonBattle.cpp.i: cmake_force
@@ -162,7 +149,7 @@ CMakeFiles/project2020summer.dir/model/PokemonBattle.cpp.s: cmake_force
 
 CMakeFiles/project2020summer.dir/persistence/PokemonSeedReader.cpp.obj: CMakeFiles/project2020summer.dir/flags.make
 CMakeFiles/project2020summer.dir/persistence/PokemonSeedReader.cpp.obj: ../persistence/PokemonSeedReader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Projects\PKMProject\project2020summer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/project2020summer.dir/persistence/PokemonSeedReader.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Projects\PKMProject\project2020summer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/project2020summer.dir/persistence/PokemonSeedReader.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\project2020summer.dir\persistence\PokemonSeedReader.cpp.obj -c F:\Projects\PKMProject\project2020summer\persistence\PokemonSeedReader.cpp
 
 CMakeFiles/project2020summer.dir/persistence/PokemonSeedReader.cpp.i: cmake_force
@@ -175,7 +162,7 @@ CMakeFiles/project2020summer.dir/persistence/PokemonSeedReader.cpp.s: cmake_forc
 
 CMakeFiles/project2020summer.dir/persistence/PokemonSkillReader.cpp.obj: CMakeFiles/project2020summer.dir/flags.make
 CMakeFiles/project2020summer.dir/persistence/PokemonSkillReader.cpp.obj: ../persistence/PokemonSkillReader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Projects\PKMProject\project2020summer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/project2020summer.dir/persistence/PokemonSkillReader.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Projects\PKMProject\project2020summer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/project2020summer.dir/persistence/PokemonSkillReader.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\project2020summer.dir\persistence\PokemonSkillReader.cpp.obj -c F:\Projects\PKMProject\project2020summer\persistence\PokemonSkillReader.cpp
 
 CMakeFiles/project2020summer.dir/persistence/PokemonSkillReader.cpp.i: cmake_force
@@ -188,7 +175,7 @@ CMakeFiles/project2020summer.dir/persistence/PokemonSkillReader.cpp.s: cmake_for
 
 CMakeFiles/project2020summer.dir/persistence/TrainerReader.cpp.obj: CMakeFiles/project2020summer.dir/flags.make
 CMakeFiles/project2020summer.dir/persistence/TrainerReader.cpp.obj: ../persistence/TrainerReader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Projects\PKMProject\project2020summer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/project2020summer.dir/persistence/TrainerReader.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Projects\PKMProject\project2020summer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/project2020summer.dir/persistence/TrainerReader.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\project2020summer.dir\persistence\TrainerReader.cpp.obj -c F:\Projects\PKMProject\project2020summer\persistence\TrainerReader.cpp
 
 CMakeFiles/project2020summer.dir/persistence/TrainerReader.cpp.i: cmake_force
@@ -201,7 +188,7 @@ CMakeFiles/project2020summer.dir/persistence/TrainerReader.cpp.s: cmake_force
 
 CMakeFiles/project2020summer.dir/model/TrainerBattle.cpp.obj: CMakeFiles/project2020summer.dir/flags.make
 CMakeFiles/project2020summer.dir/model/TrainerBattle.cpp.obj: ../model/TrainerBattle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Projects\PKMProject\project2020summer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/project2020summer.dir/model/TrainerBattle.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Projects\PKMProject\project2020summer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/project2020summer.dir/model/TrainerBattle.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\project2020summer.dir\model\TrainerBattle.cpp.obj -c F:\Projects\PKMProject\project2020summer\model\TrainerBattle.cpp
 
 CMakeFiles/project2020summer.dir/model/TrainerBattle.cpp.i: cmake_force
@@ -214,7 +201,7 @@ CMakeFiles/project2020summer.dir/model/TrainerBattle.cpp.s: cmake_force
 
 CMakeFiles/project2020summer.dir/persistence/PlayerReader.cpp.obj: CMakeFiles/project2020summer.dir/flags.make
 CMakeFiles/project2020summer.dir/persistence/PlayerReader.cpp.obj: ../persistence/PlayerReader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Projects\PKMProject\project2020summer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/project2020summer.dir/persistence/PlayerReader.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Projects\PKMProject\project2020summer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/project2020summer.dir/persistence/PlayerReader.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\project2020summer.dir\persistence\PlayerReader.cpp.obj -c F:\Projects\PKMProject\project2020summer\persistence\PlayerReader.cpp
 
 CMakeFiles/project2020summer.dir/persistence/PlayerReader.cpp.i: cmake_force
@@ -227,7 +214,7 @@ CMakeFiles/project2020summer.dir/persistence/PlayerReader.cpp.s: cmake_force
 
 CMakeFiles/project2020summer.dir/persistence/PlayerWriter.cpp.obj: CMakeFiles/project2020summer.dir/flags.make
 CMakeFiles/project2020summer.dir/persistence/PlayerWriter.cpp.obj: ../persistence/PlayerWriter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Projects\PKMProject\project2020summer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/project2020summer.dir/persistence/PlayerWriter.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Projects\PKMProject\project2020summer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/project2020summer.dir/persistence/PlayerWriter.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\project2020summer.dir\persistence\PlayerWriter.cpp.obj -c F:\Projects\PKMProject\project2020summer\persistence\PlayerWriter.cpp
 
 CMakeFiles/project2020summer.dir/persistence/PlayerWriter.cpp.i: cmake_force
@@ -245,7 +232,6 @@ project2020summer_OBJECTS = \
 "CMakeFiles/project2020summer.dir/model/PokemonType.cpp.obj" \
 "CMakeFiles/project2020summer.dir/model/Pokemon.cpp.obj" \
 "CMakeFiles/project2020summer.dir/model/Player.cpp.obj" \
-"CMakeFiles/project2020summer.dir/model/Item.cpp.obj" \
 "CMakeFiles/project2020summer.dir/model/PokemonSkill.cpp.obj" \
 "CMakeFiles/project2020summer.dir/model/PokemonBattle.cpp.obj" \
 "CMakeFiles/project2020summer.dir/persistence/PokemonSeedReader.cpp.obj" \
@@ -263,7 +249,6 @@ project2020summer.exe: CMakeFiles/project2020summer.dir/model/Trainer.cpp.obj
 project2020summer.exe: CMakeFiles/project2020summer.dir/model/PokemonType.cpp.obj
 project2020summer.exe: CMakeFiles/project2020summer.dir/model/Pokemon.cpp.obj
 project2020summer.exe: CMakeFiles/project2020summer.dir/model/Player.cpp.obj
-project2020summer.exe: CMakeFiles/project2020summer.dir/model/Item.cpp.obj
 project2020summer.exe: CMakeFiles/project2020summer.dir/model/PokemonSkill.cpp.obj
 project2020summer.exe: CMakeFiles/project2020summer.dir/model/PokemonBattle.cpp.obj
 project2020summer.exe: CMakeFiles/project2020summer.dir/persistence/PokemonSeedReader.cpp.obj
@@ -276,7 +261,7 @@ project2020summer.exe: CMakeFiles/project2020summer.dir/build.make
 project2020summer.exe: CMakeFiles/project2020summer.dir/linklibs.rsp
 project2020summer.exe: CMakeFiles/project2020summer.dir/objects1.rsp
 project2020summer.exe: CMakeFiles/project2020summer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=F:\Projects\PKMProject\project2020summer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable project2020summer.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=F:\Projects\PKMProject\project2020summer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable project2020summer.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\project2020summer.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

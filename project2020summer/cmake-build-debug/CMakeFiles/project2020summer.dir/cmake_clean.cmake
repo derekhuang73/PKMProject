@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/project2020summer.dir/main.cpp.obj"
-  "CMakeFiles/project2020summer.dir/model/Item.cpp.obj"
   "CMakeFiles/project2020summer.dir/model/Player.cpp.obj"
   "CMakeFiles/project2020summer.dir/model/Pokemon.cpp.obj"
   "CMakeFiles/project2020summer.dir/model/PokemonBattle.cpp.obj"

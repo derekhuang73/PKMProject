@@ -16,9 +16,6 @@ CMakeFiles/project2020summer.dir/main.cpp.obj: ../persistence/PlayerReader.h
 CMakeFiles/project2020summer.dir/main.cpp.obj: ../persistence/PlayerWriter.h
 CMakeFiles/project2020summer.dir/main.cpp.obj: ../persistence/TrainerReader.h
 
-CMakeFiles/project2020summer.dir/model/Item.cpp.obj: ../model/Item.cpp
-CMakeFiles/project2020summer.dir/model/Item.cpp.obj: ../model/Item.h
-
 CMakeFiles/project2020summer.dir/model/Player.cpp.obj: ../exception/NullPokemonException.h
 CMakeFiles/project2020summer.dir/model/Player.cpp.obj: ../exception/NullSkillException.h
 CMakeFiles/project2020summer.dir/model/Player.cpp.obj: ../model/Player.cpp
