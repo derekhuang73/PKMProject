@@ -4,163 +4,167 @@
 	<Project>
 		<Option title="project2020summer"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="msvc8"/>
+		<Option compiler="gcc"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/cmake-build-debug"/>
+				<Option working_dir="F:/Projects/PKMProject/project2020summer/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 all"/>
-					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/Projects/PKMProject/project2020summer/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/Projects/PKMProject/project2020summer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/Projects/PKMProject/project2020summer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/Projects/PKMProject/project2020summer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="project2020summer">
-				<Option output="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/cmake-build-debug/project2020summer.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/cmake-build-debug"/>
+				<Option output="F:/Projects/PKMProject/project2020summer/cmake-build-debug/project2020summer.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/Projects/PKMProject/project2020summer/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="msvc8"/>
+				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\ATLMFC\include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 project2020summer"/>
-					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/Projects/PKMProject/project2020summer/cmake-build-debug/Makefile&quot;  VERBOSE=1 project2020summer"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/Projects/PKMProject/project2020summer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/Projects/PKMProject/project2020summer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/Projects/PKMProject/project2020summer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="project2020summer/fast">
-				<Option output="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/cmake-build-debug/project2020summer.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/cmake-build-debug"/>
+				<Option output="F:/Projects/PKMProject/project2020summer/cmake-build-debug/project2020summer.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/Projects/PKMProject/project2020summer/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="msvc8"/>
+				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\ATLMFC\include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 project2020summer/fast"/>
-					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/Projects/PKMProject/project2020summer/cmake-build-debug/Makefile&quot;  VERBOSE=1 project2020summer/fast"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/Projects/PKMProject/project2020summer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/Projects/PKMProject/project2020summer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/Projects/PKMProject/project2020summer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/cmake-build-debug"/>
+				<Option working_dir="F:/Projects/PKMProject/project2020summer/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 edit_cache"/>
-					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/Projects/PKMProject/project2020summer/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/Projects/PKMProject/project2020summer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/Projects/PKMProject/project2020summer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/Projects/PKMProject/project2020summer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/cmake-build-debug"/>
+				<Option working_dir="F:/Projects/PKMProject/project2020summer/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Derek Huang\CLionProjects\PKMProject\project2020summer\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/Projects/PKMProject/project2020summer/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/Projects/PKMProject/project2020summer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/Projects/PKMProject/project2020summer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/Projects/PKMProject/project2020summer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullPokemonException.h">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/exception/NullPokemonException.h">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullSkillException.h">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/exception/NullSkillException.h">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/exception/NullTrainerException.h">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/exception/NullTrainerException.h">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/main.cpp">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/main.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Item.cpp">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/model/Player.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Item.h">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/model/Player.h">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Player.cpp">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/model/Pokemon.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Player.h">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/model/Pokemon.h">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.cpp">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/model/PokemonBattle.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Pokemon.h">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/model/PokemonBattle.h">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonBattle.cpp">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/model/PokemonSkill.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonBattle.h">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/model/PokemonSkill.h">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonSkill.cpp">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/model/PokemonType.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonSkill.h">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/model/PokemonType.h">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonType.cpp">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/model/Trainer.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/PokemonType.h">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/model/Trainer.h">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Trainer.cpp">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/model/TrainerBattle.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/Trainer.h">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/model/TrainerBattle.h">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/TrainerBattle.cpp">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/persistence/PlayerReader.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/model/TrainerBattle.h">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/persistence/PlayerReader.h">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/PokemonSeedReader.cpp">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/persistence/PlayerWriter.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/PokemonSeedReader.h">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/persistence/PlayerWriter.h">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/PokemonSkillReader.cpp">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/persistence/PokemonSeedReader.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/PokemonSkillReader.h">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/persistence/PokemonSeedReader.h">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/TrainerReader.cpp">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/persistence/PokemonSkillReader.cpp">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/persistence/TrainerReader.h">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/persistence/PokemonSkillReader.h">
 			<Option target="project2020summer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek Huang/CLionProjects/PKMProject/project2020summer/CMakeLists.txt">
+		<Unit filename="F:/Projects/PKMProject/project2020summer/persistence/TrainerReader.cpp">
+			<Option target="project2020summer"/>
+		</Unit>
+		<Unit filename="F:/Projects/PKMProject/project2020summer/persistence/TrainerReader.h">
+			<Option target="project2020summer"/>
+		</Unit>
+		<Unit filename="F:/Projects/PKMProject/project2020summer/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

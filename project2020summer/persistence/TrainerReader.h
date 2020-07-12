@@ -15,7 +15,7 @@ class TrainerReader {
 public:
     //P:Read File, Find Trainer, return the line with given trainer name
     //  or throw Exception if not found
-    list<string> findTrainerWithName(string trainerName)throw(NullTrainerException);
+    list<string> findTrainerWithName(string trainerName) throw (NullTrainerException);
 
     //P: split the line that contain trainer information into pieces
     list<string> trainerStringSpliter(string trainerString);
