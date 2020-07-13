@@ -7,13 +7,18 @@
 
 #include <string>
 #include "Trainer.h"
+#include "Block.h"
 
 class Player : public Trainer{
 
 public:
+
+    Block blockMap;
+    int location;
+    
     // Constructor
     explicit Player(string name);
-
+    
     // Sets level
     void setLevel(int l) {
         level = l;
@@ -26,7 +31,12 @@ public:
     void setUpPokemons(list<string> curPokemons, list<int> curHealth, list<string> staPokemons, list<int> staHealth);
 
     string getPokemons();
-
+    
+    void moveUp();
+    void moveDown();
+    void moveLeft();
+    void moveRight();
+    void pickUp();
 
 private:
 
