@@ -367,33 +367,6 @@ model\TrainerBattle.cpp.s:
 	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\model\TrainerBattle.cpp.s
 .PHONY : model\TrainerBattle.cpp.s
 
-model\floor.obj: model\floor.cpp.obj
-
-.PHONY : model\floor.obj
-
-# target to build an object file
-model\floor.cpp.obj:
-	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\model\floor.cpp.obj
-.PHONY : model\floor.cpp.obj
-
-model\floor.i: model\floor.cpp.i
-
-.PHONY : model\floor.i
-
-# target to preprocess a source file
-model\floor.cpp.i:
-	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\model\floor.cpp.i
-.PHONY : model\floor.cpp.i
-
-model\floor.s: model\floor.cpp.s
-
-.PHONY : model\floor.s
-
-# target to generate assembly for a file
-model\floor.cpp.s:
-	$(MAKE) -f CMakeFiles\project2020summer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project2020summer.dir\model\floor.cpp.s
-.PHONY : model\floor.cpp.s
-
 persistence\PokemonSeedReader.obj: persistence\PokemonSeedReader.cpp.obj
 
 .PHONY : persistence\PokemonSeedReader.obj
@@ -511,9 +484,6 @@ help:
 	@echo ... model/TrainerBattle.obj
 	@echo ... model/TrainerBattle.i
 	@echo ... model/TrainerBattle.s
-	@echo ... model/floor.obj
-	@echo ... model/floor.i
-	@echo ... model/floor.s
 	@echo ... persistence/PokemonSeedReader.obj
 	@echo ... persistence/PokemonSeedReader.i
 	@echo ... persistence/PokemonSeedReader.s
