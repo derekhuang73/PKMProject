@@ -5,19 +5,55 @@
 #ifndef PROJECT2020SUMMER_PLAYER_H
 #define PROJECT2020SUMMER_PLAYER_H
 
-
+#include <string>
 #include "Trainer.h"
 #include "Block.h"
 
-class Player : Trainer{
+class Player : public Trainer{
+
 public:
+
     Block blockMap;
     int location;
+    
+    // Constructor
+    explicit Player(string name);
+    
+    // Sets level
+    void setLevel(int l) {
+        level = l;
+    }
+
+    int getLevel() {
+        return level;
+    }
+
+    void setUpPokemons(list<string> curPokemons, list<int> curHealth, list<string> staPokemons, list<int> staHealth);
+
+    string getPokemons();
+    
     void moveUp();
     void moveDown();
     void moveLeft();
     void moveRight();
     void pickUp();
+
+private:
+
+    void setUpPokemonList(list<string> PokemonString, Pokemon* pklist[]);
+
+    void setUpPokemonHealth(list<int> HP, Pokemon* pklist[]);
+
+    list<string> getPokemonList(Pokemon* pklist[]);
+
+    list<string> getHealthList(Pokemon* pklist[]);
+
+    string listConcat(list<string> ss);
+
+    int level;
+
+    // Limit 20 to stashed Pokemons
+    Pokemon * stashedPokemonList[20]{};
 };
 
 

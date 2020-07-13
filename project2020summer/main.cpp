@@ -4,6 +4,8 @@
 #include "persistence/TrainerReader.h"
 #include "exception/NullTrainerException.h"
 #include "model/TrainerBattle.h"
+#include "persistence/PlayerReader.h"
+#include "persistence/PlayerWriter.h"
 #include <string>
 string space = "              ";
 
@@ -78,7 +80,11 @@ void printOutSkillOption(Pokemon * playerPokemon) {
 
 int main() {
     using namespace std;
-    cout << "Hello, World!" << endl;
+    PlayerReader *reader = new PlayerReader();
+    PlayerWriter *writer = new PlayerWriter();
+    //Player *test = reader->readPlayerData();
+    //writer->savePlayerData(test);
+
     string inputStr;
     int trainerLevel;
     int inputInt;

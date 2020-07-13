@@ -17,7 +17,7 @@ void Trainer::setName(const string &name) {
 int Trainer::availablePokemon() const {
     int i=0;
     for(Pokemon * pokemon : pokemonList) {
-        if (pokemon != NULL) {
+        if (pokemon != nullptr) {
         if (pokemon -> getCurrentHp() > 0) {
             i++;
         }}
@@ -55,7 +55,7 @@ void Trainer::setUpTrainer(list<string> trainerID) {
 void Trainer::addPokemon(Pokemon * pokemon) {
     for(int i=0; i<6; i++)
     {
-        if(pokemonList[i] == NULL) {
+        if(pokemonList[i] == nullptr) {
             pokemonList[i] = pokemon;
             break;
         }
@@ -69,7 +69,7 @@ Pokemon *Trainer::getPokemonWithIndex(int index) {
 vector<int> Trainer::availablePokemonIndex() {
     vector<int> i;//return list
     for (int  j = 0; j < 6; j++) {
-        if (pokemonList[j] != NULL) {
+        if (pokemonList[j] != nullptr) {
             if(pokemonList[j] -> getCurrentHp() > 0) {
                 i.push_back(j);
             }

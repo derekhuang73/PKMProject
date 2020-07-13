@@ -30,7 +30,7 @@ public:
     //--------------------------------------------------------------------------------------
 
     //P: generate Pokemon Information (skills hp lv) (can be found in trainer data)
-    void setPokemonWithID(string pokemonID);
+    void setPokemonWithID(string pokemonID) throw (NullPokemonException);
 
     //P: return the percentage damage that this pokemon will receive from given type
     double typeRestriction (PokemonType pokemonType1);
