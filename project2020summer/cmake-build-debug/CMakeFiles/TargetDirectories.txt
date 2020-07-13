@@ -1,3 +1,0 @@
-F:/Projects/PKMProject/project2020summer/cmake-build-debug/CMakeFiles/project2020summer.dir
-F:/Projects/PKMProject/project2020summer/cmake-build-debug/CMakeFiles/edit_cache.dir
-F:/Projects/PKMProject/project2020summer/cmake-build-debug/CMakeFiles/rebuild_cache.dir
