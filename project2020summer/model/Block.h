@@ -13,7 +13,7 @@ using namespace std;
 class Block {
 
 public:
-    static int width, depth, serialNum;
+    int width, depth, serialNum;
     enum floor {grass = 1,space = 2, forbid = 3, item = 4, npcActive = 5, entrance = 6, npcNonActive = 7};
     enum playerFacing {north,south,east,west};
     playerFacing playerState;
@@ -39,17 +39,17 @@ public:
     void pickUp();
 
     //-----------------------------------------------------------------------------------------
-    static int getWidth();
+    int getWidth();
 
-    static void setWidth(int width);
+    void setWidth(int width);
 
-    static int getDepth();
+    int getDepth();
 
-    static void setDepth(int depth);
+    void setDepth(int depth);
 
-    static int getSerialNum();
+    int getSerialNum();
 
-    static void setSerialNum(int serialNum);
+    void setSerialNum(int serialNum);
 
     int getPlayerLocation() const;
 
