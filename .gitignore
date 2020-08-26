@@ -1,10 +1,21 @@
 
 .idea/.name
-
+project2020summer/cmake-build-debug/CMakeFiles/3.17.2/CMakeCCompiler.cmake
+project2020summer/cmake-build-debug/CMakeFiles/3.17.2/CMakeCXXCompiler.cmake
+project2020summer/cmake-build-debug/CMakeFiles/3.17.2/CMakeDetermineCompilerABI_C.bin
+project2020summer/cmake-build-debug/CMakeFiles/3.17.2/CMakeDetermineCompilerABI_CXX.bin
+project2020summer/cmake-build-debug/CMakeFiles/3.17.2/CMakeRCCompiler.cmake
+project2020summer/cmake-build-debug/CMakeFiles/3.17.2/CMakeSystem.cmake
+project2020summer/cmake-build-debug/CMakeFiles/3.17.2/CompilerIdC/a.exe
+project2020summer/cmake-build-debug/CMakeFiles/3.17.2/CompilerIdC/CMakeCCompilerId.c
+project2020summer/cmake-build-debug/CMakeFiles/3.17.2/CompilerIdCXX/a.exe
+project2020summer/cmake-build-debug/CMakeFiles/3.17.2/CompilerIdCXX/CMakeCXXCompilerId.cpp
+project2020summer/cmake-build-debug/CMakeFiles/project2020summer.dir/link.txt
+project2020summer/cmake-build-debug/CMakeFiles/project2020summer.dir/linklibs.rsp
+project2020summer/cmake-build-debug/CMakeFiles/project2020summer.dir/objects.a
+project2020summer/cmake-build-debug/CMakeFiles/project2020summer.dir/persistence/PokemonSkillReader.cpp.obj
 project2020summer/cmake-build-debug/project2020summer.exe
-project2020summer/cmake-build-debug/CMakeFiles*
+project2020summer/cmake-build-debug/*
+project2020summer/cmake-build-debug/
 .idea
-project2020summer/cmake-build-debug/cmake_install.cmake
-project2020summer/cmake-build-debug/CMakeCache.txt
-project2020summer/cmake-build-debug/Makefile
-project2020summer/cmake-build-debug/project2020summer.cbp
+*.cmake
