@@ -1,4 +1,4 @@
-/*#include <iostream>
+#include <iostream>
 #include "model/Pokemon.h"
 #include "model/Trainer.h"
 #include "persistence/TrainerReader.h"
@@ -214,44 +214,5 @@ int main() {
     }
     cout << "game over, thank you for playing" <<endl;
 
-    return 0;
-}*/
-
-
-
-#include <iostream>
-#include <SDL.h>
-#include "model/Game.h"
-
-using namespace std;
-
-
-
-int main(int argc, char *argv[]) {
-
-    const int FPS = 1;
-    const int frameDelay = 1000 / FPS;
-
-    Uint32 frameStart;
-    int frameTime;
-
-    Game* game = new Game();
-    game -> init("Game",SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,800,640, false);
-    while (game -> running()) {
-        frameStart = SDL_GetTicks();
-
-        game -> handleEvents();
-        game -> update();
-        game -> render();
-
-        frameTime = SDL_GetTicks() - frameStart;
-
-        //used to limit frame rate
-        //slower down the update speed
-        if(frameDelay > frameTime) {
-            SDL_Delay(frameDelay - frameTime);
-        }
-    }
-    game -> clean();
     return 0;
 }

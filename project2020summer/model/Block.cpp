@@ -5,7 +5,7 @@
 #include "Block.h"
 
 int Block::getWidth() {
-    return Block::width;
+    return width;
 }
 
 void Block::setWidth(int width) {
