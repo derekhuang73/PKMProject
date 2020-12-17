@@ -6,7 +6,7 @@
 #define PROJECT2020SUMMER_PLAYERWRITER_H
 
 #include<string>
-#include "../model/Player.h"
+#include "../model/TrainerSystem/Player.h"
 using namespace std;
 class PlayerWriter {
     string File = "../data/PlayerData.txt";

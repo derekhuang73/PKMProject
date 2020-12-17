@@ -7,7 +7,7 @@
 
 #include <vector>
 #include <list>
-#include "Trainer.h"
+#include "../TrainerSystem/Trainer.h"
 
 using namespace std;
 class Block {

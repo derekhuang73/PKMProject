@@ -7,7 +7,7 @@
 
 #include <string>
 #include "Trainer.h"
-#include "Block.h"
+#include "../Map/Block.h"
 
 class Player : public Trainer{
 

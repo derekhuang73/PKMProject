@@ -8,7 +8,7 @@
 #include <string>
 #include <list>
 #include "../exception/NullTrainerException.h"
-#include "../model/Player.h"
+#include "../model/TrainerSystem/Player.h"
 
 using namespace std;
 class PlayerReader {

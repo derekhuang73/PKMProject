@@ -9,7 +9,7 @@
 #include <string>
 #include "PokemonType.h"
 #include "PokemonSkill.h"
-#include "../exception/NullPokemonException.h"
+#include "../../exception/NullPokemonException.h"
 
 using namespace std;
 

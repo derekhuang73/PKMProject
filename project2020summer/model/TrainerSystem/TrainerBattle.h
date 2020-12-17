@@ -6,7 +6,7 @@
 #define PROJECT2020SUMMER_TRAINERBATTLE_H
 
 using namespace std;
-#include "PokemonBattle.h"
+#include "../Pokemon/PokemonBattle.h"
 
 class TrainerBattle {
 

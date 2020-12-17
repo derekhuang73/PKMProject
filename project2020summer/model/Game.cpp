@@ -4,8 +4,8 @@
 
 #include <iostream>
 #include "Game.h"
-#include "TextureManager.h"
-#include "MessageBox.h"
+#include "UI_feature/TextureManager.h"
+#include "UI_feature/MessageBox.h"
 #include "SDL_ttf.h"
 using namespace std;
 

@@ -4,7 +4,7 @@
 
 #include <sstream>
 #include "Pokemon.h"
-#include "../persistence/PokemonSeedReader.h"
+#include "../../persistence/PokemonSeedReader.h"
 
 using namespace std;
 Pokemon::Pokemon(int serialNumber) {

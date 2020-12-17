@@ -4,7 +4,7 @@
 
 #ifndef SDL_TEST_MESSAGEBOX_H
 #define SDL_TEST_MESSAGEBOX_H
-#include "Game.h"
+#include "../Game.h"
 #include "string"
 #include "SDL_ttf.h"
 #include "list"

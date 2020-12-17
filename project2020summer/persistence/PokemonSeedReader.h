@@ -6,7 +6,7 @@
 #define PROJECT2020SUMMER_POKEMONSEEDREADER_H
 
 #include <string>
-#include "../model/Pokemon.h"
+#include "../model/Pokemon/Pokemon.h"
 #include "../exception/NullPokemonException.h"
 
 using namespace std;

@@ -3,7 +3,7 @@
 //
 
 #include "PokemonBattle.h"
-#include "Trainer.h"
+#include "../TrainerSystem/Trainer.h"
 
 
 void PokemonBattle::damageResolve(Pokemon * subjectPokemon, Pokemon * objectPokemon, PokemonSkill * skill) {

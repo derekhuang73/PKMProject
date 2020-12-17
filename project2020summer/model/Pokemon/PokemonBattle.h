@@ -6,7 +6,7 @@
 #define PROJECT2020SUMMER_POKEMONBATTLE_H
 
 
-#include "Trainer.h"
+#include "../TrainerSystem/Trainer.h"
 
 class PokemonBattle {
 public:

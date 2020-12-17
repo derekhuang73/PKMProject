@@ -6,7 +6,7 @@
 #define PROJECT2020SUMMER_POKEMONSKILLREADER_H
 
 #include <string>
-#include "../model/PokemonSkill.h"
+#include "../model/Pokemon/PokemonSkill.h"
 #include "../exception/NullSkillException.h"
 
 using namespace std;
