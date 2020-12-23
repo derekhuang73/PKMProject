@@ -7,11 +7,12 @@
 
 #include <vector>
 #include <list>
+#include <map>
 #include "../TrainerSystem/Trainer.h"
 
 using namespace std;
 class Block {
-
+/*
 public:
     int width, depth, serialNum;
     enum floor {grass = 1,space = 2, forbid = 3, item = 4, npcActive = 5, entrance = 6, npcNonActive = 7};
@@ -73,6 +74,81 @@ private:
     bool playerMoveDown();
     bool playerMoveLeft();
     bool playerMoveRight();
+     */
+/*////////////changed made in 2020-Dec-18////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+public:
+     /*
+     * level map
+     * serialNum is the hash key to find the correlated levelmap used in teleporting
+     * width, height of the map
+     *
+     * renderlevel:
+     * list of int, each int indicate different things that need to render eg. tree,
+     *              building, teleport entrance etc, cover above the baselevel while rendering
+     * List:
+     * 0: empty (not-render)
+     * 1: Tree
+     * 2: teleport spot
+     * 3: fences-horizontal
+     * 4: fences-vertical
+     * 5: grass-end-point-northeast (90degree angle of grass)
+     * 6: grass-end-point-northwest
+     * 7: grass-end-point-southeast
+     * 8: grass-end-point-southeast
+     * 9: Pokemon center
+     * 10: Houses
+     * 11: road sign
+     * 12: item
+     * ////////////////////////////////////////////////////////////////////////////////////////////
+     * functionlevel:
+     * list of int, each int indicate different type of floor trigger eg. teleporting, encounter
+     *              pokemon, pick up items.
+     * List:
+     * 0: empty(no trigger)
+     * 1: grass(will trigger pokemon encounter)
+     * 2: pokemon ball (can be picked up)
+     *
+     * 100000+: teleporting (100000*map serial num + index of teleport destination )
+     * ///////////////////////////////////////////////////////////////////////////////////////////
+     * baselevel:
+     * list of int, each int indicate different type of base floor, used to determine if the
+     *              character movement is legit eg. grass, road block(no-walk-able) etc.
+     *              also used to render, get render before the renderlevel
+     * List:
+     * 0: block (non-walkable)
+     * 1: road  (walkable)
+     * 2: grass (walkable)
+     * 3: water (non-walkable)
+     * 4: earth dam south-north (only allow to pass from south to north)
+     * 5: earth dam north-south (only allow to pass from north to south)
+     */
+    struct levelMap {
+        int serialNum;
+        int width;
+        int height;
+        int* renderLevel;
+        int* functionLevel;
+        int* baseLevel;
+    };
+
+    std::map<int,levelMap*> mp;
+    levelMap lvmp1, lvmp2;
+    levelMap* currMap;
+    int playerPos;
+
+    void setupMap();
+    void clearMap();
+
+    bool playerMoveUp();
+    bool playerMoveDown();
+    bool playerMoveLeft();
+    bool playerMoveRight();
+
+    void trigger();
+
+    void teleport(int spot);
 };
 
 
