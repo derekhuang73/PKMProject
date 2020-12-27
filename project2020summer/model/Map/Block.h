@@ -9,6 +9,8 @@
 #include <list>
 #include <map>
 #include "../TrainerSystem/Trainer.h"
+#include "../../../../../Desktop/SDL-related/SDL2-devel-2.0.12-mingw/SDL2-2.0.12/i686-w64-mingw32/include/SDL2/SDL_rect.h"
+#include "../../../../../Desktop/SDL-related/SDL2-devel-2.0.12-mingw/SDL2-2.0.12/i686-w64-mingw32/include/SDL2/SDL_render.h"
 
 using namespace std;
 class Block {
@@ -90,17 +92,15 @@ public:
      * List:
      * 0: empty (not-render)
      * 1: Tree
-     * 2: teleport spot
-     * 3: fences-horizontal
-     * 4: fences-vertical
-     * 5: grass-end-point-northeast (90degree angle of grass)
-     * 6: grass-end-point-northwest
+     * 2: fences-horizontal
+     * 3: fences-vertical
+     * 4: grass-end-point-northeast (90degree angle of grass)
+     * 5: grass-end-point-northwest
+     * 6: grass-end-point-southeast
      * 7: grass-end-point-southeast
-     * 8: grass-end-point-southeast
-     * 9: Pokemon center
-     * 10: Houses
-     * 11: road sign
-     * 12: item
+     * 8: Pokemon center
+     * 9: Houses
+     * 10: road sign
      * ////////////////////////////////////////////////////////////////////////////////////////////
      * functionlevel:
      * list of int, each int indicate different type of floor trigger eg. teleporting, encounter
@@ -111,6 +111,7 @@ public:
      * 2: pokemon ball (can be picked up)
      *
      * 100000+: teleporting (100000*map serial num + index of teleport destination )
+     *
      * ///////////////////////////////////////////////////////////////////////////////////////////
      * baselevel:
      * list of int, each int indicate different type of base floor, used to determine if the
@@ -137,9 +138,28 @@ public:
     levelMap lvmp1, lvmp2;
     levelMap* currMap;
     int playerPos;
+    SDL_Rect src,dest,tree_src,tree_dest, pokemonCenter_src, pokemonCenter_dest;
+    SDL_Texture * dirt,
+                * grass,
+                * water,
+                * pokemonCenter,
+                * tree,
+                * dam_ns,
+                * dam_sn,
+                * telep,
+                * pkmBall;
 
+
+    Block();
+    ~Block();
     void setupMap();
     void clearMap();
+
+    void setupRenderer();
+    void renderCurrMap();
+    void renderBaseMap();
+    void renderFunctionMap();
+    void renderRenderMap();
 
     bool playerMoveUp();
     bool playerMoveDown();

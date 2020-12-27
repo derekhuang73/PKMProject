@@ -3,6 +3,8 @@
 //
 
 #include "Block.h"
+#include "../UI_feature/TextureManager.h"
+
 /*
 int Block::getWidth() {
     return Block::width;
@@ -231,6 +233,8 @@ void Block::setupMap() {
     mp.insert(pair<int,levelMap*>(lvmp2.serialNum,&lvmp2));
 }
 
+
+
 void Block::clearMap() {
     delete [] lvmp1.baseLevel;
     delete [] lvmp1.functionLevel;
@@ -305,3 +309,139 @@ bool Block::playerMoveRight() {
     void Block::trigger() {
     //stab wait for implement!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     }
+
+Block::Block() {
+    setupMap();
+    currMap = NULL;
+    playerPos = 0;
+
+}
+
+Block::~Block() {
+    clearMap();
+}
+
+void Block::setupRenderer() {
+    dirt = TextureManager::LoadTexture("../assert/dirt.png");
+    grass = TextureManager::LoadTexture("../assert/grass.png");
+    water = TextureManager::LoadTexture("../assert/water.png");
+    tree =  TextureManager::LoadTexture("../assert/tree.png");
+    pokemonCenter = TextureManager::LoadTexture("../assert/PC.png");
+    dam_ns = TextureManager::LoadTexture("../assert/dam_NS.png");
+    dam_sn = TextureManager::LoadTexture("../assert/dam_SN.png");
+    telep = TextureManager::LoadTexture("../assert/teleport.png");
+    pkmBall = TextureManager::LoadTexture("../assert/pokemonBall.png");
+
+    tree_src.x = tree_src.y = pokemonCenter_src.x = pokemonCenter_src.y = src.x = src.y = 0;
+    src.w = dest.w = src.h = dest.h = 32;
+    tree_src.h = tree_dest.h = 64;
+    tree_src.w = tree_dest.w = 32;
+    pokemonCenter_src.w = pokemonCenter_src.h = pokemonCenter_dest.w = pokemonCenter_dest.h = 128;
+    tree_dest.x = tree_dest.y = pokemonCenter_dest.x = pokemonCenter_dest.y = dest.x = dest.y = 0;
+}
+
+void Block::renderBaseMap() {
+    int type = 0;
+    int w = currMap->width;
+    int h = currMap->height;
+    int currW = 0;
+    int currH = 0;
+    for (int i = 0; i < (w*h); i++) {
+        type = currMap->baseLevel[i];
+        dest.x = currW*32;
+        dest.y = currH*32;
+        switch (type) {
+            case 1:
+                TextureManager::Draw(dirt,src,dest);
+                break;
+            case 2:
+                TextureManager::Draw(grass,src,dest);
+                break;
+            case 3:
+                TextureManager::Draw(water,src,dest);
+                break;
+            case 4:
+                TextureManager::Draw(dam_sn,src,dest);
+                break;
+            case 5:
+                TextureManager::Draw(dam_ns,src,dest);
+                break;
+            default:
+                break;
+        }
+        currW++;
+        if(currW==w) {
+            currW = 0;
+            currH++;
+        }
+    }
+}
+
+
+void Block::renderFunctionMap() {
+
+    int type = 0;
+    int w = currMap->width;
+    int h = currMap->height;
+    int currW = 0;
+    int currH = 0;
+    for (int i = 0; i < (w*h); i++) {
+        type = currMap->functionLevel[i];
+        dest.x = currW*32;
+        dest.y = currH*32;
+        switch (type) {
+            case 1:
+                TextureManager::Draw(grass,src,dest);
+                break;
+            case 2:
+                TextureManager::Draw(pkmBall,src,dest);
+                break;
+            default:
+                if (type>=100000) {
+                    TextureManager::Draw(telep,src,dest);
+                }
+                break;
+        }
+        currW++;
+        if(currW==w) {
+            currW = 0;
+            currH++;
+        }
+    }
+}
+
+void Block::renderRenderMap() {
+    int type = 0;
+    int w = currMap->width;
+    int h = currMap->height;
+    int currW = 0;
+    int currH = 0;
+    for (int i = 0; i < (w*h); i++) {
+        type = currMap->renderLevel[i];
+        switch (type) {
+            case 1:
+                tree_dest.x = currW*32;
+                tree_dest.y = currH*32;
+                TextureManager::Draw(tree,tree_src,tree_dest);
+                break;
+            case 8:
+                pokemonCenter_dest.x = currW*32;
+                pokemonCenter_dest.y = currH*32;
+                TextureManager::Draw(pokemonCenter,pokemonCenter_src,pokemonCenter_dest);
+                break;
+            default:
+                break;
+        }
+        currW++;
+        if(currW==w) {
+            currW = 0;
+            currH++;
+        }
+    }
+}
+
+void Block::renderCurrMap() {
+    renderBaseMap();
+    renderFunctionMap();
+    renderRenderMap();
+}
