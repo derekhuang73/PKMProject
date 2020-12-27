@@ -7,11 +7,14 @@
 #include "UI_feature/TextureManager.h"
 #include "UI_feature/MessageBox.h"
 #include "SDL_ttf.h"
+#include "Map/Block.h"
+
 using namespace std;
 
 SDL_Renderer  * Game::renderer = nullptr;
 MessageBox *messageBox = nullptr;
 TTF_Font * Game::font = nullptr;
+Block *block = nullptr;
 int cnt = 0;
 Game::Game() {
 
@@ -52,7 +55,8 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
         isRunning = true;
     }
 
-
+    block = new Block();
+    block->initPos(1,100);
     messageBox = new MessageBox();
 }
 
@@ -79,6 +83,7 @@ void Game::render() {
     SDL_RenderClear(renderer);
     //this is where we would add stuff to render
     messageBox->draw();
+    block->renderCurrMap();
     SDL_RenderPresent(renderer);
 }
 

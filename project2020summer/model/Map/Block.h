@@ -120,10 +120,9 @@ public:
      * List:
      * 0: block (non-walkable)
      * 1: road  (walkable)
-     * 2: grass (walkable)
-     * 3: water (non-walkable)
-     * 4: earth dam south-north (only allow to pass from south to north)
-     * 5: earth dam north-south (only allow to pass from north to south)
+     * 2: water (non-walkable)
+     * 3: earth dam south-north (only allow to pass from south to north)
+     * 4: earth dam north-south (only allow to pass from north to south)
      */
     struct levelMap {
         int serialNum;
@@ -139,11 +138,11 @@ public:
     levelMap* currMap;
     int playerPos;
     SDL_Rect src,dest,tree_src,tree_dest, pokemonCenter_src, pokemonCenter_dest;
-    SDL_Texture * dirt,
+    SDL_Texture * dirt, // 1h*1w square
                 * grass,
                 * water,
-                * pokemonCenter,
-                * tree,
+                * pokemonCenter, // 4h*4w square
+                * tree, // 2h*1w square
                 * dam_ns,
                 * dam_sn,
                 * telep,
@@ -165,6 +164,12 @@ public:
     bool playerMoveDown();
     bool playerMoveLeft();
     bool playerMoveRight();
+
+    //purpose: used at the beginning of the game and set the player to a pos
+    //restriction: can be only used after the map is initialized
+    void initPos(int mapNum, int posNum);
+
+
 
     void trigger();
 
