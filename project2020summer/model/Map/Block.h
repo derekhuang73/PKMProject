@@ -7,11 +7,14 @@
 
 #include <vector>
 #include <list>
+#include <map>
 #include "../TrainerSystem/Trainer.h"
+#include "../../../../../Desktop/SDL-related/SDL2-devel-2.0.12-mingw/SDL2-2.0.12/i686-w64-mingw32/include/SDL2/SDL_rect.h"
+#include "../../../../../Desktop/SDL-related/SDL2-devel-2.0.12-mingw/SDL2-2.0.12/i686-w64-mingw32/include/SDL2/SDL_render.h"
 
 using namespace std;
 class Block {
-
+/*
 public:
     int width, depth, serialNum;
     enum floor {grass = 1,space = 2, forbid = 3, item = 4, npcActive = 5, entrance = 6, npcNonActive = 7};
@@ -73,6 +76,104 @@ private:
     bool playerMoveDown();
     bool playerMoveLeft();
     bool playerMoveRight();
+     */
+/*////////////changed made in 2020-Dec-18////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+public:
+     /*
+     * level map
+     * serialNum is the hash key to find the correlated levelmap used in teleporting
+     * width, height of the map
+     *
+     * renderlevel:
+     * list of int, each int indicate different things that need to render eg. tree,
+     *              building, teleport entrance etc, cover above the baselevel while rendering
+     * List:
+     * 0: empty (not-render)
+     * 1: Tree
+     * 2: fences-horizontal
+     * 3: fences-vertical
+     * 4: grass-end-point-northeast (90degree angle of grass)
+     * 5: grass-end-point-northwest
+     * 6: grass-end-point-southeast
+     * 7: grass-end-point-southeast
+     * 8: Pokemon center
+     * 9: Houses
+     * 10: road sign
+     * ////////////////////////////////////////////////////////////////////////////////////////////
+     * functionlevel:
+     * list of int, each int indicate different type of floor trigger eg. teleporting, encounter
+     *              pokemon, pick up items.
+     * List:
+     * 0: empty(no trigger)
+     * 1: grass(will trigger pokemon encounter)
+     * 2: pokemon ball (can be picked up)
+     *
+     * 100000+: teleporting (100000*map serial num + index of teleport destination )
+     *
+     * ///////////////////////////////////////////////////////////////////////////////////////////
+     * baselevel:
+     * list of int, each int indicate different type of base floor, used to determine if the
+     *              character movement is legit eg. grass, road block(no-walk-able) etc.
+     *              also used to render, get render before the renderlevel
+     * List:
+     * 0: block (non-walkable)
+     * 1: road  (walkable)
+     * 2: water (non-walkable)
+     * 3: earth dam south-north (only allow to pass from south to north)
+     * 4: earth dam north-south (only allow to pass from north to south)
+     */
+    struct levelMap {
+        int serialNum;
+        int width;
+        int height;
+        int* renderLevel;
+        int* functionLevel;
+        int* baseLevel;
+    };
+
+    std::map<int,levelMap*> mp;
+    levelMap lvmp1, lvmp2;
+    levelMap* currMap;
+    int playerPos;
+    SDL_Rect src,dest,tree_src,tree_dest, pokemonCenter_src, pokemonCenter_dest;
+    SDL_Texture * dirt, // 1h*1w square
+                * grass,
+                * water,
+                * pokemonCenter, // 4h*4w square
+                * tree, // 2h*1w square
+                * dam_ns,
+                * dam_sn,
+                * telep,
+                * pkmBall;
+
+
+    Block();
+    ~Block();
+    void setupMap();
+    void clearMap();
+
+    void setupRenderer();
+    void renderCurrMap();
+    void renderBaseMap();
+    void renderFunctionMap();
+    void renderRenderMap();
+
+    bool playerMoveUp();
+    bool playerMoveDown();
+    bool playerMoveLeft();
+    bool playerMoveRight();
+
+    //purpose: used at the beginning of the game and set the player to a pos
+    //restriction: can be only used after the map is initialized
+    void initPos(int mapNum, int posNum);
+
+
+
+    void trigger();
+
+    void teleport(int spot);
 };
 
 
