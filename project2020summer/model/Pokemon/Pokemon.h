@@ -10,6 +10,7 @@
 #include "PokemonType.h"
 #include "PokemonSkill.h"
 #include "../../exception/NullPokemonException.h"
+#include "../../persistence/PokemonSeedReader.h"
 
 using namespace std;
 
@@ -30,7 +31,7 @@ public:
     //--------------------------------------------------------------------------------------
 
     //P: generate Pokemon Information (skills hp lv) (can be found in trainer data)
-    void setPokemonWithID(string pokemonID) throw (NullPokemonException);
+    void setPokemonWithID(string pokemonID);
 
     //P: return the percentage damage that this pokemon will receive from given type
     double typeRestriction (PokemonType pokemonType1);
@@ -104,14 +105,12 @@ private:
     int serialNumber, initialAttack, initialDefend, initialHealth, pokemonLevel, currentHP,minLv, evolveLv;
     PokemonType pokemonType;
     PokemonSkill *skills[4] = {};
-    bool readyForEvo;
 
-    //P: find pokemon with given num
-    void findPokemon(int serialNumber) throw (NullPokemonException);
+    bool readyForEvo;
 
     //P:set up pokemon information with seed string
     //R: string returned from pokemonSeed reader
-    void setPokemonWithSeed(string pokemonSeed);
+    void setPokemonWithSeed(int serialNumber);
 
     //P: add skill to skills
     void addSkill(PokemonSkill * pokemonSkill);

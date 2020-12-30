@@ -17,15 +17,32 @@ class PokemonSeedReader {
 public:
     PokemonSeedReader();
 
+    struct pokemonSeed {
+        int pokemonSerialNum;
+        int atk;
+        int def;
+        int hp;
+        int typeNum;
+        int minLv;
+        int evoLv;
+        string name;
+    };
+
     //P: Read File, find Pokemon, return line that contain PokemonSeed information
     // or throw exception if Pokemon 000 or Pokemon not found;
-    string generatePokemonSeed(int serialNum) throw (NullPokemonException);
+
+    static pokemonSeed getPokemonSeed(int serialNumber);
+
 
 private:
-    //P: check if given line match with given PokemonNum
-    bool matchSerialNum(int serialNum, string pokemonSeed);
+    //P: check if given line matches with given PokemonNum
+
+    static struct pokemonSeed array[110];
+
+    static int pokemonNum;
 
 };
+
 
 
 #endif //PROJECT2020SUMMER_POKEMONSEEDREADER_H

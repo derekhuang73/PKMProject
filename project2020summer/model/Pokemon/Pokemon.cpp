@@ -3,26 +3,30 @@
 //
 
 #include <sstream>
+#include <iostream>
 #include "Pokemon.h"
 #include "../../persistence/PokemonSeedReader.h"
 
 using namespace std;
 Pokemon::Pokemon(int serialNumber) {
-    try {
-        findPokemon(serialNumber);
-    } catch (NullPokemonException) {
-    }
+    setPokemonWithSeed(serialNumber);
 }
 
-//purpose: read file and setup pokemon seed data
-void Pokemon::findPokemon(int serialNumber)throw (NullPokemonException) {
-    PokemonSeedReader pokemonSeedReader;
-    string seed = pokemonSeedReader.generatePokemonSeed(serialNumber);
-    setPokemonWithSeed(seed);
+
+Pokemon::Pokemon(int serialNum, int LV) {
+    try {
+        setPokemonWithSeed(serialNum);
+        setPokemonLevel(LV);
+        wrapUpWithLevelAndType();
+        setCurrentHp(initialHealth);
+    } catch (const char* msg) {
+        cerr << msg << endl;
+    }
 }
 
 //dummy constructor
 Pokemon::Pokemon() {
+
 }
 
 int Pokemon::getInitialAttack() const {
@@ -153,36 +157,21 @@ void Pokemon::setPokemonType(int typeInt) {
     }
 }
 
-void Pokemon::setPokemonWithSeed(string pokemonSeed) {
-    string serialNum,seedATK,seedDEF,seedHP,seedType,name,seedMinLv,seedEvoLv;
-    stringstream ss(pokemonSeed);
-    getline(ss, serialNum, ',');
-    getline(ss, seedATK, ',');
-    getline(ss, seedDEF, ',');
-    getline(ss, seedHP, ',');
-    getline(ss, seedType, ',');
-    getline(ss, seedMinLv, ',');
-    getline(ss, seedEvoLv, ',');
-    getline(ss, name, ',');
-    int pokeSN = atoi(serialNum.c_str());
-    int atk    = atoi(seedATK.c_str());
-    int def    = atoi(seedDEF.c_str());
-    int hp     = atoi(seedHP.c_str());
-    int type   = atoi(seedType.c_str());
-    int minLv  = atoi(seedMinLv.c_str());
-    int evoLv  = atoi(seedEvoLv.c_str());
-    setPokemonType(type);
-    setInitialHealth(hp);
-    setInitialDefend(def);
-    setInitialAttack(atk);
-    setSerialNumber(pokeSN);
-    setMinLv(minLv);
-    setEvolveLv(evoLv);
-    setName(name);
+//purpose: read file and setup pokemon seed data
+void Pokemon::setPokemonWithSeed(int serialNumber) {
+    PokemonSeedReader::pokemonSeed seed = PokemonSeedReader::getPokemonSeed(serialNumber);
+    setPokemonType(seed.typeNum);
+    setInitialHealth(seed.hp);
+    setInitialDefend(seed.def);
+    setInitialAttack(seed.atk);
+    setSerialNumber(seed.pokemonSerialNum);
+    setMinLv(seed.minLv);
+    setEvolveLv(seed.evoLv);
+    setName(seed.name);
+
 }
 
-
-void Pokemon::setPokemonWithID(string pokemonID) throw (NullPokemonException) {
+void Pokemon::setPokemonWithID(string pokemonID) {
     string serialS, levelS,skill1,skill2,skill3,skill4;
     int    serI,levelI,sk1I,sk2I,sk3I,sk4I;
     PokemonSkill pkSkill1, pkSkill2, pkSkill3, pkSkill4;
@@ -199,7 +188,7 @@ void Pokemon::setPokemonWithID(string pokemonID) throw (NullPokemonException) {
     sk2I = atoi(skill2.c_str());
     sk3I = atoi(skill3.c_str());
     sk4I = atoi(skill4.c_str());
-    findPokemon(serI);
+    setPokemonWithSeed(serI);
     setPokemonLevel(levelI);
     wrapUpWithLevelAndType();
     setCurrentHp(initialHealth);
@@ -260,15 +249,6 @@ void Pokemon::wrapUpWithLevelAndType() {
     }
 }
 
-Pokemon::Pokemon(int serialNum, int LV) {
-    try {
-        findPokemon(serialNum);
-        setPokemonLevel(LV);
-        wrapUpWithLevelAndType();
-        setCurrentHp(initialHealth);
-    } catch (NullPokemonException) {
-    }
-}
 
 void Pokemon::randomGenerateSkills() {
         switch (pokemonType) {
@@ -331,11 +311,11 @@ void Pokemon::pokemonLvUp() {
 void Pokemon::evolvePokemon() {
     if (serialNumber = 25) {
         int i = rand()%2 + 1;
-        findPokemon(serialNumber + i);
+        setPokemonWithSeed(serialNumber + i);
         wrapUpWithLevelAndType();
         setCurrentHp(initialHealth);
     } else {
-        findPokemon(serialNumber + 1);
+        setPokemonWithSeed(serialNumber + 1);
         wrapUpWithLevelAndType();
         setCurrentHp(initialHealth);
     }
