@@ -9,9 +9,8 @@
 #include <list>
 #include <map>
 #include "../TrainerSystem/Trainer.h"
-#include "../../../../../Desktop/SDL-related/SDL2-devel-2.0.12-mingw/SDL2-2.0.12/i686-w64-mingw32/include/SDL2/SDL_rect.h"
-#include "../../../../../Desktop/SDL-related/SDL2-devel-2.0.12-mingw/SDL2-2.0.12/i686-w64-mingw32/include/SDL2/SDL_render.h"
-
+#include <SDL.h>
+#include "../Game.h"
 using namespace std;
 class Block {
 /*
@@ -136,7 +135,12 @@ public:
     std::map<int,levelMap*> mp;
     levelMap lvmp1, lvmp2;
     levelMap* currMap;
-    int playerPos;
+    int Index_Player_Pos;
+
+    //!this two will be moved to model player once it finished implemented
+    int related_pos_to_centerX = 0,
+        related_pos_to_centerY = 0;
+
     SDL_Rect src,dest,tree_src,tree_dest, pokemonCenter_src, pokemonCenter_dest;
     SDL_Texture * dirt, // 1h*1w square
                 * grass,
@@ -148,32 +152,49 @@ public:
                 * telep,
                 * pkmBall;
 
+    int const WIDTH_AND_HEIGHT_OF_BLOCK = 32;
 
     Block();
     ~Block();
     void setupMap();
     void clearMap();
 
-    void setupRenderer();
     void renderCurrMap();
-    void renderBaseMap();
-    void renderFunctionMap();
-    void renderRenderMap();
 
     bool playerMoveUp();
     bool playerMoveDown();
     bool playerMoveLeft();
     bool playerMoveRight();
 
+    void fakeUpdate() {
+        related_pos_to_centerX++;
+        related_pos_to_centerY++;
+    }
+
+    int get_rel_c_x() {
+        return related_pos_to_centerX;
+    }
+
+    int get_rel_c_y() {
+        return related_pos_to_centerY;
+    }
+
     //purpose: used at the beginning of the game and set the player to a pos
     //restriction: can be only used after the map is initialized
     void initPos(int mapNum, int posNum);
 
+private:
+
+    void setupRenderer();
+    void renderBaseMap();
+    void renderFunctionMap();
+    void renderRenderMap();
 
 
     void trigger();
 
     void teleport(int spot);
+
 };
 
 

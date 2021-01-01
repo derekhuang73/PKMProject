@@ -56,7 +56,7 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     }
 
     block = new Block();
-    block->initPos(1,100);
+    block->initPos(1,110);    //!!!
     messageBox = new MessageBox();
 }
 
@@ -73,16 +73,15 @@ void Game::handleEvents() {
 }
 
 void Game::update() {
-    cnt ++;
-    messageBox->update();
-    cout << cnt << endl;
+    //messageBox->update();
+    block->fakeUpdate();
 }
 
 void Game::render() {
 
     SDL_RenderClear(renderer);
     //this is where we would add stuff to render
-    messageBox->draw();
+    //messageBox->draw();
     block->renderCurrMap();
     SDL_RenderPresent(renderer);
 }
@@ -95,3 +94,4 @@ void Game::clean() {
     SDL_Quit();
     cout << "game cleaned" << endl;
 }
+

@@ -24,7 +24,8 @@ public:
 
     static SDL_Renderer * renderer;
     static TTF_Font *font;
-
+    static const int window_width = 800;
+    static const int window_height = 640;
 private:
     bool isRunning;
     SDL_Window * window;

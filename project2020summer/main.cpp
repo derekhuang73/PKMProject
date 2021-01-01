@@ -236,7 +236,7 @@ int main(int argc, char *argv[]) {
     int frameTime;
 
     Game* game = new Game();
-    game -> init("Game",SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,800,640, false);
+    game -> init("Game",SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,game->window_width,game->window_height, false);
     while (game -> running()) {
         frameStart = SDL_GetTicks();
 
