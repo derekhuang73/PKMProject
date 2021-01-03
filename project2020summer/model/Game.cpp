@@ -15,7 +15,7 @@ SDL_Renderer  * Game::renderer = nullptr;
 MessageBox *messageBox = nullptr;
 TTF_Font * Game::font = nullptr;
 Block *block = nullptr;
-int cnt = 0;
+PlayerRenderer * playerRenderer = nullptr;
 Game::Game() {
 
 }
@@ -56,8 +56,9 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     }
 
     block = new Block();
-    block->initPos(1,100);
+    block->initPos(1,100);    //!!!
     messageBox = new MessageBox();
+    playerRenderer = new PlayerRenderer();
 }
 
 void Game::handleEvents() {
@@ -67,23 +68,79 @@ void Game::handleEvents() {
         case SDL_QUIT:
             isRunning = false;
             break;
+        case SDL_KEYDOWN:
+            if (!isMoving) {
+            /* Check the SDLKey values and move change the coords */
+            switch( event.key.keysym.sym ){
+                case SDLK_LEFT:
+                    l_k_map();
+                    break;
+                case SDLK_RIGHT:
+                    r_k_map();
+                    break;
+                case SDLK_UP:
+                    u_k_map();
+                    break;
+                case SDLK_DOWN:
+                    d_k_map();
+                    break;
+                default:
+                    break;
+            }
+            }
         default:
             break;
     }
 }
 
 void Game::update() {
-    cnt ++;
-    messageBox->update();
-    cout << cnt << endl;
+    //messageBox->update();
+    if (isMoving) {
+
+        if (playerRenderer->frameStage == 3) {
+            playerRenderer->frameStage = 0;
+            block->related_pos_to_centerX =0;
+            block->related_pos_to_centerY =0;
+            switch (playerRenderer->facing) {
+                case 0: block->move_up(); break;
+                case 1: block->move_down(); break;
+                case 2: block->move_left(); break;
+                case 3: block->move_right(); break;
+                default: break;
+            }
+            isMoving = false;
+        } else {
+            playerRenderer->frameStage ++;
+            switch (playerRenderer->facing) {
+                case 0:
+                    block->related_pos_to_centerY =
+                            (block->WIDTH_AND_HEIGHT_OF_BLOCK/playerRenderer->FRAMES_PER_MOVE)
+                            *(playerRenderer->frameStage); break;
+                case 1:
+                    block->related_pos_to_centerY =
+                            - (block->WIDTH_AND_HEIGHT_OF_BLOCK/playerRenderer->FRAMES_PER_MOVE)
+                            *(playerRenderer->frameStage); break;
+                case 2:
+                    block->related_pos_to_centerX =
+                            (block->WIDTH_AND_HEIGHT_OF_BLOCK/playerRenderer->FRAMES_PER_MOVE)
+                            *(playerRenderer->frameStage); break;
+                case 3:
+                    block->related_pos_to_centerX =
+                            -(block->WIDTH_AND_HEIGHT_OF_BLOCK/playerRenderer->FRAMES_PER_MOVE)
+                            *(playerRenderer->frameStage); break;
+                default: break;
+            }
+        }
+    }
 }
 
 void Game::render() {
 
     SDL_RenderClear(renderer);
     //this is where we would add stuff to render
-    messageBox->draw();
+    //messageBox->draw();
     block->renderCurrMap();
+    playerRenderer->renderPlayer();
     SDL_RenderPresent(renderer);
 }
 
@@ -95,3 +152,37 @@ void Game::clean() {
     SDL_Quit();
     cout << "game cleaned" << endl;
 }
+
+void Game::l_k_map() {
+    if (playerRenderer->facing != 2) {
+        playerRenderer->facing = 2;
+    } else if (block->playerMoveLeft()){
+        isMoving = true;
+    }
+}
+
+void Game::r_k_map() {
+    if (playerRenderer->facing != 3) {
+        playerRenderer->facing = 3;
+    } else if (block->playerMoveRight()){
+        isMoving = true;
+    }
+}
+
+void Game::u_k_map() {
+    if (playerRenderer->facing != 0) {
+        playerRenderer->facing = 0;
+    } else if (block->playerMoveUp()){
+        isMoving = true;
+    }
+}
+
+void Game::d_k_map() {
+    if (playerRenderer->facing != 1) {
+        playerRenderer->facing = 1;
+    } else if (block->playerMoveDown()){
+        isMoving = true;
+    }
+}
+
+

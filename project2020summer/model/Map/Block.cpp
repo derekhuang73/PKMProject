@@ -2,6 +2,7 @@
 // Created by Derek Huang on 2020-07-05.
 //
 
+#include <iostream>
 #include "Block.h"
 #include "../UI_feature/TextureManager.h"
 
@@ -134,7 +135,7 @@ void Block::setupMap() {
                     0,0,0,0,0,0,1,1,1,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0, //7
                     0,0,0,0,0,0,1,1,1,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0, //8
                     0,0,0,0,1,0,1,1,1,2,2,2,2,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,0,0, //9
-                    0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0, //a
+                    0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0, //a
                     0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0, //b
                     0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0, //c
                     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, //d
@@ -162,7 +163,7 @@ void Block::setupMap() {
             0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0  //e
     };
     lvmp1.renderLevel = new int[30*15] {
-            //0 1 2 3 4 5 6 7 8 9 a b c d e f g h i j k l m n o p q r s t
+          //0 1 2 3 4 5 6 7 8 9 a b c d e f g h i j k l m n o p q r s t
             1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1, //0
             1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, //1
             1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, //2
@@ -252,8 +253,8 @@ void Block::clearMap() {
 
 bool Block::playerMoveUp() {
     int w = currMap->width;
-    if (playerPos<w) {return false;}
-    int newPos = currMap->baseLevel[playerPos - w];
+    if (Index_Player_Pos<w) {return false;}
+    int newPos = currMap->baseLevel[(Index_Player_Pos) - w];
     switch (newPos) {
         case 1: return true;
         case 3: return true;
@@ -264,8 +265,8 @@ bool Block::playerMoveUp() {
 bool Block::playerMoveDown() {
     int w = currMap->width;
     int h = currMap->height;
-    if (playerPos >= ((h - 1) * w)) { return false; }
-    int newPos = currMap->baseLevel[playerPos + w];
+    if (Index_Player_Pos >= ((h - 1) * w)) { return false; }
+    int newPos = currMap->baseLevel[(Index_Player_Pos) + w];
     switch (newPos) {
         case 1:
             return true;
@@ -278,22 +279,20 @@ bool Block::playerMoveDown() {
 
 bool Block::playerMoveLeft() {
     int w = currMap->width;
-    if ((playerPos%w) == 0) {return false;}
-    int newPos = currMap->baseLevel[playerPos--];
+    if ((Index_Player_Pos%w) == 0) {return false;}
+    int newPos = currMap->baseLevel[(Index_Player_Pos)-1];
     switch (newPos) {
         case 1: return true;
-        case 2: return true;
         default:return false;
 }
     }
 
 bool Block::playerMoveRight() {
     int w = currMap->width;
-    if ((playerPos++)%w == 0) {return false;}
-    int newPos = currMap->baseLevel[playerPos++];
+    if (((Index_Player_Pos)+1)%w == 0) {return false;}
+    int newPos = currMap->baseLevel[(Index_Player_Pos)+1];
     switch (newPos) {
         case 1: return true;
-        case 2: return true;
         default:return false;
 }
     }
@@ -305,7 +304,7 @@ bool Block::playerMoveRight() {
         int indexOfTeleportSpot = spot%100000;
         if (!lvmp||indexOfTeleportSpot>=(lvmp->width*lvmp->height)){ return;}
         currMap = lvmp;
-        playerPos = indexOfTeleportSpot;
+        Index_Player_Pos = indexOfTeleportSpot;
     }
 
 
@@ -316,7 +315,7 @@ bool Block::playerMoveRight() {
 Block::Block() {
     setupMap();
     currMap = NULL;
-    playerPos = 0;
+    Index_Player_Pos = 0;
     setupRenderer();
 }
 
@@ -336,32 +335,38 @@ void Block::setupRenderer() {
     pkmBall = TextureManager::LoadTexture("../assert/pokemonBall.png");
 
     tree_src.x = tree_src.y = pokemonCenter_src.x = pokemonCenter_src.y = src.x = src.y = 0;
-    src.w = dest.w = src.h = dest.h = 32;
-    tree_src.h = tree_dest.h = 64;
-    tree_src.w = tree_dest.w = 32;
-    pokemonCenter_src.w = pokemonCenter_src.h = pokemonCenter_dest.w = pokemonCenter_dest.h = 128;
+    src.w = dest.w = src.h = dest.h = WIDTH_AND_HEIGHT_OF_BLOCK;
+    tree_src.h = tree_dest.h = 2*WIDTH_AND_HEIGHT_OF_BLOCK;
+    tree_src.w = tree_dest.w = WIDTH_AND_HEIGHT_OF_BLOCK;
+    pokemonCenter_src.w = pokemonCenter_src.h = pokemonCenter_dest.w = pokemonCenter_dest.h = 4*WIDTH_AND_HEIGHT_OF_BLOCK;
     tree_dest.x = tree_dest.y = pokemonCenter_dest.x = pokemonCenter_dest.y = dest.x = dest.y = 0;
 }
 
 void Block::renderBaseMap() {
-    int type = 0;
+    int type;
     int w = currMap->width;
     int h = currMap->height;
-    int currW = 0;
-    int currH = 0;
+    int currW = 0;//width relative to the whole map
+    int currH = 0;//height relative to the whole map
+    int centerX = Game::window_width/2;
+    int centerY = Game::window_height/2;
+    int x_rel = related_pos_to_centerX;
+    int y_rel = related_pos_to_centerY;
     for (int i = 0; i < (w*h); i++) {
         type = currMap->baseLevel[i];
-        dest.x = currW*32;
-        dest.y = currH*32;
+        dest.x = centerX + (currW - Index_Player_Pos%w)*WIDTH_AND_HEIGHT_OF_BLOCK + x_rel;
+        dest.y = centerY + (currH - Index_Player_Pos/w)*WIDTH_AND_HEIGHT_OF_BLOCK + y_rel;
         switch (type) {
             case 0:
                 TextureManager::Draw(dirt,src,dest);
                 break;
             case 1:
                 TextureManager::Draw(dirt,src,dest);
+
                 break;
             case 2:
                 TextureManager::Draw(water,src,dest);
+
                 break;
             case 3:
                 TextureManager::Draw(dam_sn,src,dest);
@@ -383,15 +388,19 @@ void Block::renderBaseMap() {
 
 void Block::renderFunctionMap() {
 
-    int type = 0;
+    int type;
     int w = currMap->width;
     int h = currMap->height;
-    int currW = 0;
-    int currH = 0;
+    int currW = 0;//width relative to the whole map
+    int currH = 0;//height relative to the whole map
+    int centerX = Game::window_width/2;
+    int centerY = Game::window_height/2;
+    int x_rel = related_pos_to_centerX;
+    int y_rel = related_pos_to_centerY;
     for (int i = 0; i < (w*h); i++) {
         type = currMap->functionLevel[i];
-        dest.x = currW*32;
-        dest.y = currH*32;
+        dest.x = centerX + (currW - Index_Player_Pos%w)*WIDTH_AND_HEIGHT_OF_BLOCK + x_rel;
+        dest.y = centerY + (currH - Index_Player_Pos/w)*WIDTH_AND_HEIGHT_OF_BLOCK + y_rel;
         switch (type) {
             case 1:
                 TextureManager::Draw(grass,src,dest);
@@ -414,22 +423,26 @@ void Block::renderFunctionMap() {
 }
 
 void Block::renderRenderMap() {
-    int type = 0;
+    int type;
     int w = currMap->width;
     int h = currMap->height;
-    int currW = 0;
-    int currH = 0;
+    int currW = 0;//width relative to the whole map
+    int currH = 0;//height relative to the whole map
+    int centerX = Game::window_width/2;
+    int centerY = Game::window_height/2;
+    int x_rel = related_pos_to_centerX;
+    int y_rel = related_pos_to_centerY;
     for (int i = 0; i < (w*h); i++) {
         type = currMap->renderLevel[i];
         switch (type) {
             case 1:
-                tree_dest.x = currW*32;
-                tree_dest.y = currH*32;
+                tree_dest.x = centerX + (currW - Index_Player_Pos%w)*WIDTH_AND_HEIGHT_OF_BLOCK + x_rel;
+                tree_dest.y = centerY + (currH - Index_Player_Pos/w)*WIDTH_AND_HEIGHT_OF_BLOCK + y_rel;
                 TextureManager::Draw(tree,tree_src,tree_dest);
                 break;
             case 8:
-                pokemonCenter_dest.x = currW*32;
-                pokemonCenter_dest.y = currH*32;
+                pokemonCenter_dest.x = centerX + (currW - Index_Player_Pos%w)*WIDTH_AND_HEIGHT_OF_BLOCK + x_rel;
+                pokemonCenter_dest.y = centerY + (currH - Index_Player_Pos/w)*WIDTH_AND_HEIGHT_OF_BLOCK + y_rel;
                 TextureManager::Draw(pokemonCenter,pokemonCenter_src,pokemonCenter_dest);
                 break;
             default:
@@ -454,5 +467,24 @@ void Block::initPos(int mapNum, int posNum) {
     levelMap* lvmp = itr->second;
     if (!lvmp||posNum>=(lvmp->width*lvmp->height)){ return;}
     currMap = lvmp;
-    playerPos = posNum;
+    Index_Player_Pos = posNum;
 }
+
+
+void Block::move_up() {
+    Index_Player_Pos -= currMap->width;
+}
+
+void Block::move_down() {
+    Index_Player_Pos += currMap->width;
+}
+
+void Block::move_left() {
+    Index_Player_Pos --;
+}
+
+void Block::move_right() {
+    Index_Player_Pos ++;
+}
+
+

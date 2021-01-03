@@ -13,8 +13,6 @@ class Player : public Trainer{
 
 public:
 
-    Block blockMap;
-    int location;
     
     // Constructor
     explicit Player(string name);
@@ -51,6 +49,9 @@ private:
     string listConcat(list<string> ss);
 
     int level;
+
+
+
 
     // Limit 20 to stashed Pokemons
     Pokemon * stashedPokemonList[20]{};

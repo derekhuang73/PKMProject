@@ -229,14 +229,14 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
 
-    const int FPS = 1;
+    const int FPS = 10;
     const int frameDelay = 1000 / FPS;
 
     Uint32 frameStart;
     int frameTime;
 
     Game* game = new Game();
-    game -> init("Game",SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,800,640, false);
+    game -> init("Game",SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,game->window_width,game->window_height, false);
     while (game -> running()) {
         frameStart = SDL_GetTicks();
 
