@@ -11,6 +11,7 @@
 #include "../TrainerSystem/Trainer.h"
 #include <SDL.h>
 #include "../Game.h"
+#include "../UI_feature/PlayerRenderer.h"
 using namespace std;
 class Block {
 /*
@@ -137,7 +138,6 @@ public:
     levelMap* currMap;
     int Index_Player_Pos;
 
-    //!this two will be moved to model player once it finished implemented
     int related_pos_to_centerX = 0,
         related_pos_to_centerY = 0;
 
@@ -166,18 +166,11 @@ public:
     bool playerMoveLeft();
     bool playerMoveRight();
 
-    void fakeUpdate() {
-        related_pos_to_centerX++;
-        related_pos_to_centerY++;
-    }
 
-    int get_rel_c_x() {
-        return related_pos_to_centerX;
-    }
-
-    int get_rel_c_y() {
-        return related_pos_to_centerY;
-    }
+    void move_up();
+    void move_down();
+    void move_left();
+    void move_right();
 
     //purpose: used at the beginning of the game and set the player to a pos
     //restriction: can be only used after the map is initialized

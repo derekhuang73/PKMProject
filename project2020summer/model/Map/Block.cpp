@@ -135,7 +135,7 @@ void Block::setupMap() {
                     0,0,0,0,0,0,1,1,1,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0, //7
                     0,0,0,0,0,0,1,1,1,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0, //8
                     0,0,0,0,1,0,1,1,1,2,2,2,2,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,0,0, //9
-                    0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0, //a
+                    0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0, //a
                     0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0, //b
                     0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0, //c
                     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, //d
@@ -163,7 +163,7 @@ void Block::setupMap() {
             0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0  //e
     };
     lvmp1.renderLevel = new int[30*15] {
-            //0 1 2 3 4 5 6 7 8 9 a b c d e f g h i j k l m n o p q r s t
+          //0 1 2 3 4 5 6 7 8 9 a b c d e f g h i j k l m n o p q r s t
             1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1, //0
             1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, //1
             1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, //2
@@ -254,7 +254,7 @@ void Block::clearMap() {
 bool Block::playerMoveUp() {
     int w = currMap->width;
     if (Index_Player_Pos<w) {return false;}
-    int newPos = currMap->baseLevel[Index_Player_Pos - w];
+    int newPos = currMap->baseLevel[(Index_Player_Pos) - w];
     switch (newPos) {
         case 1: return true;
         case 3: return true;
@@ -266,7 +266,7 @@ bool Block::playerMoveDown() {
     int w = currMap->width;
     int h = currMap->height;
     if (Index_Player_Pos >= ((h - 1) * w)) { return false; }
-    int newPos = currMap->baseLevel[Index_Player_Pos + w];
+    int newPos = currMap->baseLevel[(Index_Player_Pos) + w];
     switch (newPos) {
         case 1:
             return true;
@@ -280,21 +280,19 @@ bool Block::playerMoveDown() {
 bool Block::playerMoveLeft() {
     int w = currMap->width;
     if ((Index_Player_Pos%w) == 0) {return false;}
-    int newPos = currMap->baseLevel[Index_Player_Pos--];
+    int newPos = currMap->baseLevel[(Index_Player_Pos)-1];
     switch (newPos) {
         case 1: return true;
-        case 2: return true;
         default:return false;
 }
     }
 
 bool Block::playerMoveRight() {
     int w = currMap->width;
-    if ((Index_Player_Pos++)%w == 0) {return false;}
-    int newPos = currMap->baseLevel[Index_Player_Pos++];
+    if (((Index_Player_Pos)+1)%w == 0) {return false;}
+    int newPos = currMap->baseLevel[(Index_Player_Pos)+1];
     switch (newPos) {
         case 1: return true;
-        case 2: return true;
         default:return false;
 }
     }
@@ -352,10 +350,10 @@ void Block::renderBaseMap() {
     int currH = 0;//height relative to the whole map
     int centerX = Game::window_width/2;
     int centerY = Game::window_height/2;
-    int x_rel = get_rel_c_x();
-    int y_rel = get_rel_c_y();
+    int x_rel = related_pos_to_centerX;
+    int y_rel = related_pos_to_centerY;
     for (int i = 0; i < (w*h); i++) {
-        type = currMap->functionLevel[i];
+        type = currMap->baseLevel[i];
         dest.x = centerX + (currW - Index_Player_Pos%w)*WIDTH_AND_HEIGHT_OF_BLOCK + x_rel;
         dest.y = centerY + (currH - Index_Player_Pos/w)*WIDTH_AND_HEIGHT_OF_BLOCK + y_rel;
         switch (type) {
@@ -364,9 +362,11 @@ void Block::renderBaseMap() {
                 break;
             case 1:
                 TextureManager::Draw(dirt,src,dest);
+
                 break;
             case 2:
                 TextureManager::Draw(water,src,dest);
+
                 break;
             case 3:
                 TextureManager::Draw(dam_sn,src,dest);
@@ -395,8 +395,8 @@ void Block::renderFunctionMap() {
     int currH = 0;//height relative to the whole map
     int centerX = Game::window_width/2;
     int centerY = Game::window_height/2;
-    int x_rel = get_rel_c_x();
-    int y_rel = get_rel_c_y();
+    int x_rel = related_pos_to_centerX;
+    int y_rel = related_pos_to_centerY;
     for (int i = 0; i < (w*h); i++) {
         type = currMap->functionLevel[i];
         dest.x = centerX + (currW - Index_Player_Pos%w)*WIDTH_AND_HEIGHT_OF_BLOCK + x_rel;
@@ -430,8 +430,8 @@ void Block::renderRenderMap() {
     int currH = 0;//height relative to the whole map
     int centerX = Game::window_width/2;
     int centerY = Game::window_height/2;
-    int x_rel = get_rel_c_x();
-    int y_rel = get_rel_c_y();
+    int x_rel = related_pos_to_centerX;
+    int y_rel = related_pos_to_centerY;
     for (int i = 0; i < (w*h); i++) {
         type = currMap->renderLevel[i];
         switch (type) {
@@ -468,6 +468,23 @@ void Block::initPos(int mapNum, int posNum) {
     if (!lvmp||posNum>=(lvmp->width*lvmp->height)){ return;}
     currMap = lvmp;
     Index_Player_Pos = posNum;
+}
+
+
+void Block::move_up() {
+    Index_Player_Pos -= currMap->width;
+}
+
+void Block::move_down() {
+    Index_Player_Pos += currMap->width;
+}
+
+void Block::move_left() {
+    Index_Player_Pos --;
+}
+
+void Block::move_right() {
+    Index_Player_Pos ++;
 }
 
 

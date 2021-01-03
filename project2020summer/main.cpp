@@ -229,7 +229,7 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
 
-    const int FPS = 1;
+    const int FPS = 10;
     const int frameDelay = 1000 / FPS;
 
     Uint32 frameStart;
