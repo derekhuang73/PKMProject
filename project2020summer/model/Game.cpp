@@ -8,6 +8,8 @@
 #include "UI_feature/MessageBox.h"
 #include "SDL_ttf.h"
 #include "Map/Block.h"
+#include "string"
+#include "TrainerSystem/TrainerList.h"
 
 using namespace std;
 
@@ -16,6 +18,12 @@ MessageBox *messageBox = nullptr;
 TTF_Font * Game::font = nullptr;
 Block *block = nullptr;
 PlayerRenderer * playerRenderer = nullptr;
+bool isMessageDisplaying = false;
+TrainerList *trainerList = nullptr;
+
+
+
+
 Game::Game() {
 
 }
@@ -55,9 +63,12 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
         isRunning = true;
     }
 
+    trainerList = new TrainerList();
     block = new Block();
+    block->game = this;
     block->initPos(1,100);    //!!!
     messageBox = new MessageBox();
+    isMessageDisplaying = false;
     playerRenderer = new PlayerRenderer();
 }
 
@@ -69,7 +80,7 @@ void Game::handleEvents() {
             isRunning = false;
             break;
         case SDL_KEYDOWN:
-            if (!isMoving) {
+            if (!isMoving && !isMessageDisplaying) {
             /* Check the SDLKey values and move change the coords */
             switch( event.key.keysym.sym ){
                 case SDLK_LEFT:
@@ -84,9 +95,19 @@ void Game::handleEvents() {
                 case SDLK_DOWN:
                     d_k_map();
                     break;
+                case SDLK_SPACE:
+                    block->key_event_trigger();
+                    break;
                 default:
                     break;
             }
+            } else if (!isMoving&&isMessageDisplaying) { // in this case the game is talking
+                switch( event.key.keysym.sym ) {
+                    case SDLK_SPACE:
+                        isMessageDisplaying = false;
+                        break;
+                    default: break;
+                }
             }
         default:
             break;
@@ -94,9 +115,7 @@ void Game::handleEvents() {
 }
 
 void Game::update() {
-    //messageBox->update();
     if (isMoving) {
-
         if (playerRenderer->frameStage == 3) {
             playerRenderer->frameStage = 0;
             block->related_pos_to_centerX =0;
@@ -137,10 +156,11 @@ void Game::update() {
 void Game::render() {
 
     SDL_RenderClear(renderer);
-    //this is where we would add stuff to render
-    //messageBox->draw();
     block->renderCurrMap();
     playerRenderer->renderPlayer();
+    if (isMessageDisplaying) {
+        messageBox->renderMessageBox();
+    }
     SDL_RenderPresent(renderer);
 }
 
@@ -183,6 +203,19 @@ void Game::d_k_map() {
     } else if (block->playerMoveDown()){
         isMoving = true;
     }
+}
+
+void Game::encounterPokemon() {
+
+}
+
+void Game::displayMessage(string message) {
+    isMessageDisplaying = true;
+    messageBox->setString(message);
+}
+
+int Game::getFacing() {
+    return playerRenderer->facing;
 }
 
 

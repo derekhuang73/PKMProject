@@ -15,10 +15,10 @@ MessageBox::MessageBox() {
     srcRect.x = 0;
     srcRect.y = 0;
 
+    destRect.w =  Game::window_width;
+    destRect.h =  (Game::window_height)/4;
     destRect.x = 0;
-    destRect.y = 500;
-    destRect.w =  800;
-    destRect.h =  140;
+    destRect.y = Game::window_height - destRect.h;
 
 }
 
@@ -89,6 +89,21 @@ void MessageBox::drawString(std::string text, int lineNum) {
     messageDestRect.y = destRect.y+ 20 + lineNum*texH;
     messageDestRect.h = texH;
     messageDestRect.w = texW;
+    TextureManager::Draw(TextTexture,messageDestRect);
+}
+
+void MessageBox::setString(std::string str) {
+    myStr = str;
+}
+
+void MessageBox::renderMessageBox() {
+    SDL_Texture* TextTexture = TextureManager::LoadTextTexture(myStr);
+    SDL_QueryTexture(TextTexture, nullptr, nullptr, &texW, &texH);
+    messageDestRect.x = destRect.x + 40;
+    messageDestRect.y = destRect.y+ 20;
+    messageDestRect.h = texH;
+    messageDestRect.w = texW;
+    TextureManager::Draw(MessageTexture,srcRect,destRect);
     TextureManager::Draw(TextTexture,messageDestRect);
 }
 

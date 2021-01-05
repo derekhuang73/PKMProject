@@ -109,7 +109,7 @@ public:
      * 0: empty(no trigger)
      * 1: grass(will trigger pokemon encounter)
      * 2: pokemon ball (can be picked up)
-     *
+     * 50+: npc (50 + npc serial num)
      * 100000+: teleporting (100000*map serial num + index of teleport destination )
      *
      * ///////////////////////////////////////////////////////////////////////////////////////////
@@ -138,10 +138,15 @@ public:
     levelMap* currMap;
     int Index_Player_Pos;
 
+
     int related_pos_to_centerX = 0,
         related_pos_to_centerY = 0;
 
-    SDL_Rect src,dest,tree_src,tree_dest, pokemonCenter_src, pokemonCenter_dest;
+    SDL_Rect src,dest,
+            tree_src,tree_dest,
+            pokemonCenter_src, pokemonCenter_dest,
+            PK_C_MAP_SRC, PK_C_MAP_DES,
+            npc_src, npc_dest;
     SDL_Texture * dirt, // 1h*1w square
                 * grass,
                 * water,
@@ -150,9 +155,11 @@ public:
                 * dam_ns,
                 * dam_sn,
                 * telep,
-                * pkmBall;
+                * pkmBall,
+                * POKEMON_CENTER_MAP;
 
     int const WIDTH_AND_HEIGHT_OF_BLOCK = 32;
+    Game * game;
 
     Block();
     ~Block();
@@ -172,21 +179,25 @@ public:
     void move_left();
     void move_right();
 
+
     //purpose: used at the beginning of the game and set the player to a pos
     //restriction: can be only used after the map is initialized
     void initPos(int mapNum, int posNum);
-
+    void key_event_trigger();
 private:
 
     void setupRenderer();
     void renderBaseMap();
     void renderFunctionMap();
     void renderRenderMap();
-
+    void renderSpecialMap();
 
     void trigger();
 
     void teleport(int spot);
+    std::map<int,levelMap*> specialMap;
+    std::map<int,int> specialMapType;
+
 
 };
 
