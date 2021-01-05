@@ -155,9 +155,9 @@ void Block::setupMap() {
             0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0, //6
             0,0,0,0,0,0,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0, //7
             0,0,0,0,0,0,1,1,1,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0, //8
-            0,0,0,a,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, //9
+            0,0,0,0,a,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, //9
             0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, //a
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, //b
+            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0, //b
             0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, //c
             0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, //d
             0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0  //e
@@ -182,62 +182,54 @@ void Block::setupMap() {
     };
     mp.insert(pair<int,levelMap*>(lvmp1.serialNum,&lvmp1));
     // lvmp2
+    int b = 100000;
+    int n = 51;
     lvmp2.serialNum = 2;
-    lvmp2.width = 30;
-    lvmp2.height = 15;
-    lvmp2.baseLevel = new int [30*15]
+    lvmp2.width = 10;
+    lvmp2.height = 10;
+    lvmp2.baseLevel = new int [10*10]
             {
-                    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-                    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-                    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-                    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-                    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-                    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-                    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-                    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-                    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-                    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-                    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-                    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-                    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-                    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-                    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+                  //0,1,2,3,4,5,6,7,8,9
+                    0,0,0,0,0,0,0,0,0,0,//0
+                    0,1,1,1,0,0,0,0,1,0,//1
+                    0,1,1,1,0,0,0,0,1,0,//2
+                    0,1,1,1,0,0,0,0,1,0,//3
+                    0,1,1,1,1,1,1,1,1,0,//4
+                    0,1,1,1,1,1,1,1,1,0,//5
+                    0,1,1,1,1,1,1,1,1,0,//6
+                    0,1,1,1,1,1,1,1,1,0,//7
+                    0,1,1,1,1,1,1,1,1,0,//8
+                    0,0,0,0,0,0,0,0,0,0 //9
             };
-    lvmp2.functionLevel = new int [30*15] {
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+    lvmp2.functionLevel = new int [10*10] {
+          //0,1,2,3,4,5,6,7,8,9
+            0,0,0,0,0,0,0,0,0,0,//0
+            0,0,0,0,0,0,0,0,0,0,//1
+            0,0,0,0,0,0,0,0,0,0,//2
+            0,0,0,0,0,0,n,0,0,0,//3
+            0,0,0,0,0,0,0,0,0,0,//4
+            0,0,0,0,0,0,0,0,0,0,//5
+            0,0,0,0,0,0,0,0,0,0,//6
+            0,0,0,0,0,0,0,0,0,0,//7
+            0,0,0,0,0,0,0,b,0,0,//8
+            0,0,0,0,0,0,0,0,0,0 //9
     };
-    lvmp2.renderLevel = new int[30*15] {
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+    lvmp2.renderLevel = new int [10*10] {
+            //0,1,2,3,4,5,6,7,8,9
+            0,0,0,0,0,0,0,0,0,0,//0
+            0,0,0,0,0,0,0,0,0,0,//1
+            0,0,0,0,0,0,0,0,0,0,//2
+            0,0,0,0,0,0,0,0,0,0,//3
+            0,0,0,0,0,0,0,0,0,0,//4
+            0,0,0,0,0,0,0,0,0,0,//5
+            0,0,0,0,0,0,0,0,0,0,//6
+            0,0,0,0,0,0,0,0,0,0,//7
+            0,0,0,0,0,0,0,0,0,0,//8
+            0,0,0,0,0,0,0,0,0,0 //9
     };
     mp.insert(pair<int,levelMap*>(lvmp2.serialNum,&lvmp2));
+    specialMap.insert(pair<int,levelMap*>(lvmp2.serialNum,&lvmp2));
+    specialMapType.insert(pair<int,int> (lvmp2.serialNum,1));
 }
 
 
@@ -302,14 +294,31 @@ bool Block::playerMoveRight() {
         auto itr = mp.find(serialnum);
         levelMap* lvmp = itr->second;
         int indexOfTeleportSpot = spot%100000;
-        if (!lvmp||indexOfTeleportSpot>=(lvmp->width*lvmp->height)){ return;}
+        if (!lvmp||indexOfTeleportSpot>=(lvmp->width*lvmp->height)){
+            cout<< "teleport failed"<< endl;
+            return;}
         currMap = lvmp;
-        Index_Player_Pos = indexOfTeleportSpot;
+        for (int i = 0; i < currMap->width*currMap->height; i++) {
+            if (currMap->functionLevel[i] >= 100000) {
+                Index_Player_Pos = i;
+                break;
+            }
+        }
+        cout<<"teleported to " << currMap->serialNum << "at " << Index_Player_Pos << endl;
     }
 
 
     void Block::trigger() {
-    //stab wait for implement!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    int type = currMap->functionLevel[Index_Player_Pos];
+    if (type >= 100000){
+        teleport(type);
+        return;
+    } else {
+        switch (type) {
+            case 1: game->encounterPokemon();
+            default: break;
+        }
+    }
     }
 
 Block::Block() {
@@ -333,6 +342,7 @@ void Block::setupRenderer() {
     dam_sn = TextureManager::LoadTexture("../assert/dam_SN.png");
     telep = TextureManager::LoadTexture("../assert/teleport.png");
     pkmBall = TextureManager::LoadTexture("../assert/pokemonBall.png");
+    POKEMON_CENTER_MAP = TextureManager::LoadTexture("../assert/PK_C_MAP.png");
 
     tree_src.x = tree_src.y = pokemonCenter_src.x = pokemonCenter_src.y = src.x = src.y = 0;
     src.w = dest.w = src.h = dest.h = WIDTH_AND_HEIGHT_OF_BLOCK;
@@ -340,6 +350,13 @@ void Block::setupRenderer() {
     tree_src.w = tree_dest.w = WIDTH_AND_HEIGHT_OF_BLOCK;
     pokemonCenter_src.w = pokemonCenter_src.h = pokemonCenter_dest.w = pokemonCenter_dest.h = 4*WIDTH_AND_HEIGHT_OF_BLOCK;
     tree_dest.x = tree_dest.y = pokemonCenter_dest.x = pokemonCenter_dest.y = dest.x = dest.y = 0;
+    npc_src.x = npc_src.y = 0;
+    npc_src.w = npc_src.h = WIDTH_AND_HEIGHT_OF_BLOCK;
+    npc_dest.w = WIDTH_AND_HEIGHT_OF_BLOCK;
+    npc_dest.h = 2*WIDTH_AND_HEIGHT_OF_BLOCK;
+    PK_C_MAP_SRC.x = PK_C_MAP_SRC.y = 0;
+    PK_C_MAP_SRC.w = PK_C_MAP_SRC.h = 50;
+    PK_C_MAP_DES.w = PK_C_MAP_DES.h = 10*WIDTH_AND_HEIGHT_OF_BLOCK;
 }
 
 void Block::renderBaseMap() {
@@ -411,6 +428,15 @@ void Block::renderFunctionMap() {
             default:
                 if (type>=100000) {
                     TextureManager::Draw(telep,src,dest);
+                    break;
+                } else if (type >= 50) {
+                    npc_dest.x = dest.x;
+                    npc_dest.y = dest.y - WIDTH_AND_HEIGHT_OF_BLOCK;
+                    auto item = game->trainerList->TrainerMap.find(type - 50);
+                    if (item != game->trainerList->TrainerMap.end()) {
+                        SDL_Texture* texture = item->second->trainerImage;
+                        TextureManager::Draw(texture,npc_src,npc_dest);}
+                    break;
                 }
                 break;
         }
@@ -457,9 +483,17 @@ void Block::renderRenderMap() {
 }
 
 void Block::renderCurrMap() {
-    renderBaseMap();
-    renderFunctionMap();
-    renderRenderMap();
+    if (specialMap.find(currMap->serialNum)!= specialMap.end()) //for special map like pokemon center or indoor map
+    {
+        renderFunctionMap();
+        renderSpecialMap();
+        cout<<"render special map"<<endl;
+    }
+    else {
+        renderBaseMap();
+        renderFunctionMap();
+        renderRenderMap();
+    }
 }
 
 void Block::initPos(int mapNum, int posNum) {
@@ -473,18 +507,75 @@ void Block::initPos(int mapNum, int posNum) {
 
 void Block::move_up() {
     Index_Player_Pos -= currMap->width;
+    trigger();
 }
 
 void Block::move_down() {
     Index_Player_Pos += currMap->width;
+    trigger();
 }
 
 void Block::move_left() {
     Index_Player_Pos --;
+    trigger();
 }
 
 void Block::move_right() {
     Index_Player_Pos ++;
+    trigger();
+}
+
+void Block::renderSpecialMap() {
+    int w = currMap->width;
+    int centerX = Game::window_width/2;
+    int centerY = Game::window_height/2;
+    int x_rel = related_pos_to_centerX;
+    int y_rel = related_pos_to_centerY;
+    int type = specialMapType.find(currMap->serialNum)->second;
+    cout<<"special map type "<< type<< endl;
+    switch (type) {
+        case 1:
+            PK_C_MAP_DES.x = centerX  - (Index_Player_Pos%w -1)*WIDTH_AND_HEIGHT_OF_BLOCK + x_rel;
+            PK_C_MAP_DES.y = centerY  - (Index_Player_Pos/w)*WIDTH_AND_HEIGHT_OF_BLOCK + y_rel;
+            TextureManager::Draw(POKEMON_CENTER_MAP,PK_C_MAP_SRC,PK_C_MAP_DES);
+            break;
+        default:
+            break;
+    }
+}
+
+void Block::key_event_trigger() {
+    int newPos = 0;
+    switch (game->getFacing()) {
+        case 0:
+            newPos = Index_Player_Pos - currMap->width;
+            break;
+        case 1:
+            newPos = Index_Player_Pos + currMap->width;
+            break;
+        case 2:
+            newPos =  Index_Player_Pos- 1;
+            break;
+        case 3:
+            newPos =  Index_Player_Pos + 1;
+            break;
+        default: break;
+    }
+    int i = currMap->functionLevel[newPos];
+    switch (i) {
+        case 2:
+            game->displayMessage("You Picked Up a Pokemon Ball!");
+            break;
+        default: if (i>=50) {
+            auto itr = game->trainerList->TrainerMap.find(i-50);
+            if (itr == game->trainerList->TrainerMap.end()) {
+                return;
+            }
+            string str = itr->second->words;
+            game->displayMessage(str);
+                break;
+        }
+    }
 }
 
 

@@ -10,6 +10,8 @@
 #include "../Pokemon/Pokemon.h"
 #include <list>
 #include <vector>
+#include <SDL.h>
+#include <SDL_image.h>
 using namespace std;
 class Trainer {
 public:
@@ -40,6 +42,9 @@ public:
     //R: trainer string that return from trainer reader
     void setUpTrainer(list<string> trainerID);
 
+    string words;
+
+    SDL_Texture* trainerImage;
 
 protected:
     string name;

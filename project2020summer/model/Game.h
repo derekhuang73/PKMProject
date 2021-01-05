@@ -8,7 +8,9 @@
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 #include "UI_feature/PlayerRenderer.h"
-
+#include "string"
+#include "TrainerSystem/TrainerList.h"
+using namespace std;
 class Game {
 public:
     Game();
@@ -26,15 +28,19 @@ public:
 
     static SDL_Renderer * renderer;
     static TTF_Font *font;
-    static const int window_width = 200;
-    static const int window_height = 160;
+    static const int window_width = 400;
+    static const int window_height = 320;
 
+    void displayMessage(std::string message);
+    void encounterPokemon();
+    int getFacing();
 
-
+    TrainerList *trainerList;
 private:
     bool isRunning;
     SDL_Window * window;
     bool isMoving = false;
+    bool isMessageDisplaying;
 
     void l_k_map();
     void r_k_map();

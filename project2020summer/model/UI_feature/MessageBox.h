@@ -14,18 +14,21 @@ public:
     MessageBox();
     ~MessageBox();
     void draw();
+    void setString(std::string str);
+    void renderMessageBox();
     void update();
 private:
     SDL_Texture  *MessageTexture;
     SDL_Rect srcRect, destRect,messageDestRect;
     std::string File = "../data/message.txt";
+    std::string myStr;
     int texW = 0;
     int texH = 0;
     int texLine = 0;
-    void drawString(std::string text);
     void drawLine();
     std::list<std::string> lineSperator(std::string text);
     void drawString(std::string text, int lineNum);
+    void drawString(std::string text);
 };
 
 
