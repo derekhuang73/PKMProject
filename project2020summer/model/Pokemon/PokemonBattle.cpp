@@ -68,6 +68,10 @@ void PokemonBattle::resetMissing() {
     missing = false;
 }
 
+PokemonBattle::PokemonBattle() {
+    resetMissing();
+}
+
 
 
 

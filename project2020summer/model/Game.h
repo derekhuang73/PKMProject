@@ -10,6 +10,8 @@
 #include "UI_feature/PlayerRenderer.h"
 #include "string"
 #include "TrainerSystem/TrainerList.h"
+#include "Pokemon/PokemonBattle.h"
+#include "Pokemon/PokemonTextureMap.h"
 using namespace std;
 class Game {
 public:
@@ -36,6 +38,8 @@ public:
     int getFacing();
 
     TrainerList *trainerList;
+    PokemonBattle *pokemonBattle;
+    PokemonTextureMap *pokemonTextureMap;
 private:
     bool isRunning;
     SDL_Window * window;
