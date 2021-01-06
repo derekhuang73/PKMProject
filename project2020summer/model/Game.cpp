@@ -9,7 +9,7 @@
 #include "SDL_ttf.h"
 #include "Map/Block.h"
 #include "string"
-#include "TrainerSystem/TrainerList.h"
+#include "UI_feature/PokemonBattleUI.h"
 
 using namespace std;
 
@@ -20,8 +20,9 @@ Block *block = nullptr;
 PlayerRenderer * playerRenderer = nullptr;
 bool isMessageDisplaying = false;
 TrainerList *trainerList = nullptr;
-
-
+PokemonBattle *pokemonBattle = nullptr;
+bool is_Pokemon_Battle = false;
+PokemonBattleUI *pokemonBattleUi = nullptr;
 
 
 Game::Game() {
@@ -62,7 +63,10 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
         }
         isRunning = true;
     }
-
+    pokemonTextureMap = new PokemonTextureMap();
+    pokemonBattleUi = new PokemonBattleUI();
+    pokemonBattleUi->game = this;
+    pokemonBattle = new PokemonBattle();
     trainerList = new TrainerList();
     block = new Block();
     block->game = this;

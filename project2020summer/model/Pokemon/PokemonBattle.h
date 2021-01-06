@@ -10,6 +10,7 @@
 
 class PokemonBattle {
 public:
+    PokemonBattle();
 
     PokemonBattle(Pokemon * playerPokemon, Pokemon * cpPokemon);
 
