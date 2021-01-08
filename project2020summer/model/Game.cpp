@@ -21,10 +21,8 @@ PlayerRenderer * playerRenderer = nullptr;
 bool isMessageDisplaying = false;
 TrainerList *trainerList = nullptr;
 PokemonBattle *pokemonBattle = nullptr;
-bool is_Pokemon_Battle = false;
 PokemonBattleUI *pokemonBattleUi = nullptr;
-
-
+Pokemon *playerPKM, *cpPKM;/////used for tested purpose only
 Game::Game() {
 
 }
@@ -74,6 +72,9 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     messageBox = new MessageBox();
     isMessageDisplaying = false;
     playerRenderer = new PlayerRenderer();
+    is_Pokemon_Battle = false;
+    playerPKM = new Pokemon(1,10);
+    cpPKM = new Pokemon(1, 5);
 }
 
 void Game::handleEvents() {
@@ -84,7 +85,46 @@ void Game::handleEvents() {
             isRunning = false;
             break;
         case SDL_KEYDOWN:
-            if (!isMoving && !isMessageDisplaying) {
+            if (isMessageDisplaying) {
+                switch( event.key.keysym.sym ) {
+                    case SDLK_SPACE:
+                        isMessageDisplaying = false;
+                        break;
+                    default: break;
+                }
+            } else if (is_Pokemon_Battle) {
+                switch( event.key.keysym.sym ) {
+                    case SDLK_LEFT:
+                        if (pokemonBattleUi->optionHighlight == 1 ||
+                        pokemonBattleUi->optionHighlight == 3) {
+                            pokemonBattleUi->optionHighlight --;
+                        }
+                        break;
+                    case SDLK_RIGHT:
+                        if (pokemonBattleUi->optionHighlight == 0 ||
+                            pokemonBattleUi->optionHighlight == 2) {
+                            pokemonBattleUi->optionHighlight ++;
+                        }
+                        break;
+                    case SDLK_UP:
+                        if (pokemonBattleUi->optionHighlight == 2 ||
+                            pokemonBattleUi->optionHighlight == 3) {
+                            pokemonBattleUi->optionHighlight -= 2;
+                        }
+                        break;
+                    case SDLK_DOWN:
+                        if (pokemonBattleUi->optionHighlight == 0 ||
+                            pokemonBattleUi->optionHighlight == 1) {
+                            pokemonBattleUi->optionHighlight += 2;
+                        }
+                        break;
+                    case SDLK_SPACE:
+                        pokemonBattleUi->select();
+                        break;
+                    default:
+                        break;
+                }
+            } else if (!isMoving) {
             /* Check the SDLKey values and move change the coords */
             switch( event.key.keysym.sym ){
                 case SDLK_LEFT:
@@ -105,13 +145,6 @@ void Game::handleEvents() {
                 default:
                     break;
             }
-            } else if (!isMoving&&isMessageDisplaying) { // in this case the game is talking
-                switch( event.key.keysym.sym ) {
-                    case SDLK_SPACE:
-                        isMessageDisplaying = false;
-                        break;
-                    default: break;
-                }
             }
         default:
             break;
@@ -119,42 +152,8 @@ void Game::handleEvents() {
 }
 
 void Game::update() {
-    if (isMoving) {
-        if (playerRenderer->frameStage == 3) {
-            playerRenderer->frameStage = 0;
-            block->related_pos_to_centerX =0;
-            block->related_pos_to_centerY =0;
-            switch (playerRenderer->facing) {
-                case 0: block->move_up(); break;
-                case 1: block->move_down(); break;
-                case 2: block->move_left(); break;
-                case 3: block->move_right(); break;
-                default: break;
-            }
-            isMoving = false;
-        } else {
-            playerRenderer->frameStage ++;
-            switch (playerRenderer->facing) {
-                case 0:
-                    block->related_pos_to_centerY =
-                            (block->WIDTH_AND_HEIGHT_OF_BLOCK/playerRenderer->FRAMES_PER_MOVE)
-                            *(playerRenderer->frameStage); break;
-                case 1:
-                    block->related_pos_to_centerY =
-                            - (block->WIDTH_AND_HEIGHT_OF_BLOCK/playerRenderer->FRAMES_PER_MOVE)
-                            *(playerRenderer->frameStage); break;
-                case 2:
-                    block->related_pos_to_centerX =
-                            (block->WIDTH_AND_HEIGHT_OF_BLOCK/playerRenderer->FRAMES_PER_MOVE)
-                            *(playerRenderer->frameStage); break;
-                case 3:
-                    block->related_pos_to_centerX =
-                            -(block->WIDTH_AND_HEIGHT_OF_BLOCK/playerRenderer->FRAMES_PER_MOVE)
-                            *(playerRenderer->frameStage); break;
-                default: break;
-            }
-        }
-    }
+    pokemonBattleUi->update();
+    movingUpdate();
 }
 
 void Game::render() {
@@ -162,6 +161,11 @@ void Game::render() {
     SDL_RenderClear(renderer);
     block->renderCurrMap();
     playerRenderer->renderPlayer();
+
+    if (is_Pokemon_Battle){
+        pokemonBattleUi->render_Battle();
+    }
+
     if (isMessageDisplaying) {
         messageBox->renderMessageBox();
     }
@@ -210,7 +214,12 @@ void Game::d_k_map() {
 }
 
 void Game::encounterPokemon() {
-
+    int randomIndex = rand()%10;
+    if (randomIndex<=5) {
+        is_Pokemon_Battle = true;
+        pokemonBattle->setPlayerPokemon(playerPKM);
+        pokemonBattle->setCpPokemon(cpPKM);
+    }
 }
 
 void Game::displayMessage(string message) {
@@ -220,6 +229,45 @@ void Game::displayMessage(string message) {
 
 int Game::getFacing() {
     return playerRenderer->facing;
+}
+
+void Game::movingUpdate() {
+    if (isMoving) {
+        if (playerRenderer->frameStage == 3) {
+            playerRenderer->frameStage = 0;
+            block->related_pos_to_centerX =0;
+            block->related_pos_to_centerY =0;
+            switch (playerRenderer->facing) {
+                case 0: block->move_up(); break;
+                case 1: block->move_down(); break;
+                case 2: block->move_left(); break;
+                case 3: block->move_right(); break;
+                default: break;
+            }
+            isMoving = false;
+        } else {
+            playerRenderer->frameStage ++;
+            switch (playerRenderer->facing) {
+                case 0:
+                    block->related_pos_to_centerY =
+                            (block->WIDTH_AND_HEIGHT_OF_BLOCK/playerRenderer->FRAMES_PER_MOVE)
+                            *(playerRenderer->frameStage); break;
+                case 1:
+                    block->related_pos_to_centerY =
+                            - (block->WIDTH_AND_HEIGHT_OF_BLOCK/playerRenderer->FRAMES_PER_MOVE)
+                            *(playerRenderer->frameStage); break;
+                case 2:
+                    block->related_pos_to_centerX =
+                            (block->WIDTH_AND_HEIGHT_OF_BLOCK/playerRenderer->FRAMES_PER_MOVE)
+                            *(playerRenderer->frameStage); break;
+                case 3:
+                    block->related_pos_to_centerX =
+                            -(block->WIDTH_AND_HEIGHT_OF_BLOCK/playerRenderer->FRAMES_PER_MOVE)
+                            *(playerRenderer->frameStage); break;
+                default: break;
+            }
+        }
+    }
 }
 
 
