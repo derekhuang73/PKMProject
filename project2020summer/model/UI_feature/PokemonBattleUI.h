@@ -20,6 +20,12 @@ public:
     string hint;
     SDL_Texture *BG,*option,*highlight,*hint_Text,*playerPKM_T,*OP_PKM_T;
     SDL_Rect src, dest;
+    bool isChoosingSkill;
+    const int THICKNESS = Game::window_width / 10;
+    int battleStage;
+
+    int optionHighlight;
+
     void updatePKMB();
 
     void render_menu();
@@ -35,6 +41,14 @@ public:
     void render_Pokemon_switch_list();
 
     void render_BackGround();
+
+    void battleUpdate();
+
+    void select();
+
+    void render_Battle();
+
+    void update();
 
 };
 

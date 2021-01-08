@@ -10,6 +10,8 @@
 
 class PokemonBattle {
 public:
+
+
     PokemonBattle();
 
     PokemonBattle(Pokemon * playerPokemon, Pokemon * cpPokemon);
@@ -23,10 +25,19 @@ public:
 
     void setPlayerPokemon(Pokemon *playerPokemon);
 
+    PokemonSkill *getPlayerPkMskill() const;
+
+    void setPlayerPkMskill(PokemonSkill *playerPkMskill);
+
+    PokemonSkill *getCpPkMskill() const;
+
+    void setCpPkMskill(PokemonSkill *cpPkMskill);
 //-----------------------------------------------------------------
 
     //P: cpPokemon attack with random chosen skill
-    void cpPokemonAttack();
+    PokemonSkill* cpPokemonGetSkill();
+
+    void cpPokemonAttack(PokemonSkill * skill);
 
     //P: playerPokemon attack with given skill
     //R: Skill must be chosen in playerPokemon's skills
@@ -48,7 +59,7 @@ private:
 
     bool missing;
     Pokemon * playerPokemon, * cpPokemon;
-
+    PokemonSkill* playerPKMskill, *cpPKMskill;
 
 };
 

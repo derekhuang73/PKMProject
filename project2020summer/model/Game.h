@@ -40,6 +40,9 @@ public:
     TrainerList *trainerList;
     PokemonBattle *pokemonBattle;
     PokemonTextureMap *pokemonTextureMap;
+
+    bool is_Pokemon_Battle;
+
 private:
     bool isRunning;
     SDL_Window * window;
@@ -50,6 +53,8 @@ private:
     void r_k_map();
     void u_k_map();
     void d_k_map();
+
+    void movingUpdate();
 };
 
 

@@ -43,10 +43,8 @@ void PokemonBattle::setCpPokemon(Pokemon *cpPokemon) {
     PokemonBattle::cpPokemon = cpPokemon;
 }
 
-void PokemonBattle::cpPokemonAttack() {
-    int availableSkillIndex = cpPokemon -> getNumOfSkill();
-    int randomIndex = rand()%availableSkillIndex;
-    PokemonSkill * skill = cpPokemon -> getSkill(randomIndex);
+
+void PokemonBattle::cpPokemonAttack(PokemonSkill* skill) {
     damageResolve(cpPokemon,playerPokemon,skill);
 }
 
@@ -70,6 +68,29 @@ void PokemonBattle::resetMissing() {
 
 PokemonBattle::PokemonBattle() {
     resetMissing();
+}
+
+PokemonSkill *PokemonBattle::cpPokemonGetSkill() {
+    int availableSkillIndex = cpPokemon -> getNumOfSkill();
+    int randomIndex = rand()%availableSkillIndex;
+    PokemonSkill * skill = cpPokemon -> getSkill(randomIndex);
+    return  skill;
+}
+
+PokemonSkill *PokemonBattle::getPlayerPkMskill() const {
+    return playerPKMskill;
+}
+
+void PokemonBattle::setPlayerPkMskill(PokemonSkill *playerPkMskill) {
+    playerPKMskill = playerPkMskill;
+}
+
+PokemonSkill *PokemonBattle::getCpPkMskill() const {
+    return cpPKMskill;
+}
+
+void PokemonBattle::setCpPkMskill(PokemonSkill *cpPkMskill) {
+    cpPKMskill = cpPkMskill;
 }
 
 
