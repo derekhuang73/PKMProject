@@ -216,7 +216,8 @@ void Pokemon::addSkillwSerialNum(int skillSerialNum) {
     try {
         PokemonSkill* pokemonSkill = new PokemonSkill(skillSerialNum);
         addSkill(pokemonSkill);
-    } catch (NullSkillException) {
+    } catch (const char* msg) {
+        cerr << msg << endl;
     }
 }
 
@@ -301,10 +302,10 @@ void Pokemon::setEvolveLv(int evolveLv) {
 
 void Pokemon::pokemonLvUp() {
     if (pokemonLevel <= 99) {
-    setPokemonLevel(pokemonLevel + 1);
-    if (pokemonLevel >= evolveLv) {
-        readyForEvo = true;
-    }
+        setPokemonLevel(pokemonLevel + 1);
+        if (pokemonLevel >= evolveLv) {
+            readyForEvo = true;
+        }
     }
 }
 

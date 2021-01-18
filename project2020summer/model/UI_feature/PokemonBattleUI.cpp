@@ -8,8 +8,7 @@
 
 void PokemonBattleUI::updatePKMB() {
     pokemonBattle = game->pokemonBattle;
-    playerPKM = pokemonBattle->getPlayerPokemon();
-    opPkm = pokemonBattle->getCpPokemon();
+
 }
 
 PokemonBattleUI::PokemonBattleUI() {
@@ -22,6 +21,8 @@ PokemonBattleUI::PokemonBattleUI() {
 
 void PokemonBattleUI::render_pokemons() {
      int i;
+     playerPKM = pokemonBattle->getPlayerPokemon();
+     opPkm = pokemonBattle->getCpPokemon();
      i = playerPKM->getSerialNumber();
      auto itr = game->pokemonTextureMap->textureMap.find(i);
      if (itr==game->pokemonTextureMap->textureMap.end()) { return;}
@@ -132,6 +133,8 @@ void PokemonBattleUI::render_hint() {
     int texW = 0;
     int texH = 0;
     SDL_Texture *TextTexture;
+
+    optionHighlight = 1;
 
     if (isChoosingSkill){
         PokemonSkill *pokemonSkill = playerPKM->getSkill(optionHighlight);
@@ -321,7 +324,8 @@ void PokemonBattleUI::render_Battle() {
     render_option_highlight();
 }
 
-void PokemonBattleUI::update() {
+void PokemonBattleUI::update(Game &game) {
+   PokemonBattleUI::game = &game;
    updatePKMB();
    battleUpdate();
 }

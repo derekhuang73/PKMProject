@@ -4,14 +4,15 @@
 
 #include <sstream>
 #include "PokemonSkill.h"
-#include "../../persistence/PokemonSkillReader.h"
 
 using namespace std;
-PokemonSkill::PokemonSkill(int skillSerialNum) throw(NullSkillException) {
-    string skillString;
-    PokemonSkillReader pokemonSkillReader;
-        skillString = pokemonSkillReader.findSkill(skillSerialNum);
-        setUpSkill(skillString);
+PokemonSkill::PokemonSkill(int skillSerialNum){
+    PokemonSkillReader::pokemonSkillSeed seed = PokemonSkillReader::findSkill(skillSerialNum);
+    setSkillSerialNum(seed.skillSerialNum);
+    setPower(seed.power);
+    setHitRate(seed.hitRate);
+    setSkillType(seed.skillType);
+    setSkillName(seed.skillName);
 }
 
 
@@ -22,7 +23,7 @@ int PokemonSkill::getPower() const {
     return power;
 }
 
-void PokemonSkill::setPower(int power) throw (NullSkillException){
+void PokemonSkill::setPower(int power){
     PokemonSkill::power = power;
 }
 
@@ -59,20 +60,6 @@ void PokemonSkill::setSkillName(const string &skillName) {
     PokemonSkill::skillName = skillName;
 }
 
-void PokemonSkill::setUpSkill(string pmSkillString) {
-        stringstream stringstream1(pmSkillString);
-        string data;
-        getline(stringstream1, data, ',');
-        setSkillSerialNum(atoi(data.c_str()));
-        getline(stringstream1, data, ',');
-        setPower(atoi(data.c_str()));
-        getline(stringstream1, data, ',');
-        setHitRate(atoi(data.c_str()));
-        getline(stringstream1,data,',');
-        setSkillType(atoi(data.c_str()));
-        getline(stringstream1,data,',');
-        setSkillName(data);
-}
 
 void PokemonSkill::setSkillType(int typeInt) {
     switch (typeInt) {
@@ -97,10 +84,12 @@ void PokemonSkill::setSkillType(int typeInt) {
 
 PokemonSkill::PokemonSkill(int startPoint, int range) {
     int serialNum = rand()%range + startPoint;
-    string skillString;
-    PokemonSkillReader pokemonSkillReader;
-    skillString = pokemonSkillReader.findSkill(serialNum);
-    setUpSkill(skillString);
+    PokemonSkillReader::pokemonSkillSeed seed = PokemonSkillReader::findSkill(skillSerialNum);
+    setSkillSerialNum(seed.skillSerialNum);
+    setPower(seed.power);
+    setHitRate(seed.hitRate);
+    setSkillType(seed.skillType);
+    setSkillName(seed.skillName);
 }
 
 int PokemonSkill::startPointOfType(PokemonType type) {

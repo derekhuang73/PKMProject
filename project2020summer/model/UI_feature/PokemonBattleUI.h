@@ -48,7 +48,7 @@ public:
 
     void render_Battle();
 
-    void update();
+    void update(Game &game);
 
 };
 

@@ -10,6 +10,8 @@
 #include "Map/Block.h"
 #include "string"
 #include "UI_feature/PokemonBattleUI.h"
+#include <cstdlib>     /* srand, rand */
+#include <ctime>       /* time */
 
 using namespace std;
 
@@ -22,6 +24,8 @@ bool isMessageDisplaying = false;
 TrainerList *trainerList = nullptr;
 PokemonBattle *pokemonBattle = nullptr;
 PokemonBattleUI *pokemonBattleUi = nullptr;
+static PokemonSeedReader pokemonSeedReader;
+static PokemonSkillReader pokemonSkillReader;
 Pokemon *playerPKM, *cpPKM;/////used for tested purpose only
 Game::Game() {
 
@@ -75,6 +79,8 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     is_Pokemon_Battle = false;
     playerPKM = new Pokemon(1,10);
     cpPKM = new Pokemon(1, 5);
+
+    srand(time(nullptr));
 }
 
 void Game::handleEvents() {
@@ -152,7 +158,7 @@ void Game::handleEvents() {
 }
 
 void Game::update() {
-    pokemonBattleUi->update();
+    pokemonBattleUi->update(*this);
     movingUpdate();
 }
 

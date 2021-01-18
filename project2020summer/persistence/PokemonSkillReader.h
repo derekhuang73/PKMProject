@@ -13,13 +13,27 @@ using namespace std;
 class PokemonSkillReader {
     string File = "../data/PokemonSkillData.txt";
 public:
+
+    PokemonSkillReader();
+
+    struct pokemonSkillSeed {
+        int power;
+        int hitRate;
+        PokemonType skillType;
+        int skillSerialNum;
+        string skillName;
+    };
+
     //P: Read File, find skill, return line that contain skill information
     // or throw exception if Skill 000 or skill not found;
-    string findSkill(int skillNum) throw(NullSkillException);
+    static pokemonSkillSeed findSkill(int skillNum);
 
 private:
     //P: check if given line match with given skillNUM
-    bool skillMatch(int skillNum, string skillString);
+
+    static struct pokemonSkillSeed array[110];
+
+    static int skillNum;
 
 };
 

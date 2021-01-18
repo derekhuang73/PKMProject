@@ -9,6 +9,7 @@
 #include <string>
 #include "PokemonType.h"
 #include "../../exception/NullSkillException.h"
+#include "../../persistence/PokemonSkillReader.h"
 
 using namespace std;
 class PokemonSkill {
@@ -20,7 +21,7 @@ public:
                         NormalSkillStartAT = 4;
     PokemonSkill();
 
-    PokemonSkill(int skillSerialNum) throw (NullSkillException);
+    PokemonSkill(int skillSerialNum);
 
     //P:random generate skill within range and given start point
     PokemonSkill(int startPoint, int range);
@@ -28,7 +29,7 @@ public:
     //------------------------------------------------------------------------------
     int getPower() const;
 
-    void setPower(int power) throw(NullSkillException);
+    void setPower(int power);
 
     int getHitRate() const;
 
@@ -59,7 +60,6 @@ private:
 
     //P: set up skill with skillString
     //R: skill string returned from skillReader
-    void setUpSkill(string pmSkillString);
 };
 
 

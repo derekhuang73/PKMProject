@@ -3,7 +3,6 @@
 //
 
 #include "PokemonSeedReader.h"
-#include "../exception/NullPokemonException.h"
 #include <fstream>
 #include <iostream>
 #include <sstream>

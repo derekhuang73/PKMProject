@@ -7,11 +7,25 @@
 #include <sstream>
 #include "PokemonSkillReader.h"
 #include "../exception/NullSkillException.h"
+using namespace std;
 
-string PokemonSkillReader::findSkill(int skillNum) throw(NullSkillException) {
+struct  PokemonSkillReader::pokemonSkillSeed PokemonSkillReader::array[110];
+int PokemonSkillReader::skillNum;
+
+PokemonSkillReader::pokemonSkillSeed PokemonSkillReader::findSkill(int skillSerialNum) {
     if (skillNum == 0) {
-        throw NullSkillException();
+        throw "Skill out of Range!";
     }
+    for(int i = 0; i < skillNum; i++) {
+        if(array[i].skillSerialNum == skillSerialNum) {
+            return array[i];
+        }
+    }
+    throw "Skill not found!";
+
+}
+
+PokemonSkillReader::PokemonSkillReader() {
     ifstream inFile;
     inFile.open(File);
     if (inFile.fail()) {
@@ -19,21 +33,24 @@ string PokemonSkillReader::findSkill(int skillNum) throw(NullSkillException) {
         exit(1);
     }
     string skillString;
+    int counter = 0;
     while (!inFile.eof()) {
         inFile >> skillString;
-        if (skillMatch(skillNum,skillString)) {
-            inFile.close();
-            return skillString;
-        }
+        string serialNum, seedPower, seedHitRate, seedType, Name;
+        stringstream ss(skillString);
+        getline(ss, serialNum, ',');
+        getline(ss, seedPower, ',');
+        getline(ss, seedHitRate, ',');
+        getline(ss, seedType, ',');
+        getline(ss, Name, ',');
+        array[counter].skillSerialNum = atoi(serialNum.c_str());
+        array[counter].power = atoi(seedPower.c_str());
+        array[counter].hitRate = atoi(seedHitRate.c_str());
+        array[counter].skillType = (PokemonType) atoi(seedType.c_str());
+        array[counter].skillName = Name;
+        counter++;
     }
+    skillNum = counter;
     inFile.close();
-    throw NullSkillException();
-
-}
-
-bool PokemonSkillReader::skillMatch(int skillNum, string skillString) {
-    string skillNUM = skillString.substr(0,3);
-    int skillSerialNum = atoi(skillNUM.c_str());
-    return skillSerialNum == skillNum;
 }
 
