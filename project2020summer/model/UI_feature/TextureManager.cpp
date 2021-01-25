@@ -25,12 +25,15 @@ SDL_Texture *TextureManager::LoadTextTexture(std::string text) {
         std::cout << " Failed to load font : " << SDL_GetError() << std::endl;
     }
     SDL_Surface *surface = TTF_RenderText_Solid(font, text.c_str(), textColor);
+    if (text == "") {
+        std::cout << "error: empty string" << std::endl;
+    }
     if (surface == nullptr) {
-        std::cout<<"surface error" << std::endl;
+        std::cout<< "surface error: " << SDL_GetError() << std::endl;
     }
     SDL_Texture *texture = SDL_CreateTextureFromSurface(Game::renderer, surface);
     if (texture == nullptr) {
-        std::cout<<"texture error" << std::endl;
+        std::cout<<"texture error: " <<  SDL_GetError() << std::endl;
     }
     SDL_FreeSurface(surface);
     return texture;

@@ -21,7 +21,7 @@ public:
     SDL_Texture *BG,*option,*highlight,*hint_Text,*playerPKM_T,*OP_PKM_T;
     SDL_Rect src, dest;
     bool isChoosingSkill;
-    const int THICKNESS = Game::window_width / 10;
+    const int THICKNESS = Game::window_width / 40;
     int battleStage;
 
     int optionHighlight;

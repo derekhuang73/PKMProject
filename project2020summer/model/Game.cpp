@@ -223,6 +223,7 @@ void Game::encounterPokemon() {
     int randomIndex = rand()%10;
     if (randomIndex<=5) {
         is_Pokemon_Battle = true;
+        //this is used for test purpose and with limited samples
         pokemonBattle->setPlayerPokemon(playerPKM);
         pokemonBattle->setCpPokemon(cpPKM);
     }
