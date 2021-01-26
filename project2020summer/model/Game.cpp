@@ -77,9 +77,12 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     isMessageDisplaying = false;
     playerRenderer = new PlayerRenderer();
     is_Pokemon_Battle = false;
+
+    //!!!THIS IS USED FOR TESTED PURPOSE ONLY
     playerPKM = new Pokemon(1,10);
     cpPKM = new Pokemon(1, 5);
-
+    playerPKM->randomGenerateSkills();
+    cpPKM->randomGenerateSkills();
     srand(time(nullptr));
 }
 

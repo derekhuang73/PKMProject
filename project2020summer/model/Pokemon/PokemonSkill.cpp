@@ -84,7 +84,7 @@ void PokemonSkill::setSkillType(int typeInt) {
 
 PokemonSkill::PokemonSkill(int startPoint, int range) {
     int serialNum = rand()%range + startPoint;
-    PokemonSkillReader::pokemonSkillSeed seed = PokemonSkillReader::findSkill(skillSerialNum);
+    PokemonSkillReader::pokemonSkillSeed seed = PokemonSkillReader::findSkill(serialNum);
     setSkillSerialNum(seed.skillSerialNum);
     setPower(seed.power);
     setHitRate(seed.hitRate);

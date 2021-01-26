@@ -252,16 +252,22 @@ void Pokemon::wrapUpWithLevelAndType() {
 
 
 void Pokemon::randomGenerateSkills() {
+    cout<< "start adding random skill" <<endl;
         switch (pokemonType) {
             case Fire:
                 for (int i = 0; i < rand()%3+1; ++i) {
+                    cout<< "start adding random  F skill" <<endl;
                     PokemonSkill * p;
                     p = new PokemonSkill(p -> FireSkillStartAT, p -> NumOfSkillPerType);
+                    cout<< "created random  F skill" <<endl;
                     addSkill(p);
+                    cout<< "added random  F skill" <<endl;
+                    cout<< "skill name: "<< p->getSkillName() << endl;
                 }
                 break;
             case Water:
                 for (int i = 0; i < rand()%3+1; ++i) {
+                    cout<< "start adding random  W skill" <<endl;
                     PokemonSkill * p;
                     p = new PokemonSkill(p -> WaterSkillStartAT, p -> NumOfSkillPerType);
                     addSkill(p);
@@ -269,6 +275,7 @@ void Pokemon::randomGenerateSkills() {
                 break;
             case Grass:
                 for (int i = 0; i < rand()%3+1; ++i) {
+                    cout<< "start adding random  G skill" <<endl;
                     PokemonSkill * p;
                     p = new PokemonSkill(p -> GrassSkillStartAT, p -> NumOfSkillPerType);
                     addSkill(p);
@@ -276,6 +283,7 @@ void Pokemon::randomGenerateSkills() {
                 break;
             case Normal:
                 for (int i = 0; i < rand()%3+1; ++i) {
+                    cout<< "start adding random  N skill" <<endl;
                     PokemonSkill * p;
                     p = new PokemonSkill(p -> NormalSkillStartAT, p -> NumOfSkillPerType);
                     addSkill(p);
