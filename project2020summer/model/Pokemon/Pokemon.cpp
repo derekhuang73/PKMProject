@@ -224,8 +224,8 @@ void Pokemon::addSkillwSerialNum(int skillSerialNum) {
 int Pokemon::getNumOfSkill() {
     for(int i=0; i<4; i++) {
         if (skills[i] == NULL) {
-        return (i-1);
-    }
+            return i;
+        }
     }
 }
 

@@ -2,6 +2,7 @@
 // Created by Derek Huang on 2020-04-24.
 //
 
+#include <iostream>
 #include "PokemonBattle.h"
 #include "../TrainerSystem/Trainer.h"
 

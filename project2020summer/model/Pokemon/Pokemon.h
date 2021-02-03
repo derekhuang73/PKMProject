@@ -42,6 +42,7 @@ public:
     //P: add skill with given skillnum to skills
     void addSkillwSerialNum(int skillSerialNum);
 
+    //Returns Number of Skills
     int getNumOfSkill();
 
     //random generate 1-4 skills with its type skill
