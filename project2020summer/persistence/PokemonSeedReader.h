@@ -25,7 +25,7 @@ public:
         int typeNum;
         int minLv;
         int evoLv;
-        string name;
+        char name[110];
     };
 
     //P: Read File, find Pokemon, return line that contain PokemonSeed information

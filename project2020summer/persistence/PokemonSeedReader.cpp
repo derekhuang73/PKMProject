@@ -3,6 +3,7 @@
 //
 
 #include "PokemonSeedReader.h"
+#include <cstring>
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -51,7 +52,7 @@ PokemonSeedReader::PokemonSeedReader() {
         array[counter].typeNum = atoi(seedType.c_str());
         array[counter].minLv = atoi(seedMinLv.c_str());
         array[counter].evoLv = atoi(seedEvoLv.c_str());
-        array[counter].name = name;
+        strcpy(array[counter].name, name.c_str());
         counter++;
     }
     pokemonNum = counter;
