@@ -258,7 +258,7 @@ void Pokemon::randomGenerateSkills() {
                 for (int i = 0; i < rand()%3+1; ++i) {
                     cout<< "start adding random  F skill" <<endl;
                     PokemonSkill * p;
-                    p = new PokemonSkill(p -> FireSkillStartAT, p -> NumOfSkillPerType);
+                    p = new PokemonSkill(PokemonSkill::FireSkillStartAT, PokemonSkill::NumOfSkillPerType);
                     cout<< "created random  F skill" <<endl;
                     addSkill(p);
                     cout<< "added random  F skill" <<endl;
@@ -269,7 +269,7 @@ void Pokemon::randomGenerateSkills() {
                 for (int i = 0; i < rand()%3+1; ++i) {
                     cout<< "start adding random  W skill" <<endl;
                     PokemonSkill * p;
-                    p = new PokemonSkill(p -> WaterSkillStartAT, p -> NumOfSkillPerType);
+                    p = new PokemonSkill(PokemonSkill::WaterSkillStartAT, PokemonSkill::NumOfSkillPerType);
                     addSkill(p);
                 }
                 break;
@@ -277,7 +277,7 @@ void Pokemon::randomGenerateSkills() {
                 for (int i = 0; i < rand()%3+1; ++i) {
                     cout<< "start adding random  G skill" <<endl;
                     PokemonSkill * p;
-                    p = new PokemonSkill(p -> GrassSkillStartAT, p -> NumOfSkillPerType);
+                    p = new PokemonSkill(PokemonSkill::GrassSkillStartAT, PokemonSkill::NumOfSkillPerType);
                     addSkill(p);
                 }
                 break;
@@ -285,7 +285,7 @@ void Pokemon::randomGenerateSkills() {
                 for (int i = 0; i < rand()%3+1; ++i) {
                     cout<< "start adding random  N skill" <<endl;
                     PokemonSkill * p;
-                    p = new PokemonSkill(p -> NormalSkillStartAT, p -> NumOfSkillPerType);
+                    p = new PokemonSkill(PokemonSkill::NormalSkillStartAT, PokemonSkill::NumOfSkillPerType);
                     addSkill(p);
                 }
         }

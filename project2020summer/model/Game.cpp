@@ -24,8 +24,8 @@ bool isMessageDisplaying = false;
 TrainerList *trainerList = nullptr;
 PokemonBattle *pokemonBattle = nullptr;
 PokemonBattleUI *pokemonBattleUi = nullptr;
-static PokemonSeedReader pokemonSeedReader;
-static PokemonSkillReader pokemonSkillReader;
+PokemonSeedReader pokemonSeedReader;
+PokemonSkillReader pokemonSkillReader;
 Pokemon *playerPKM, *cpPKM;/////used for tested purpose only
 Game::Game() {
 

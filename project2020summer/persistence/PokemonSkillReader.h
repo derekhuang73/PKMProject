@@ -21,7 +21,7 @@ public:
         int hitRate;
         PokemonType skillType;
         int skillSerialNum;
-        string skillName;
+        char skillName[110];
     };
 
     //P: Read File, find skill, return line that contain skill information

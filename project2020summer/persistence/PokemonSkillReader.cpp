@@ -3,6 +3,7 @@
 //
 
 #include <fstream>
+#include <cstring>
 #include <iostream>
 #include <sstream>
 #include "PokemonSkillReader.h"
@@ -46,8 +47,8 @@ PokemonSkillReader::PokemonSkillReader() {
         array[counter].skillSerialNum = atoi(serialNum.c_str());
         array[counter].power = atoi(seedPower.c_str());
         array[counter].hitRate = atoi(seedHitRate.c_str());
-        array[counter].skillType = (PokemonType) atoi(seedType.c_str());
-        array[counter].skillName = Name;
+        array[counter].skillType = (PokemonType) ( atoi(seedType.c_str()) - 1 );
+        strcpy(array[counter].skillName, Name.c_str());
         counter++;
     }
     skillNum = counter;
