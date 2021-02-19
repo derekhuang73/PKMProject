@@ -18,7 +18,7 @@ public:
     Game *game;
     Pokemon *playerPKM, *opPkm;
     string hint;
-    SDL_Texture *BG,*option,*highlight,*hint_Text,*playerPKM_T,*OP_PKM_T;
+    SDL_Texture *BG,*option,*highlight,*hint_Text,*playerPKM_T,*OP_PKM_T,*hpTube,*hpRed,*hpGr;
     SDL_Rect src, dest;
     bool isChoosingSkill;
     const int THICKNESS = Game::window_width / 40;

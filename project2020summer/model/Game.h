@@ -42,12 +42,12 @@ public:
     PokemonTextureMap *pokemonTextureMap;
 
     bool is_Pokemon_Battle;
+    bool isMessageDisplaying;
 
 private:
     bool isRunning;
     SDL_Window * window;
     bool isMoving = false;
-    bool isMessageDisplaying;
 
     void l_k_map();
     void r_k_map();

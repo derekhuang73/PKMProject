@@ -16,6 +16,9 @@ PokemonBattleUI::PokemonBattleUI() {
     highlight = TextureManager::LoadTexture("../assert/highlight.png");
     hint_Text = TextureManager::LoadTexture("../assert/hint_block.png");
     option = TextureManager::LoadTexture("../assert/Options.png");
+    hpTube = TextureManager::LoadTexture("../assert/hpTube.png");
+    hpRed  = TextureManager::LoadTexture("../assert/hpRed.png");
+    hpGr =   TextureManager::LoadTexture("../assert/hpGr.png");
     battleStage = 0;
     isChoosingSkill = false;
     optionHighlight = 0;
@@ -229,6 +232,7 @@ void PokemonBattleUI::battleUpdate() {
     switch (battleStage) {
         case 0:
             if (game->is_Pokemon_Battle) {
+                opPkm->setCurrentHp(opPkm->getInitialHealth());//!!! This line used for test only
                 battleStage = 1;
             }
             break;
@@ -322,7 +326,7 @@ void PokemonBattleUI::select() {
 void PokemonBattleUI::render_Battle() {
     render_BackGround();
     render_pokemons();
-    //render_hp_info();
+    render_hp_info();
     render_menu();
     render_hint();
     render_option_highlight();
@@ -331,9 +335,36 @@ void PokemonBattleUI::render_Battle() {
 void PokemonBattleUI::update(Game &game) {
    PokemonBattleUI::game = &game;
    updatePKMB();
-   battleUpdate();
+   if (!game.isMessageDisplaying) {
+       battleUpdate();
+   }
 }
 
 void PokemonBattleUI::render_hp_info() {
+    src.x = src.y = 0;
+    src.w = src.h = 32;
+    int hp1 = playerPKM->getCurrentHp();
+    int hp2 = opPkm->getCurrentHp();
+    int hp3 = playerPKM->getInitialHealth();
+    int hp4 = opPkm->getInitialHealth();
 
+    dest.x = 0;
+    dest.y = 0;
+    dest.w = game->window_width / 2;
+    dest.h = game->window_height / 5;
+    TextureManager::Draw(hpGr,src,dest);
+    dest.w = game->window_width / 2 * hp1 / hp3;
+    TextureManager::Draw(hpRed,src,dest);
+    dest.w = game->window_width / 2;
+    TextureManager::Draw(hpTube,src,dest);
+
+    dest.x = game->window_width/2;
+    dest.y = game->window_height*11/20;
+    dest.h =dest.h = game->window_height / 5;
+    dest.w = game->window_width / 2;
+    TextureManager::Draw(hpGr,src,dest);
+    dest.w = game->window_width / 2 * hp2 / hp4;
+    TextureManager::Draw(hpRed,src,dest);
+    dest.w = game->window_width / 2;
+    TextureManager::Draw(hpTube,src,dest);
 }
